@@ -11984,11 +11984,18 @@ body {
 
 .nav-item {
   background-color: #FFFFFF;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 5px;
-  padding: 0;
-  margin-top: 10px;
-  width: 130px;
-  height: 40px;
+  padding: 0 10px;
+  margin-top: 30px;
   text-align: center;
+  font-size: 15px;
+}
+
+.nav-item:hover {
+  background-color: #154875;
+}
+
+.nav-item a:hover {
+  color: #FFFFFF;
 }/*# sourceMappingURL=main.css.map */
