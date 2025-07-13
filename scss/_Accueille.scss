@@ -1,6 +1,4 @@
-body {
-  background-color: $primary;
-}
+ 
 .navbar-nav{
     padding: 10px;
   
@@ -16,6 +14,8 @@ body {
     // height: 40px;
     text-align: center;
     font-size: 15px;
+    color: $black;
+    font-weight: bold;
 
      
     
@@ -27,3 +27,54 @@ body {
 .nav-item a:hover{
     color: $white;
 }
+ .section1_accueil{
+    background-image: url(../Images/image\ accueille.png);
+    background-size: cover;
+}
+.h1_accueil{
+    color: $white;
+    text-align: center;
+    padding-top: 100px;    
+    
+} 
+.h4_accueil{
+    color: $white;
+    text-align: center;
+    margin-top: 60px;
+    
+}
+.container1-section1 span{
+    color: $primary;
+    font-weight: bold;
+}
+.container2-section1{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    
+}
+
+.input-group{
+    width: 400px;
+    height: 60px;
+    margin: 0 auto;
+    border-radius:40px;
+    margin-top: 30px;
+    
+}
+input::placeholder{
+    text-align: center;
+    font-weight: bold;
+}
+ .container2-section1{
+    padding-top: 60px;
+     
+    padding-bottom: 80px;
+ }
+ .input_recherche{
+    width: 800px;
+    border: none;
+    border-radius: 40px;
+ }
+ .text_container2{
+    color:$white;
+ }

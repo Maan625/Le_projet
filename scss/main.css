@@ -11974,10 +11974,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  background-color: #FFFD55;
-}
-
 .navbar-nav {
   padding: 10px;
 }
@@ -11990,6 +11986,8 @@ body {
   margin-top: 30px;
   text-align: center;
   font-size: 15px;
+  color: #000000;
+  font-weight: bold;
 }
 
 .nav-item:hover {
@@ -11997,5 +11995,65 @@ body {
 }
 
 .nav-item a:hover {
+  color: #FFFFFF;
+}
+
+.section1_accueil {
+  background-image: url(../Images/image\ accueille.png);
+  background-size: cover;
+}
+
+.h1_accueil {
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 100px;
+}
+
+.h4_accueil {
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.container1-section1 span {
+  color: #FFFD55;
+  font-weight: bold;
+}
+
+.container2-section1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.input-group {
+  width: 400px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 40px;
+  margin-top: 30px;
+}
+
+input::-moz-placeholder {
+  text-align: center;
+  font-weight: bold;
+}
+
+input::placeholder {
+  text-align: center;
+  font-weight: bold;
+}
+
+.container2-section1 {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.input_recherche {
+  width: 800px;
+  border: none;
+  border-radius: 40px;
+}
+
+.text_container2 {
   color: #FFFFFF;
 }/*# sourceMappingURL=main.css.map */
