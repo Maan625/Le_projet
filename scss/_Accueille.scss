@@ -1,93 +1,133 @@
- 
-.navbar-nav{
-    padding: 10px;
-  
+ .navbar-nav {
+     padding: 10px;
 
-}
-.nav-item{
-    background-color: $white;
-    border-radius: 15px;
-    margin: 5px;
-    padding: 0 10px;
-    margin-top: 30px;
-    // width: 130px;
-    // height: 40px;
-    text-align: center;
-    font-size: 15px;
-    color: $black;
-    font-weight: bold;
 
-     
-    
-}
-.nav-item:hover{
-  
-    background-color: $tertiary;
-}
-.nav-item a:hover{
-    color: $white;
-}
- .section1_accueil{
-    background-image: url(../Images/image\ accueille.png);
-    background-size: cover;
-}
-.h1_accueil{
-    color: $white;
-    text-align: center;
-    padding-top: 100px;    
-    
-} 
-.h4_accueil{
-    color: $white;
-    text-align: center;
-    margin-top: 60px;
-    
-}
-.container1-section1 span{
-    color: $primary;
-    font-weight: bold;
-}
-.container2-section1{
-    margin-top: 40px;
-    margin-bottom: 40px;
-    
-}
+ }
 
-.input-group{
-    width: 400px;
-    height: 60px;
-    margin: 0 auto;
-    border-radius:40px;
-    margin-top: 30px;
-    
-}
-input::placeholder{
-    text-align: center;
-    font-weight: bold;
-}
- .container2-section1{
-    padding-top: 60px;
-     
-    padding-bottom: 80px;
+ .nav-item {
+     background-color: $white;
+     border-radius: 15px;
+     margin: 5px;
+     padding: 0 10px;
+     margin-top: 30px;
+     // width: 130px;
+     // height: 40px;
+     text-align: center;
+     font-size: 15px;
+     color: $black;
+     font-weight: bold;
+
+
+
  }
- .input_recherche{
-    width: 800px;
-    border: none;
-    border-radius: 40px;
+
+ .nav-item:hover {
+
+     background-color: $tertiary;
  }
- .text_container2{
-    color:$white;
+
+ .nav-item a:hover {
+     color: $white;
  }
- 
- .text_section2{
-    text-align: center;
-   
-   
-    
+
+ .section1_accueil {
+     background-image: url(../Images/image\ accueille.png);
+     background-size: cover;
  }
- .text_section2 p{
-    color:$tertiary;
-    font-size: 20px;
-    font-weight: bold;
-   
-}
+
+ .h1_accueil {
+     color: $white;
+     text-align: center;
+     padding-top: 100px;
+
+ }
+
+ .h4_accueil {
+     color: $white;
+     text-align: center;
+     margin-top: 60px;
+
+ }
+
+ .container1-section1 span {
+     color: $primary;
+     font-weight: bold;
+ }
+
+ .container2-section1 {
+     margin-top: 40px;
+     margin-bottom: 40px;
+
+ }
+
+ .input-group {
+     width: 400px;
+     height: 60px;
+     margin: 0 auto;
+     border-radius: 40px;
+     margin-top: 30px;
+
+ }
+
+ input::placeholder {
+     text-align: center;
+     font-weight: bold;
+ }
+
+ .container2-section1 {
+     padding-top: 60px;
+
+     padding-bottom: 80px;
+ }
+
+ .input_recherche {
+     width: 800px;
+     border: none;
+     border-radius: 40px;
+ }
+
+ .text_container2 {
+     color: $white;
+ }
+
+ .text_section2 {
+     text-align: center;
+
+
+
+ }
+
+ .text_section2 p {
+     color: $tertiary;
+     font-size: 20px;
+     font-weight: bold;
+
+ }
+
+ .buttum_section2_accueil {
+     text-align: center;
+
+ }
+
+ .button_group_section2 {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: center;
+     gap: 20px;
+
+ }
+
+ .buttun_section2_accueil {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 30px;
+ }
+
+ @media screen and (max-width: 768px) {
+     .buttun_section2_accueil {
+         flex-direction: column;
+         gap: 20px;
+     }
+ }

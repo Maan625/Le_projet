@@ -11974,6 +11974,30 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.text_section2 {
+  animation: rotate 3s infinite alternate;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-100px);
+  }
+  100% {
+    transform: translate(100px);
+  }
+}
+.input-group {
+  animation: translate 2s ease-in-out alternate;
+}
+
+@keyframes translate {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
 .navbar-nav {
   padding: 10px;
 }
@@ -12066,4 +12090,30 @@ input::placeholder {
   color: #154875;
   font-size: 20px;
   font-weight: bold;
+}
+
+.buttum_section2_accueil {
+  text-align: center;
+}
+
+.button_group_section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.buttun_section2_accueil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .buttun_section2_accueil {
+    flex-direction: column;
+    gap: 20px;
+  }
 }/*# sourceMappingURL=main.css.map */
