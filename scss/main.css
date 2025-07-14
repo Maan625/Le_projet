@@ -11980,10 +11980,10 @@ textarea.form-control-lg {
 
 @keyframes rotate {
   0% {
-    transform: translate(-100px);
+    transform: translateY(-50px);
   }
   100% {
-    transform: translate(100px);
+    transform: translateY(20px);
   }
 }
 .input-group {
@@ -11992,12 +11992,20 @@ textarea.form-control-lg {
 
 @keyframes translate {
   0% {
-    transform: translateX(-1000px);
+    transform: translateY(-1000px);
   }
   100% {
-    transform: translateX(0px);
+    transform: translateY(0px);
   }
 }
+.image_formateur {
+  transition: transform 0.5s ease-in-out;
+}
+
+.image_formateur:hover {
+  transform: rotate(360deg);
+}
+
 .navbar-nav {
   padding: 10px;
 }
@@ -12116,4 +12124,66 @@ input::placeholder {
     flex-direction: column;
     gap: 20px;
   }
+}
+.card {
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.section3_accueil {
+  margin-top: 60px;
+}
+
+.card-img-top {
+  border-radius: 30px 30px 0 0;
+}
+
+.line_star {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #00162B;
+  font-size: 20px;
+}
+
+.line_time {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  color: #00162B;
+  font-size: 20px;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.image_formateur {
+  border-radius: 50%;
+  border: 2px solid #FFFD55;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.hr_section3 {
+  border: 2px solid #00162B;
+}
+
+.line_price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-body a {
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
