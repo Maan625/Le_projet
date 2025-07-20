@@ -12187,4 +12187,22 @@ input::placeholder {
 
 .card-body a {
   text-decoration: none;
+}
+
+.button_voir {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button_voir button {
+  background-color: #FAC925;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.button_voir button:hover {
+  background-color: #FDB913;
 }/*# sourceMappingURL=main.css.map */
