@@ -12018,6 +12018,49 @@ textarea.form-control-lg {
     transform: translateX(0px);
   }
 }
+.spinner {
+  animation: spinner 4s infinite ease;
+}
+
+.spinner div:nth-of-type(1) {
+  transform: translateZ(-35.2px) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+  transform: rotateY(-270deg) translateX(50%);
+  transform-origin: top right;
+}
+
+.spinner div:nth-of-type(3) {
+  transform: rotateY(270deg) translateX(-50%);
+  transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+  transform: rotateX(90deg) translateY(-50%);
+  transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+  transform: rotateX(-90deg) translateY(50%);
+  transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+  transform: translateZ(35.2px);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+  }
+  50% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+  }
+  100% {
+    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
+  }
+}
 .navbar-nav {
   padding: 10px;
 }
@@ -12326,57 +12369,29 @@ input::placeholder {
 .spinner {
   width: 70.4px;
   height: 70.4px;
-  --clr:#FAC925;
-  --clr-alpha: #00162B;
-  animation: spinner 4s infinite ease;
   transform-style: preserve-3d;
   margin: 0 auto;
 }
 
 .spinner > div {
-  background-color: var(--clr-alpha);
+  background-color: #00162B;
   height: 100%;
   position: absolute;
   width: 100%;
-  border: 3.5px solid var(--clr);
+  border: 3.5px solid #FAC925;
 }
 
-.spinner div:nth-of-type(1) {
-  transform: translateZ(-35.2px) rotateY(180deg);
+.evenement_gratuit {
+  background-color: #00162B;
+  color: #FFFFFF;
+  padding: 30px;
+  margin: 20px 40px;
+  border-radius: 40px;
+  border: 5px solid #FAC925;
 }
 
-.spinner div:nth-of-type(2) {
-  transform: rotateY(-270deg) translateX(50%);
-  transform-origin: top right;
-}
-
-.spinner div:nth-of-type(3) {
-  transform: rotateY(270deg) translateX(-50%);
-  transform-origin: center left;
-}
-
-.spinner div:nth-of-type(4) {
-  transform: rotateX(90deg) translateY(-50%);
-  transform-origin: top center;
-}
-
-.spinner div:nth-of-type(5) {
-  transform: rotateX(-90deg) translateY(50%);
-  transform-origin: bottom center;
-}
-
-.spinner div:nth-of-type(6) {
-  transform: translateZ(35.2px);
-}
-
-@keyframes spinner {
-  0% {
-    transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
-  }
-  50% {
-    transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
-  }
-  100% {
-    transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
-  }
+.card_evenement {
+  border: 3px solid #FFFFFF;
+  border-radius: 30px;
+  background-color: #FAC925;
 }/*# sourceMappingURL=main.css.map */
