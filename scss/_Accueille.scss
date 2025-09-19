@@ -374,3 +374,57 @@
     background-color: $button;
 }
 
+
+
+ /* Animation Slide-in */
+ .cd {
+    margin: 0 auto;
+ }
+ .cd h2 {
+    font-size: 3rem;
+    color: $primary;
+ }
+ @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .carousel-item.active {
+    animation: slideIn 0.8s ease-out;
+  }
+  .carousel-inner {
+    padding: 100px;
+    background-color: $secondary;
+    border-radius: 32px;
+    border: 5px solid $button;
+  }
+
+  .testimonial {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    color: white;
+  }
+
+  .testimonial img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  .testimonial .stars i {
+    color: #ffc107;
+  }
+  .image_témignage{
+    border:5px solid $button;
+  }
+
+
