@@ -399,10 +399,15 @@
     animation: slideIn 0.8s ease-out;
   }
   .carousel-inner {
-    padding: 100px;
+    padding: 30px 0 ;
     background-color: $secondary;
     border-radius: 32px;
     border: 5px solid $button;
+  }
+  @media screen and (max-width: 600px) {
+    .carousel-inner {
+       width: 100%;
+    }
   }
 
   .testimonial {
@@ -426,5 +431,56 @@
   .image_témignage{
     border:5px solid $button;
   }
+
+
+  
+  .newsletter{
+     margin: 0 60px;
+     border: 3px solid $button;
+     border-radius: 30px;
+  }
+ 
+ .form_newsletter{
+    width: 400px;
+    margin: auto;
+    border: 1px solid $button;
+    background-color: $evenement;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+ }
+
+ #btn_newsletter:hover{
+    background-color: $button;
+    color: black;
+ }
+ .text_newsletter{
+    width: 400px;
+    margin: 0 auto ;
+    border: 1px solid $button;
+    color: $secondary;
+    background-color: $evenement;
+ 
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 200px;
+    margin-bottom: 50px;
+ }
+
+ @media screen and (max-width: 600px) {
+     .newsletter{
+         margin: 0;
+     }
+     .text_newsletter{
+        margin-top: 20px;
+
+     }
+     .form_newsletter{
+        margin-top: 20px;
+     }
+ }
+    
+
 
 
