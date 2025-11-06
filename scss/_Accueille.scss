@@ -104,6 +104,26 @@
      font-weight: bold;
 
  }
+ .dropdown-menu{
+     width: 250px;
+    
+    //  text-align: center;
+    
+ }
+ .link_drop{
+     color: $black;
+     font-weight: bold;
+     text-decoration: none;
+     padding: 4px;
+     margin-bottom: 20px;
+     font-size: 14px;
+     margin-left: 10px;
+     border-radius: 10px;
+ }
+ .link_drop:hover{
+     color: white;
+     background-color: $tertiary;
+ }
 
  .buttum_section2_accueil {
      text-align: center;
@@ -135,7 +155,27 @@
 
  .card {
      transition: all 0.3s ease-in-out;
+     border: 2px solid $secondary;
+     border-radius: 30px;
  }
+ .button_commence{
+    width: 150px;
+    margin: 10px auto;
+    margin-bottom: 20px;
+    background-color: $button;
+    padding: 5px 10px 5px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: $white;
+    text-align: center;
+  
+}
+.button_commence:hover{
+    background-color: $button_hover;
+    color: $black;
+}
+
 
  .card:hover {
      transform: scale(1.05);
@@ -220,6 +260,7 @@
 
  .button_voir button:hover {
      background-color: $button_hover;
+     color: $black;
  }
 
  .section4_accueil {
@@ -480,7 +521,74 @@
         margin-top: 20px;
      }
  }
-    
 
+ //section footer
+ .lines_footer{
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-direction: column;
+    gap: 30px;
+ }
 
+ .footer{
+    background-color: $secondary;
+    padding: 30px 0;
+ }
+ .line_footer{
+    text-decoration: none;
+    color: $white;
+    font-size: 16px;
+    font-weight: bold;
 
+ }
+ .line_footer.active{
+     color: $primary;
+ }
+ 
+ .line_footer::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: $button;
+    transition: width .5s;
+ }
+ .line_footer:hover::after{
+    width: 100%;
+ }
+
+ .footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    margin: 30px 0;
+ }
+ #para_rejoindre{
+    color:$primary;
+ }
+ .icon_sociale{
+    font-size: 24px;
+
+ }
+ .icon_sociale:hover{
+     animation: rotate 0.5s ease-in-out;
+ }
+ @keyframes rotate{
+     0%{
+        transform: rotate(0deg);
+     }
+     100%{
+        transform: rotate(360deg);
+     }
+ }
+
+ @media screen and (max-width: 768px) {
+     .footer{
+         flex-direction: column;
+         gap: 50px;
+         text-align: center;
+        
+     }
+ }
