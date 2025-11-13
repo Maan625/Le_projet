@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scss/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title> Accueil</title>
+</head>
+<style>
+
+</style>
+<header class="header_accueil">
+    <button onclick="changerMode()" id="modeButton">🌙 Mode nuit</button>
+
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../Images/logo.png" alt="logo" width="80" height="80"></a>
+            <button class="navbar-toggler text-white text-bg-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#"> Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  " aria-current="page" href="#"> A propos</a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Nos Cours
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li><a class="link_drop" href="cours_communication.html"> cours en communication</a></li>
+                            <li><a class="link_drop" href="cours_réseaux_informatiques.html"> cours en Réseaux
+                                    informatiques</a></li>
+                            <li><a class="link_drop" href="Tous_les_cours.html">tous les cours</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#"> Essais </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#"> Contactez-Nous </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Nouveau compte</a>
+
+                    </li>
+                    <li class="nav-item text-bg-warning">
+                        <a class="nav-link  " aria-current="page" href="#">Connexion</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+</header>
+<main class="py-5">
+    <div class="container">
+
+        <!-- TITRE -->
+        <h1 class="fw-bold mb-3">
+            Les bases de la fibre FTTH sur le terrain
+        </h1>
+        <p class="text-muted">
+            Publié le 15/09/2025 • Temps de lecture : 6 minutes
+        </p>
+
+        <!-- IMAGE PRINCIPALE -->
+        <img src="images-les articles/1675838992376-Fiber to the Home (FTTH).png" class="img-fluid w-75 rounded-4 shadow mb-4"
+            alt="Installation de la fibre optique FTTH">
+
+        <!-- INTRODUCTION -->
+        <p class="lead">
+            La fibre optique FTTH (<em>Fiber To The Home</em>) est aujourd’hui la technologie
+            la plus utilisée pour offrir un Internet très haut débit aux particuliers.
+            Dans cet article, découvrons comment elle est déployée et comment elle fonctionne concrètement.
+        </p>
+
+        <hr class="my-4">
+
+        <!-- SECTION 1 -->
+        <h2 class="fw-bold mt-4 mb-3">1. Qu’est-ce que le FTTH ?</h2>
+        <p>
+            Le FTTH signifie <strong>Fiber To The Home</strong>, c’est-à-dire que la fibre optique arrive
+            directement jusqu’à l’abonné. Contrairement au FTTB ou au VDSL, il n’y a pas de câble en cuivre :
+            le signal lumineux est transporté du NRO (Nœud de Raccordement Optique) jusqu’à la prise PTO du logement.
+        </p>
+
+        <div class="text-center my-4">
+            <img src="images-les articles/Schéma de l’architecture FTTH.webp" class="img-fluid rounded shadow" style="max-width:650px;"
+                alt="Schéma de l’architecture FTTH">
+        </div>
+
+        <!-- SECTION 2 -->
+        <h2 class="fw-bold mt-4 mb-3">2. Les principaux éléments du réseau FTTH</h2>
+
+        <ul>
+            <li><strong>NRO</strong> — Point de départ du réseau optique, où les équipements actifs sont installés.</li>
+            <li><strong>SRO</strong> — Sous-répartiteur optique : répartit les fibres vers les zones desservies.</li>
+            <li><strong>PBO</strong> — Point de Branchement Optique : situé souvent en façade ou en chambre.</li>
+            <li><strong>PTO</strong> — Prise Terminale Optique à l’intérieur du logement.</li>
+        </ul>
+
+        <div class="text-center my-4">
+            <img src="images-les articles/Éléments physiques d’un réseau FTTH.webp" class="img-fluid rounded shadow" style="max-width:700px;"
+                alt="Éléments physiques d’un réseau FTTH">
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 class="fw-bold mt-4 mb-3">3. Comment se déroule une installation ?</h2>
+
+        <ol>
+            <li>Repérage du parcours entre le PBO et le logement.</li>
+            <li>Tirage du câble optique (souvent en façade ou en gaine technique).</li>
+            <li>Pose de la PTO (prise optique intérieure).</li>
+            <li>Raccordement par soudure (fusion des fibres).</li>
+            <li>Mesure OTDR et vérification du signal.</li>
+        </ol>
+
+        <p>
+            Chaque étape est réalisée avec précision pour éviter toute perte de signal ou micro-courbure de la fibre.
+        </p>
+
+        <!-- SECTION 4 -->
+        <h2 class="fw-bold mt-4 mb-3">4. Sécurité et bonnes pratiques</h2>
+        <p>
+            La fibre optique transporte un signal lumineux invisible à l’œil nu.
+            Il est donc essentiel de <strong>ne jamais regarder directement</strong> dans une fibre active.
+            De plus, il faut toujours manipuler la fibre avec soin et utiliser un laser rouge (<em>VFL</em>)
+            pour vérifier la continuité sans danger.
+        </p>
+
+        <div class="alert alert-warning mt-3">
+            ⚠️ <strong>Attention :</strong> le verre de la fibre est extrêmement fin et fragile.
+            Une fibre cassée ou pliée provoque une perte de signal importante.
+        </div>
+
+        <!-- SECTION 5 -->
+        <h2 class="fw-bold mt-4 mb-3">5. Les outils de mesure : OTDR et power meter</h2>
+        <p>
+            Après l’installation, le technicien utilise un <strong>réflectomètre optique (OTDR)</strong>
+            pour vérifier la qualité du signal et localiser d’éventuelles pertes.
+            Un <em>power meter</em> mesure la puissance lumineuse reçue.
+        </p>
+
+        <div class="text-center my-4">
+            <img src="images-les articles/Test OTDR sur un câble fibre optique.jpg" class="img-fluid rounded shadow" style="max-width:550px;"
+                alt="Test OTDR sur un câble fibre optique">
+        </div>
+
+        <!-- CONCLUSION -->
+        <h2 class="fw-bold mt-4 mb-3">Conclusion</h2>
+        <p>
+            Le FTTH permet d’offrir un accès Internet rapide et stable, avec un débit pouvant atteindre plusieurs
+            gigabits.
+            La maîtrise des étapes d’installation, des règles de sécurité et des outils de mesure est essentielle
+            pour tout technicien fibre optique.
+        </p>
+
+       <a href="../Articles_techniques.html" class="btn_lire text-decoration-none   fw-semibold w-50 mx-auto">
+                        ← Retour aux articles
+        </a>
+
+    </div>
+</main>
+
+
+<footer class="footer">
+    <div class="lines_footer">
+        <a class="line_footer active" href="">Accueil</a>
+        <a class="line_footer" href="">A propos</a>
+        <a class="line_footer" href="">Essais</a>
+        <a class="line_footer" href="">Nos formations</a>
+        <a class="line_footer" href="">Contactez-Nous</a>
+    </div>
+    <div class="rejoin_contact ">
+        <div class="rejoin">
+            <h3 class="text-light fw-bold">Rejoignez-nous</h3>
+            <p id="para_rejoindre">Rejoindre en tant qu’entraîneur</p>
+        </div>
+        <div class="contact">
+            <h3 class="text-light fw-bold">Contactez-nous</h3>
+            <a class="text-decoration-none" href=""><i class="bi bi-map-fill"> 12 rue de la paix, 75000
+                    Paris</i></a><br><br>
+            <a class="text-decoration-none" href=""><i class="bi bi-telephone-fill"> +33 1 23 45 67 89</i></a>
+            <br><br>
+            <a class="text-decoration-none" href=""><i class="bi bi-envelope-fill"> Maanali@example.com</i></a>
+        </div>
+    </div>
+    <div class="suivez-nous text-center ">
+        <h3 class="text-light fw-bold mb-5">Suivez-nous</h3>
+        <div class="line_social d-flex justify-content-center gap-5">
+            <a class="icon_sociale" href=""><i class="bi bi-facebook"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-twitter"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-instagram"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-linkedin"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-youtube"></i></a>
+        </div>
+    </div>
+</footer>
+<script src="../js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<body>

@@ -27,7 +27,7 @@
     transition: transform 0.5s ease-in-out;
 }
 .image_formateur:hover{
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
 }
  #titre_section4{
     animation: translate 2s ease-in-out alternate;

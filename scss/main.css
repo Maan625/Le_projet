@@ -12003,7 +12003,7 @@ textarea.form-control-lg {
 }
 
 .image_formateur:hover {
-  transform: rotate(360deg);
+  transform: rotateY(360deg);
 }
 
 #titre_section4 {
@@ -12061,6 +12061,10 @@ textarea.form-control-lg {
     transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
   }
 }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .navbar-nav {
   padding: 10px;
 }
@@ -12073,8 +12077,11 @@ textarea.form-control-lg {
   margin-top: 30px;
   text-align: center;
   font-size: 15px;
-  color: #000000;
-  font-weight: bold;
+  font-weight: lighter;
+}
+
+.nav-item .nav-link {
+  color: black;
 }
 
 .nav-item:hover {
@@ -12145,6 +12152,20 @@ input::placeholder {
   color: #FFFFFF;
 }
 
+.text_container2 h5, .text_container2 .h5 {
+  color: #FFFD55;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.text_container2 p {
+  box-shadow: 5px 5px 10px black;
+  border-radius: 20px;
+  padding: 3px;
+  background-color: #154875;
+  opacity: 0.8;
+}
+
 .text_section2 {
   text-align: center;
 }
@@ -12204,14 +12225,15 @@ input::placeholder {
   transition: all 0.3s ease-in-out;
   border: 2px solid #00162B;
   border-radius: 30px;
+  text-align: center;
 }
 
 .button_commence {
   width: 150px;
-  margin: 10px auto;
+  margin: 0 auto;
   margin-bottom: 20px;
   background-color: #B88E00;
-  padding: 5px 10px 5px 10px;
+  align-items: center;
   border: none;
   border-radius: 10px;
   font-weight: bold;
@@ -12230,6 +12252,9 @@ input::placeholder {
 
 .section3_accueil {
   margin-top: 60px;
+  background-color: #00162B;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .card-img-top {
@@ -12246,7 +12271,7 @@ input::placeholder {
 .card-title {
   font-weight: bold;
   color: #00162B;
-  font-size: 20px;
+  font-size: 17px;
   padding: 10px;
 }
 
@@ -12401,10 +12426,17 @@ input::placeholder {
   height: 540px;
   padding: 20px 5px;
   border: 3px solid #B88E00;
+  border-radius: 20px;
 }
 
 .title12_section4 {
+  font-size: 18px;
+  width: 100%;
+}
+
+.card_1 > .card-body > p {
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .spinner {
@@ -12583,7 +12615,6 @@ input::placeholder {
   justify-content: space-around;
   align-items: center;
   gap: 50px;
-  margin: 30px 0;
 }
 
 #para_rejoindre {
@@ -12594,22 +12625,612 @@ input::placeholder {
   font-size: 24px;
 }
 
-.icon_sociale:hover {
-  animation: rotate 0.5s ease-in-out;
+.icon_sociale {
+  transition: transform 0.5s ease-in-out;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.icon_sociale:hover {
+  transform: rotateY(360deg);
 }
+
 @media screen and (max-width: 768px) {
   .footer {
     flex-direction: column;
     gap: 50px;
     text-align: center;
   }
+}
+#modeButton {
+  position: fixed;
+  top: 100px;
+  right: 15px;
+  z-index: 999;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #222;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #B88E00;
+  color: #FFFFFF;
+}
+
+.dark-mode .card {
+  background-color: #154875;
+  color: white;
+}
+
+.dark-mode a {
+  color: #154875;
+}
+
+#modeButton:hover {
+  background-color: #00162B;
+  color: white;
+  transform: scale(1.05);
+}
+
+.dark-mode .card_1 {
+  background-color: #00162B;
+  color: white;
+}
+
+.dark-mode .card-title {
+  color: #FFFFFF;
+}
+
+.dark-mode .line_time {
+  color: #FFFFFF;
+}
+
+.dark-mode .line_time .time i {
+  color: #FFFFFF;
+}
+
+.dark-mode .line_footer,
+#para_rejoindre {
+  color: #B88E00;
+}
+
+.dark-mode .text-decoration-none {
+  color: #B88E00;
+}
+
+.dark-mode .icon_sociale {
+  color: #B88E00;
+}
+
+.dark-mode .section4_accueil {
+  background-color: #B88E00;
+}
+
+.dark-mode .icon1_section4_2,
+.icon1_section4_1,
+.icon1_section4 {
+  border: 2px solid #B88E00;
+}
+
+.main_cours {
+  background-color: #ece6e6;
+  padding: 40px;
+}
+
+.main_cours_2 {
+  background-image: url(../Images/cours_réseaux_informatiques/image\ de\ fond\ réseaux\ en\ informatiques.png);
+  padding: 40px;
+}
+
+.main_tous_cours_2 {
+  background-image: url(../Images/cours_communication/fond\ de\ écran\ tous\ les\ cours.png);
+}
+
+.présentation_du_cours {
+  padding: 30px;
+  border: 2px solid #B88E00;
+  border-radius: 100px 0 100px 0;
+}
+
+.titre_cours {
+  color: #00162B;
+  font-weight: bold;
+}
+
+.para_cours {
+  color: #212529;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+}
+
+.card_2 {
+  background-color: #00162B;
+  color: #FFFFFF;
+  transition: all 0.3s ease-out;
+  border: 2px solid #00162B;
+  border-radius: 30px;
+  border: 1px solid #FFFD55;
+  text-align: center;
+}
+
+.card_2:hover {
+  transform: scale(1.05);
+}
+
+.card_2-img-top {
+  border-radius: 30px 30px 0 0;
+}
+
+.card_2-title {
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.line_2_time {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  color: #B88E00;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.line_2_price {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  align-items: center;
+}
+
+.dark-mode .main_cours {
+  background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
+}
+
+.dark-mode .titre_cours {
+  color: #B88E00;
+}
+
+.dark-mode .para_cours {
+  color: #FFFFFF;
+}
+
+.créer_compte {
+  color: #B88E00;
+  margin-top: 20px;
+  font-weight: bolder;
+}
+
+.form_contact {
+  background-color: #00162B;
+  width: 350px;
+  margin: 60px auto;
+  padding: 20px;
+  border-radius: 20px;
+  color: #FFFFFF;
+}
+
+.btn_inscrir {
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #B88E00;
+  border: none;
+  color: #FFFFFF;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.main_compte {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.image_article {
+  animation: slider 6s ease-in-out infinite alternate;
+  margin: 20px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 100px 0;
+  height: 600px;
+}
+
+@keyframes slider {
+  0% {
+    background-image: url(/Images/image\ accueille.png);
+  }
+  25% {
+    background-image: url(https://images.unsplash.com/photo-1661332549696-7367960fcd42?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
+  }
+  50% {
+    background-image: url(https://images.unsplash.com/photo-1661332549696-7367960fcd42?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
+  }
+  100% {
+    background-image: url(https://images.unsplash.com/photo-1703113690885-8caf0c77a7cf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
+  }
+}
+@media screen and (max-width: 768px) {
+  .main_compte {
+    grid-template-columns: 1fr;
+  }
+}
+.dark-mode .créer_compte {
+  color: #00162B;
+}
+
+.section_formaulaire_contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images_contact {
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+}
+
+.image_contact {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* الطبقة التي تقوم بالأنيميشن */
+.image_contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  animation: imageSlideshow 15s ease-in-out infinite;
+  z-index: 0;
+  transform: scale(1);
+  transition: transform 2s ease-in-out;
+}
+
+/* طبقة التعتيم الخفيف لزيادة وضوح النص فوق الصورة */
+.image_contact::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+  border-radius: 20px;
+  z-index: 1;
+}
+
+@keyframes imageSlideshow {
+  0% {
+    background-image: url(../Images/image\ accueille.png);
+    opacity: 1;
+    transform: scale(1);
+  }
+  25% {
+    opacity: 0;
+  }
+  30% {
+    background-image: url(https://images.unsplash.com/photo-1661332549696-7367960fcd42?auto=format&fit=crop&q=80&w=687);
+    opacity: 0;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  75% {
+    opacity: 0;
+  }
+  80% {
+    background-image: url(https://images.unsplash.com/photo-1703113690885-8caf0c77a7cf?auto=format&fit=crop&q=80&w=687);
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+.formaulair_contact {
+  display: flex;
+  width: 400px;
+  margin: 30px;
+  flex-direction: column;
+  background-color: #00162B;
+  color: #FFFFFF;
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.textarea {
+  height: 200px;
+}
+
+.dark-mode input {
+  background-color: #f2f2f2;
+  color: #00162B;
+}
+
+.dark-mode textarea {
+  background-color: #f2f2f2;
+  color: #00162B;
+}
+
+.main_connexion {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main_connexion::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  animation: slideShow 20s ease-in-out infinite;
+  z-index: -1;
+  transform: scale(1);
+  transition: transform 1s ease-in-out;
+}
+
+@keyframes slideShow {
+  0% {
+    background-image: url(https://plus.unsplash.com/premium_photo-1679917152484-c7b68dd0962a?auto=format&fit=crop&q=80&w=1032);
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  30% {
+    background-image: url(https://plus.unsplash.com/premium_photo-1733317391601-b1651d6d4be9?auto=format&fit=crop&q=80&w=1170);
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.05);
+  }
+  55% {
+    background-image: url(https://plus.unsplash.com/premium_photo-1682145181120-73cfdfc8a36d?auto=format&fit=crop&q=60&w=900);
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  80% {
+    background-image: url(https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=60&w=900);
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+.formaulaire_connexion {
+  display: flex;
+  width: 400px;
+  margin: 30px;
+  flex-direction: column;
+  background-color: #00162B;
+  color: #FFFFFF;
+  padding: 30px;
+  border-radius: 20px;
+  border: 2px solid #B88E00;
+}
+
+.button_connexion {
+  background-color: #B88E00;
+  color: #FFFFFF;
+  border-radius: 10px;
+  border: 1px solid #FFFFFF;
+}
+
+.button_connexion:hover {
+  background-color: #FFFFFF;
+  color: #00162B;
+}
+
+.déscription_du_cours {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 80px;
+  gap: 10px;
+}
+
+.card_de_cours {
+  width: 350px;
+  height: 450px;
+  margin: 30px;
+  position: sticky;
+  top: 20px;
+}
+
+aside {
+  margin-bottom: 40px;
+}
+
+.card-text {
+  text-align: left;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding: 10px;
+}
+
+.card--body {
+  background-color: #00162B;
+  padding: 10px;
+}
+
+.span_cours {
+  color: #B88E00;
+}
+
+.titre_card_description {
+  text-align: center;
+  color: #B88E00;
+  background-color: #00162B;
+  padding: 10px;
+}
+
+.para_card_description {
+  background-color: #00162B;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 10px;
+  width: 700px;
+}
+
+.card_description_cours {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .déscription_du_cours {
+    display: flex;
+    flex-direction: column;
+    -moz-columns: 1;
+         columns: 1;
+    align-items: center;
+  }
+  .para_card_description {
+    width: 100%;
+  }
+  article {
+    order: 2;
+  }
+  aside {
+    order: 1;
+    margin-bottom: 80px;
+  }
+}
+.dark-mode .button_tous_cours {
+  border: 1px solid #FFFFFF;
+  background-color: #00162B;
+}
+
+/* زر رئيسي بنفس هويتك */
+.btn-accent {
+  background-color: #B88E00;
+  color: #FFFFFF;
+  border: none;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: #00162B;
+  color: #FFFFFF;
+}
+
+/* خلفية تدرّج من الثانوي إلى الثالثي */
+/* خلفيات ناعمة للبطاقات والإحصاءات */
+.bg-soft-accent {
+  background: color-mix(in srgb, var(--primary) 25%, white);
+}
+
+/* تحسينات صغيرة */
+.rounded-4 {
+  border-radius: 1rem;
+}
+
+.object-fit-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.section_valeurs {
+  background-color: #00162B;
+}
+
+.image__formateur {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.dark-mode .btn-accent {
+  border: 2px solid #FFFFFF;
+  color: #000000;
+}
+
+.dark-mode .btn-accent:hover {
+  background-color: #00162B;
+  color: #FFFFFF;
+}
+
+.dark-mode .h1_valeurs .titre_notre_equipe {
+  color: #00162B;
+}
+
+.dark-mode .titre_notre_equipe {
+  color: #00162B;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+}
+
+.btn-accent {
+  background: var(--btn);
+  color: #fff;
+  border: none;
+}
+
+.btn-accent:hover,
+.btn-accent:focus {
+  background: var(--btn-hover);
+  color: #000;
+}
+
+.object-fit-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* بادج للمجالات التقنية */
+.badge-theme {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* حالة إخفاء عند الفلترة */
+.article-card.d-none {
+  display: none !important;
+}
+
+.btn_lire {
+  background-color: #00162B;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.btn_lire:hover,
+.btn_lire:focus {
+  background-color: #B88E00;
+  color: #FFFFFF;
+}
+
+.dark-mode .article_affiche {
+  color: #000000;
+}
+
+.dark-mode .btn_lire {
+  color: #FFFFFF;
 }/*# sourceMappingURL=main.css.map */

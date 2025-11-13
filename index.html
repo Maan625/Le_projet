@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -21,11 +21,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#"> Accueil</a>
+                        <li class="nav-item text-bg-warning">
+                            <a class="nav-link  " aria-current="page" href="#"> Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#"> A propos</a>
+                            <a class="nav-link  " aria-current="page" href="#"> A propos</a>
 
                         </li>
                         <li class="nav-item dropdown">
@@ -35,13 +35,13 @@
                             </a>
                             <ul class="dropdown-menu">
 
-                                <li><a class="link_drop" href=""> cours en communication</a></li>
-                                <li><a class="link_drop" href=""> cours en Réseaux informatiques</a></li>
-                                <li><a class="link_drop" href="">tous les cours</a></li>
+                                <li><a class="link_drop" href="cours_communication.html"> cours en communication</a></li>
+                                <li><a class="link_drop" href="cours_réseaux_informatiques.html"> cours en Réseaux informatiques</a></li>
+                                <li><a class="link_drop" href="Tous_les_cours.html">tous les cours</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#"> Essais </a>
+                            <a class="nav-link " aria-current="page" href="#"> Articles techniques </a>
 
                         </li>
                         <li class="nav-item">
@@ -67,6 +67,8 @@
     </header>
     <main class="main_accueil">
         <section class="section1_accueil">
+  <button onclick="changerMode()" id="modeButton">🌙 Mode nuit</button>
+
             <div class="container1-section1">
                 <h1 class="h1_accueil ">Élevez votre carrière professionnelle <br> avec <span>TélécomFacile</span> </h1>
                 <h4 class="h4_accueil">Plus de 20 formations en ligne</h4>
@@ -80,11 +82,11 @@
 
             </div>
             <div class="container2-section1">
-                <div class="row mx-auto  justify-content-md-around  justify-content-sm-center text-sm-center ">
-                    <div class=" col-auto mb-4">
+                <div class="row  mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
+                    <div class=" col-auto mb-sm-4">
 
 
-                        <img src="Images/Accès à vie.png" alt="">
+                        <img class="w-50" src="Images/Accès à vie.png" alt="">
                         <div class="text_container2">
                             <h5>Accès à vie</h5>
                             <p> Apprenez à tout moment et depuis n’importe où,<br> et accédez à vos formations dès
@@ -96,17 +98,17 @@
 
 
                     </div>
-                    <div class="col-auto mb-4  ">
-                        <img src="Images/Formation dispensée par des experts.png" alt="">
+                    <div class="col-auto mb-sm-4">
+                        <img class="w-25" src="Images/Formation dispensée par des experts.png" alt="">
                         <div class="text_container2">
                             <h5> Apprentissage avec des experts</h5>
-                            <p>Formateurs certifiés avec une vaste expérience pratique dans les plus <br> grandes
+                            <p>Formateurs certifiés avec <br> une vaste expérience pratique dans les plus <br> grandes
                                 entreprises
                                 informatiques.</p>
                         </div>
                     </div>
                     <div class="col-auto mb-4">
-                        <img src="Images/Plus de 20 formations en ligne.png" alt="">
+                        <img class="w-50 text-center" src="Images/Plus de 20 formations en ligne.png" alt="">
                         <div class="text_container2">
                             <h5> Plus de 20 formations en ligne</h5>
                             <p> Une vaste bibliothèque couvrant les technologies <br> les plus récentes dans le domaine
@@ -139,7 +141,7 @@
 
         </section>
         <section class="section3_accueil">
-            <div class="row mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
+            <div class="row   mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
                 <div class="col-auto mb-4">
                     <div class="card mx-auto" style="width: 18rem;">
                         <img src="Images/cv image.png" class="card-img-top" alt="image cv">
@@ -350,7 +352,7 @@
                                 <span>4.5</span>
                             </div>
                             <a href="">
-                                <h5 class="card-title">Formation en communications satellitaires</h5>
+                                <h5 class="card-title">Cours en communications  satellitaires</h5>
                             </a>
                             <div class="line_time">
                                 <span class="time"><i class="bi bi-clock text-secondary  "></i> 400h</span>
@@ -396,8 +398,8 @@
                                 <h5 class="card-title">Formation au cloud computing</h5>
                             </a>
                             <div class="line_time">
-                                <span class="time"><i class="bi bi-clock text-secondary  "></i> 300h</span>
-                                <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>130
+                                <span class="time"><i class="bi bi-clock"></i> 300h</span>
+                                <span class="liçon"><i class="bi bi-file-earmark-play "> </i>130
                                     licons</span>
 
                             </div>
@@ -476,9 +478,10 @@
                                 alt="accee a la vie">
                         </div>
                         <div class="card-body  ">
-                            <h5 class="title12_section4 fw-bold text-center "> Une fois inscrit, vous bénéficiez d’un
-                                accès à vie aux évolutions et mises à jour du contenu</h5>
-                            <p> Dans un secteur des télécommunications en perpétuelle évolution et à rythme accéléré,
+                            <h3 class="title12_section4 fw-bold text-center "> Une fois inscrit, vous bénéficiez d’un
+                                accès à vie aux évolutions et mises à jour du contenu</h3>
+                                <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+                            <p class="text-center"> Dans un secteur des télécommunications en perpétuelle évolution et à rythme accéléré,
                                 TélécomFacile offre à ses étudiants un accès illimité et permanent aux dernières mises à
                                 jour ainsi qu’aux technologies les plus innovantes du marché de l’emploi</p>
                         </div>
@@ -496,9 +499,11 @@
                                 alt="accee a la vie">
                         </div>
                         <div class="card-body  ">
-                            <h5 class="title12_section4 fw-bold text-center "> Des réunions hebdomadaires et régulières
-                                avec le formateur</h5>
-                            <p> Parce qu’à l’Académie TélécomFacile, nous ne nous contentons pas de créer des solutions
+                            <h5 class="title12_section4 fw-bold  text-center">Des réunions hebdomadaires  et régulières
+                               <br> avec le formateur</h5>
+                                <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+
+                            <p class="text-center"> Parce qu’à l’Académie TélécomFacile, nous ne nous contentons pas de créer des solutions
                                 , nous veillons à les offrir sous leur meilleure forme , nous avons mis en place des
                                 réunions hebdomadaires et régulières pour permettre à nos stagiaires de poser toutes
                                 leurs questions et obtenir des réponses claires à leurs préoccupations.
@@ -520,7 +525,9 @@
                         <div class="card-body  ">
                             <h5 class="title12_section4 fw-bold text-center"> Une couverture complète de tout ce dont
                                 vous avez besoin dans le domaine des télécommunications</h5>
-                            <p>Avec une sélection des meilleurs ingénieurs et formateurs, nous avons mis en place des
+                                <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+
+                            <p class="text-center">Avec une sélection des meilleurs ingénieurs et formateurs, nous avons mis en place des
                                 formations variées couvrant tous les aspects essentiels du domaine des
                                 télécommunications pour réussir votre insertion sur le marché du travail.
 
@@ -543,7 +550,7 @@
                         </div>
                         <div class="card-body mb-5">
                             <h3 class="title1_section4 fw-bold text-center ">Êtes-vous prêt?</h3>
-                            <p>Pour construire et développer votre expertise professionnelle avec nous</p>
+                            <p class="text-center">Pour construire et développer votre expertise professionnelle avec nous</p>
                         </div>
                         <div class="spinner">
                             <div></div>
@@ -754,6 +761,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
