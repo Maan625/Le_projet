@@ -11986,7 +11986,7 @@ textarea.form-control-lg {
     transform: translateX(0px);
   }
 }
-.input-group {
+#input-group {
   animation: translate 2s ease-in-out alternate;
 }
 
@@ -12119,7 +12119,7 @@ body {
   margin-bottom: 40px;
 }
 
-.input-group {
+#input-group {
   width: 400px;
   height: 60px;
   margin: 0 auto;
@@ -12658,7 +12658,7 @@ input::placeholder {
 }
 
 .dark-mode {
-  background-color: #B88E00;
+  background-color: #121212;
   color: #FFFFFF;
 }
 
@@ -12715,6 +12715,20 @@ input::placeholder {
 .icon1_section4_1,
 .icon1_section4 {
   border: 2px solid #B88E00;
+}
+
+.dark-mode .btn_accueille {
+  background-color: #FFFFFF;
+  color: #00162B;
+}
+
+.dark-mode .btn_accueille:hover {
+  background-color: #B88E00;
+  color: #FFFFFF;
+}
+
+.dark-mode .p_section2 {
+  color: #B88E00;
 }
 
 .main_cours {
@@ -12864,7 +12878,7 @@ input::placeholder {
   }
 }
 .dark-mode .créer_compte {
-  color: #00162B;
+  color: #FFFFFF;
 }
 
 .section_formaulaire_contact {
@@ -13124,23 +13138,19 @@ aside {
 
 /* زر رئيسي بنفس هويتك */
 .btn-accent {
-  background-color: #B88E00;
+  background-color: #00162B;
   color: #FFFFFF;
   border: none;
 }
 
 .btn-accent:hover,
 .btn-accent:focus {
-  background-color: #00162B;
+  background-color: #B88E00;
   color: #FFFFFF;
 }
 
 /* خلفية تدرّج من الثانوي إلى الثالثي */
 /* خلفيات ناعمة للبطاقات والإحصاءات */
-.bg-soft-accent {
-  background: color-mix(in srgb, var(--primary) 25%, white);
-}
-
 /* تحسينات صغيرة */
 .rounded-4 {
   border-radius: 1rem;
@@ -13165,11 +13175,11 @@ aside {
 
 .dark-mode .btn-accent {
   border: 2px solid #FFFFFF;
-  color: #000000;
+  color: #FFFFFF;
 }
 
 .dark-mode .btn-accent:hover {
-  background-color: #00162B;
+  background-color: #B88E00;
   color: #FFFFFF;
 }
 
@@ -13181,20 +13191,16 @@ aside {
   color: #00162B;
 }
 
+#titre_temoignages {
+  color: #000000;
+}
+
+.dark-mode #titre_temoignages {
+  color: #FFFFFF;
+}
+
 .bg-brand-gradient {
   background: linear-gradient(135deg, var(--secondary), var(--tertiary));
-}
-
-.btn-accent {
-  background: var(--btn);
-  color: #fff;
-  border: none;
-}
-
-.btn-accent:hover,
-.btn-accent:focus {
-  background: var(--btn-hover);
-  color: #000;
 }
 
 .object-fit-cover {
@@ -13233,4 +13239,88 @@ aside {
 
 .dark-mode .btn_lire {
   color: #FFFFFF;
+}
+
+.dark-mode .btn_filter {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.dark-mode .btn_filter:hover,
+.dark-mode .btn_filter:focus {
+  background-color: #B88E00;
+  color: #FFFFFF;
+}
+
+.book-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover {
+  height: 220px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* بحث الكتب */
+#livres-search::-moz-placeholder {
+  font-size: 0.9rem;
+}
+#livres-search::placeholder {
+  font-size: 0.9rem;
+}
+
+.btn_télécharger {
+  background-color: #00162B;
+  color: #FFFFFF;
+}
+
+.btn_télécharger:hover {
+  background-color: #FFFFFF;
+  color: #00162B;
+  border: 1px solid #000000;
+}
+
+.dark-mode .btn_télécharger {
+  background-color: #00162B;
+  color: #FFFFFF;
+}
+
+.dark-mode .btn_télécharger:hover {
+  background-color: #FFFFFF;
+  color: #00162B;
+  border: 1px solid #00162B;
+}
+
+.dark-mode .text-muted {
+  color: #FFFFFF;
+}
+
+.section_livres {
+  background-color: #cbc5c5;
+}
+
+.dark-mode .section_livres {
+  background-color: #121212;
+}
+
+.dark-mode .section_présentation {
+  background-color: #121212;
+}
+
+.container {
+  color: #000000;
+}
+
+.dark-mode .container {
+  color: #FFFFFF;
+}
+
+.dark-mode .section_filter {
+  background-color: #cbc5c5;
 }/*# sourceMappingURL=main.css.map */

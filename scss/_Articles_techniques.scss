@@ -1,16 +1,7 @@
 .bg-brand-gradient{
   background: linear-gradient(135deg, var(--secondary), var(--tertiary));
 }
-.btn-accent{
-  background: var(--btn);
-  color:#fff;
-  border:none;
-}
-.btn-accent:hover,
-.btn-accent:focus{
-  background: var(--btn-hover);
-  color:#000;
-}
+ 
 .object-fit-cover{ object-fit: cover; }
 
 /* بادج للمجالات التقنية */
@@ -54,5 +45,17 @@
 }
 .dark-mode .btn_lire{
     
+    color: $white;
+}
+
+
+
+.dark-mode .btn_filter{
+    background-color: $white;
+    color: $black;
+}
+.dark-mode .btn_filter:hover,
+.dark-mode .btn_filter:focus{
+    background-color: $button;
     color: $white;
 }

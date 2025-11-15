@@ -71,66 +71,7 @@ function changerMode() {
 
 
 
-  // page articles techniques
-
-//   document.addEventListener('DOMContentLoaded', () => {
-//   const filterBtns = document.querySelectorAll('.filter-btn');
-//   const cards = document.querySelectorAll('.article-card');
-//   const searchInput = document.getElementById('search-articles');
-
-//   // فلترة حسب الفئة (5G, fibre, réseaux...)
-//   filterBtns.forEach(btn => {
-//     btn.addEventListener('click', () => {
-//       const filter = btn.getAttribute('data-filter');
-
-//       // active button style
-//       filterBtns.forEach(b => b.classList.remove('active'));
-//       btn.classList.add('active');
-
-//       cards.forEach(card => {
-//         const category = card.getAttribute('data-category');
-//         if (filter === 'all' || category === filter) {
-//           card.classList.remove('d-none');
-//         } else {
-//           card.classList.add('d-none');
-//         }
-//       });
-
-//       // بعد تغيير الفلتر، نطبّق البحث أيضاً إن كان فيه نص
-//       if (searchInput && searchInput.value.trim() !== '') {
-//         applySearch(searchInput.value.trim().toLowerCase(), cards);
-//       }
-//     });
-//   });
-
-//   // بحث نصي في العناوين والكلمات المفتاحية
-//   function applySearch(term, cardsNodeList){
-//     cardsNodeList.forEach(card => {
-//       const title = card.querySelector('h3').innerText.toLowerCase();
-//       const keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-//       const hiddenByCategory = card.classList.contains('d-none');
-//       if (hiddenByCategory) return; // لا نعدل كارت مخفي من الفلتر
-
-//       if (title.includes(term) || keywords.includes(term)) {
-//         card.style.opacity = '1';
-//       } else {
-//         card.style.opacity = '0.25';
-//       }
-//     });
-//   }
-
-//   if (searchInput) {
-//     searchInput.addEventListener('input', (e) => {
-//       const term = e.target.value.trim().toLowerCase();
-//       // إعادة الشفافية الافتراضية
-//       cards.forEach(c => c.style.opacity = '1');
-
-//       if (term.length >= 2) {
-//         applySearch(term, cards);
-//       }
-//     });
-//   }
-// });
+//page Articles - Filtrage et recherche page articles.html
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -202,3 +143,90 @@ document.addEventListener('DOMContentLoaded', () => {
 
   applyFilters();
 });
+
+
+
+
+// page FAQ - Recherche dans la FAQ
+document.addEventListener('DOMContentLoaded', () => {
+  const faqSearch = document.getElementById('faq-search');
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  if (faqSearch && faqItems.length) {
+    faqSearch.addEventListener('input', () => {
+      const term = faqSearch.value.trim().toLowerCase();
+
+      faqItems.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        if (term === '' || text.includes(term)) {
+          item.classList.remove('d-none');
+        } else {
+          item.classList.add('d-none');
+        }
+      });
+    });
+  }
+});
+
+
+
+
+
+//page Livres - Filtrage et recherche page livres_informatique.html
+
+document.addEventListener('DOMContentLoaded', () => {
+  const livreSearch = document.getElementById('livres-search');
+  const livreCards = document.querySelectorAll('.livre-card');
+  const filterBtns = document.querySelectorAll('.livre-filter-btn');
+
+  function applyLivreFilters() {
+    const activeFilterBtn = document.querySelector('.livre-filter-btn.active');
+    const categoryFilter = activeFilterBtn
+      ? activeFilterBtn.getAttribute('data-filter')
+      : 'all';
+
+    const term = livreSearch
+      ? livreSearch.value.trim().toLowerCase()
+      : '';
+
+    livreCards.forEach(card => {
+      const cat = card.getAttribute('data-category');
+      const text =
+        card.innerText.toLowerCase() +
+        ' ' +
+        (card.getAttribute('data-keywords') || '').toLowerCase();
+
+      const matchCategory =
+        categoryFilter === 'all' || cat === categoryFilter;
+
+      const matchSearch =
+        term === '' || text.includes(term);
+
+      if (matchCategory && matchSearch) {
+        card.classList.remove('d-none');
+      } else {
+        card.classList.add('d-none');
+      }
+    });
+  }
+
+  // أزرار التصنيف
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      applyLivreFilters();
+    });
+  });
+
+  // البحث
+  if (livreSearch) {
+    livreSearch.addEventListener('input', () => {
+      applyLivreFilters();
+    });
+  }
+
+  // تطبيق أولي
+  applyLivreFilters();
+});
+

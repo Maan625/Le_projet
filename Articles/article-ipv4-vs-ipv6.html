@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../scss/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title> Accueil</title>
+</head>
+<style>
+
+</style>
+<header class="header_accueil">
+    <button onclick="changerMode()" id="modeButton">🌙 Mode nuit</button>
+
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="../Images/logo.png" alt="logo" width="80" height="80"></a>
+            <button class="navbar-toggler text-white text-bg-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#"> Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  " aria-current="page" href="#"> A propos</a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Nos Cours
+                        </a>
+                        <ul class="dropdown-menu">
+
+                            <li><a class="link_drop" href="cours_communication.html"> cours en communication</a></li>
+                            <li><a class="link_drop" href="cours_réseaux_informatiques.html"> cours en Réseaux
+                                    informatiques</a></li>
+                            <li><a class="link_drop" href="Tous_les_cours.html">tous les cours</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#"> Essais </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active " aria-current="page" href="#"> Contactez-Nous </a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#">Nouveau compte</a>
+
+                    </li>
+                    <li class="nav-item text-bg-warning">
+                        <a class="nav-link  " aria-current="page" href="#">Connexion</a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+</header>
+   <main class="py-5">
+    <div class="container">
+
+      <!-- TITRE -->
+      <h1 class="fw-bold mb-3">
+        IPv4 vs IPv6 : comprendre la transition
+      </h1>
+      <p class="text-muted">
+        Publié le 03/12/2025 • Temps de lecture : 6 minutes
+      </p>
+
+      <!-- IMAGE PRINCIPALE -->
+      <img src="images-les articles/Comparaison IPv4 et IPv6.png"
+           class="img-fluid w-75 rounded-4 shadow mb-4"
+           alt="Comparaison IPv4 et IPv6">
+
+      <!-- INTRODUCTION -->
+      <p class="lead">
+        L’adresse IP est au cœur du fonctionnement d’Internet.  
+        Avec l’épuisement des adresses IPv4, une nouvelle version — <strong>IPv6</strong> — a été introduite pour répondre
+        aux besoins croissants de connectivité.  
+        Mais quelles sont les différences entre les deux standards ?
+      </p>
+
+      <hr class="my-4">
+
+      <!-- SECTION 1 -->
+      <h2 class="fw-bold mt-4 mb-3">1. Qu’est-ce qu’une adresse IP ?</h2>
+      <p>
+        Une adresse IP (<em>Internet Protocol</em>) identifie un appareil sur un réseau.
+        C’est l’équivalent d’une adresse postale pour Internet.
+      </p>
+
+      <!-- SECTION 2 -->
+      <h2 class="fw-bold mt-4 mb-3">2. IPv4 : la première version déployée massivement</h2>
+      <p>
+        IPv4 utilise un format d’adresse sur <strong>32 bits</strong>, soit environ 4,3 milliards d’adresses possibles.
+      </p>
+
+      <div class="text-center my-3">
+        <img src="images-les articles/Format d’une adresse IPv4.png" class="img-fluid w-75 rounded shadow" style="max-width:650px;"
+             alt="Format d’une adresse IPv4">
+      </div>
+
+      <ul>
+        <li>Format : <code>192.168.1.10</code></li>
+        <li>4 octets séparés par des points</li>
+        <li>Très répandu mais presque épuisé</li>
+      </ul>
+
+      <!-- SECTION 3 -->
+      <h2 class="fw-bold mt-4 mb-3">3. IPv6 : la nouvelle génération</h2>
+      <p>
+        IPv6 utilise un format sur <strong>128 bits</strong>, offrant un nombre quasi illimité d’adresses :
+      </p>
+
+      <div class="alert alert-info">
+        🔢 <strong>Nombre d’adresses IPv6 :</strong>  
+        340 282 366 920 938 463 463 374 607 431 768 211 456 (3,4 × 10³⁸)
+      </div>
+      
+      <p>Exemple d’adresse :</p>
+
+      <pre class="bg-light p-3 rounded">2001:0db8:85a3:0000:0000:8a2e:0370:7334</pre>
+ 
+      <div class="text-center my-3">
+        <img src="images-les articles/Format d’une adresse IPv6.png" class="img-fluid w-75 rounded shadow" style="max-width:680px;"
+             alt="Format d’une adresse IPv6">
+      </div>
+
+
+      <!-- SECTION 4 -->
+      <h2 class="fw-bold mt-4 mb-3">4. IPv4 vs IPv6 : les différences majeures</h2>
+      <table class="table table-bordered text-center">
+        <thead class="table-light">
+          <tr>
+            <th>Critère</th>
+            <th>IPv4</th>
+            <th>IPv6</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Taille</td><td>32 bits</td><td>128 bits</td></tr>
+          <tr><td>Format</td><td>Décimal (0–255)</td><td>Hexadécimal (0–FFFF)</td></tr>
+          <tr><td>Nombre d’adresses</td><td>4,3 milliards</td><td>3,4 × 10³⁸</td></tr>
+          <tr><td>NAT</td><td>Nécessaire</td><td>Inutile (adresse publique unique)</td></tr>
+          <tr><td>Sécurité</td><td>Optionnelle</td><td>IPSec intégré</td></tr>
+          <tr><td>Configuration</td><td>DHCP ou manuel</td><td>Auto-configuration (SLAAC)</td></tr>
+        </tbody>
+      </table>
+
+      <!-- SECTION 5 -->
+      <h2 class="fw-bold mt-4 mb-3">5. Pourquoi la transition vers IPv6 est-elle nécessaire ?</h2>
+      <ul>
+        <li>Explosion du nombre d’appareils connectés (IoT)</li>
+        <li>Limites d’IPv4 et épuisement des adresses</li>
+        <li>Besoin d’améliorer la sécurité native</li>
+        <li>Meilleures performances grâce à un routage simplifié</li>
+      </ul>
+
+      <!-- SECTION 6 -->
+      <h2 class="fw-bold mt-4 mb-3">6. Migration : un passage progressif</h2>
+      <p>
+        La transition ne se fait pas du jour au lendemain.
+        Aujourd’hui, la plupart des réseaux fonctionnent en <strong>double pile (Dual Stack)</strong> :
+      </p>
+
+      <ul>
+        <li>IPv4 + IPv6 en parallèle</li>
+        <li>Compatibilité totale avec les anciens équipements</li>
+        <li>Transition douce pour les opérateurs et entreprises</li>
+      </ul>
+
+      <div class="text-center my-4">
+        <img src="images-les articles/1.jpg" class="img-fluid w-75 rounded shadow" style="max-width:650px;"
+             alt="Architecture Dual Stack IPv4/IPv6">
+      </div>
+
+      <!-- CONCLUSION -->
+      <h2 class="fw-bold mt-4 mb-3">Conclusion</h2>
+      <p>
+        IPv6 n’est pas seulement une évolution : c’est une nécessité pour soutenir la croissance d’Internet.
+        Grâce à son énorme capacité d’adressage et sa sécurité intégrée,
+        il représente le futur des réseaux modernes.
+      </p>
+
+       <a href="../Articles_techniques.html" class="btn_lire text-decoration-none   fw-semibold w-50 mx-auto">
+            ← Retour aux articles
+        </a>
+
+    </div>
+  </main>
+<footer class="footer">
+    <div class="lines_footer">
+        <a class="line_footer active" href="">Accueil</a>
+        <a class="line_footer" href="">A propos</a>
+        <a class="line_footer" href="">Essais</a>
+        <a class="line_footer" href="">Nos formations</a>
+        <a class="line_footer" href="">Contactez-Nous</a>
+    </div>
+    <div class="rejoin_contact ">
+        <div class="rejoin">
+            <h3 class="text-light fw-bold">Rejoignez-nous</h3>
+            <p id="para_rejoindre">Rejoindre en tant qu’entraîneur</p>
+        </div>
+        <div class="contact">
+            <h3 class="text-light fw-bold">Contactez-nous</h3>
+            <a class="text-decoration-none" href=""><i class="bi bi-map-fill"> 12 rue de la paix, 75000
+                    Paris</i></a><br><br>
+            <a class="text-decoration-none" href=""><i class="bi bi-telephone-fill"> +33 1 23 45 67 89</i></a>
+            <br><br>
+            <a class="text-decoration-none" href=""><i class="bi bi-envelope-fill"> Maanali@example.com</i></a>
+        </div>
+    </div>
+    <div class="suivez-nous text-center ">
+        <h3 class="text-light fw-bold mb-5">Suivez-nous</h3>
+        <div class="line_social d-flex justify-content-center gap-5">
+            <a class="icon_sociale" href=""><i class="bi bi-facebook"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-twitter"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-instagram"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-linkedin"></i></a>
+            <a class="icon_sociale" href=""><i class="bi bi-youtube"></i></a>
+        </div>
+    </div>
+</footer>
+<script src="../js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+    integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+<body>

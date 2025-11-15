@@ -1,0 +1,63 @@
+  .book-card{
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.book-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+}
+
+.book-cover{
+  height: 220px;
+  object-fit: cover;
+}
+
+/* بحث الكتب */
+#livres-search::placeholder{
+  font-size: .9rem;
+}
+
+
+.btn_télécharger {
+  background-color: $secondary;
+  color: $white;
+}
+.btn_télécharger:hover {
+  background-color:$white;
+  color: $secondary;
+  border: 1px solid $black;
+}
+.dark-mode .btn_télécharger {
+  background-color: $secondary;
+  color: $white;
+}
+.dark-mode .btn_télécharger:hover {
+  background-color:$white;
+  color: $secondary;
+  border: 1px solid $secondary;
+}
+.dark-mode .text-muted {
+  color: $white;
+}
+.section_livres {
+   background-color:$article_bg;
+ }
+ .dark-mode .section_livres {
+   background-color:#121212;
+ }
+
+ .dark-mode .section_présentation {
+   background-color: #121212;
+   
+ }  
+   .container {
+   color: $black;
+ }
+  .dark-mode .container {
+    color: $white;
+  }
+
+
+  .dark-mode .section_filter{
+    background-color: $article_bg;
+  }

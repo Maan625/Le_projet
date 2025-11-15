@@ -57,7 +57,7 @@ body {
   margin-bottom: 40px;
 }
 
-.input-group {
+#input-group {
   width: 400px;
   height: 60px;
   margin: 0 auto;
@@ -600,7 +600,7 @@ input::placeholder {
   transition: all 0.3s ease;
 }
 .dark-mode {
-  background-color: $button;
+  background-color: #121212;
   color: $white;
 }
 
@@ -651,4 +651,17 @@ input::placeholder {
 .icon1_section4_1,
 .icon1_section4 {
   border: 2px solid $button;
+}
+ 
+ 
+.dark-mode .btn_accueille{
+    background-color: $white;
+    color: $secondary;
+}
+.dark-mode .btn_accueille:hover{
+    background-color: $button;
+    color: $white;
+}
+.dark-mode .p_section2{
+    color: $button;
 }
