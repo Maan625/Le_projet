@@ -7,26 +7,28 @@ body {
 
 .nav-item {
   background-color: $white;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 5px;
-  padding: 0 10px;
+  // padding: 0 10px;
   margin-top: 30px;
   // width: 130px;
   // height: 40px;
   text-align: center;
   font-size: 15px;
-  //  color: $black;
-  font-weight: lighter;
-}
-.nav-item .nav-link {
-  color: black;
+  // color: $white;
+  // font-weight: lighter;
 }
 
-.nav-item:hover {
-  background-color: $tertiary;
+
+.nav-item a {
+  // background-color: $tertiary;
+  color: $black;
+  border-radius: 10px;
 }
 
-.nav-item a:hover {
+
+.nav-item :hover   {
+ background-color: $tertiary;
   color: $white;
 }
 
@@ -111,10 +113,11 @@ input::placeholder {
 .dropdown-menu {
   width: 250px;
 
+
   //  text-align: center;
 }
 .link_drop {
-  color: $black;
+  // color: $button;
   font-weight: bold;
   text-decoration: none;
   padding: 4px;
@@ -123,8 +126,8 @@ input::placeholder {
   margin-left: 10px;
   border-radius: 10px;
 }
-.link_drop:hover {
-  color: white;
+.link_drop a {
+  // color: white;
   background-color: $tertiary;
 }
 
@@ -576,15 +579,15 @@ input::placeholder {
 
 #modeButton {
   position: fixed;
-  top: 100px;
+  top: 110px;
   right: 15px;
 
   z-index: 999;
 
-  background-color: #ffffffcc;
+  background-color: $secondary;
   color: #222;
-
-  border: none;
+  opacity: 0.8;
+  border: 2px solid $button;
 
   padding: 10px 18px;
 
@@ -664,4 +667,7 @@ input::placeholder {
 }
 .dark-mode .p_section2{
     color: $button;
+}
+.dark-mode .dropdown-menu {
+    background-color: $white;
 }

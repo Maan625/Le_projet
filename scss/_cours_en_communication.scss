@@ -1,5 +1,5 @@
 .main_cours {
-  // background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
+  background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
   background-color: #ece6e6;
   padding: 40px;
    
@@ -17,11 +17,11 @@
   border-radius: 100px 0 100px 0;
 }
 .titre_cours {
-  color: $secondary;
+  color: $button;
   font-weight: bold;
 }
 .para_cours {
-  color: $dark;
+  color: $white;
   font-size: 16px;
   line-height: 1.5;
   font-family: Arial, sans-serif;
@@ -73,16 +73,18 @@
 
 
  //dark_mode
- .dark-mode .main_cours{
+//  .dark-mode .main_cours{
   
-  background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
+//   background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
 
- }
- .dark-mode .titre_cours{
-  color: $button;
+//  }
+//  .dark-mode .titre_cours{
+//   color: $button;
 
- }
-  .dark-mode .para_cours{
-  color: $white;
+//  }
+//   .dark-mode .para_cours{
+//   color: $white;
 
- }
+//  }
+
+ 

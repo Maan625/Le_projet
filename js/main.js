@@ -11,16 +11,16 @@ function changerMode() {
   if (body.classList.contains("dark-mode"))   // Si le mode sombre est activé
 
   {
-    bouton.innerText = "☀️ Mode jour";   //  // Change le texte du bouton en "Mode jour" avec une icône de soleil
+    bouton.innerText = "☀️";   //  // Change le texte du bouton en "Mode jour" avec une icône de soleil
 
 
   } else     // Si le mode sombre est désactivé
 
   {
-    bouton.innerText = "🌙 Mode nuit"; // Change le texte du bouton en "Mode nuit" avec une icône de lune
+    bouton.innerText = "🌙"; // Change le texte du bouton en "Mode nuit" avec une icône de lune
 
   }
-} //Résumé :Cett
+}  
 
 
 
@@ -113,19 +113,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // سكرول ناعم لأسفل عند وجود كلمة بحث
+   
     if (scroll && term !== '' && articlesSection && !hasScrolledOnce) {
       articlesSection.scrollIntoView({ behavior: 'smooth' });
       hasScrolledOnce = true;
     }
 
-    // لو المستخدم مسح البحث نرجع نسمح بالسكرول مرة ثانية
+ 
     if (term === '') {
       hasScrolledOnce = false;
     }
   }
 
-  // أزرار الفلتر
+  
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // البحث: نفلتر مباشرة، ومع أول كتابة حقيقية ننزل للأسفل
+  
   if (searchInput) {
     searchInput.addEventListener('input', () => {
       applyFilters({ scroll: true });
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-//page Livres - Filtrage et recherche page livres_informatique.html
+//page Livres - Filtrage et recherche page livres_informatique.html 
 
 document.addEventListener('DOMContentLoaded', () => {
   const livreSearch = document.getElementById('livres-search');
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // أزرار التصنيف
+  
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
@@ -219,14 +219,112 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // البحث
+  
   if (livreSearch) {
     livreSearch.addEventListener('input', () => {
       applyLivreFilters();
     });
   }
 
-  // تطبيق أولي
+   
   applyLivreFilters();
 });
 
+
+
+
+//page Cours - Filtrage et recherche page cours_en_communication.html ثم cours_réseaux_informatiques.html
+document.addEventListener('DOMContentLoaded', () => {
+  const coursFilterBtns = document.querySelectorAll('.cours-filter-btn');
+  const coursCards = document.querySelectorAll('.cours-card');
+
+  if (coursFilterBtns.length && coursCards.length) {
+    function applyCoursFilters() {
+      const activeBtn = document.querySelector('.cours-filter-btn.active');
+      const filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+
+      coursCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+
+        const match =
+          filter === 'all' ||
+          cat === filter;
+
+        if (match) {
+          card.classList.remove('d-none');
+        } else {
+          card.classList.add('d-none');
+        }
+      });
+    }
+
+    coursFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        coursFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyCoursFilters();
+      });
+    });
+
+    applyCoursFilters();
+  }
+});
+
+
+
+// recherche et filtrage dans  la page tous les cours 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const tousSearch = document.getElementById('tous-cours-search');
+  const tousFilterBtns = document.querySelectorAll('.tous-cours-filter-btn');
+  const tousCards = document.querySelectorAll('.tous-cours-card');
+
+  if (tousSearch && tousFilterBtns.length && tousCards.length) {
+
+    function applyTousCoursFilters() {
+      const activeBtn = document.querySelector('.tous-cours-filter-btn.active');
+      const filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+      const term = tousSearch.value.trim().toLowerCase();
+
+      tousCards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        const text = (
+          card.innerText +
+          ' ' +
+          (card.getAttribute('data-keywords') || '')
+        ).toLowerCase();
+
+        const matchCategory = (filter === 'all' || cat === filter);
+        const matchSearch = (term === '' || text.includes(term));
+
+        if (matchCategory && matchSearch) {
+          card.classList.remove('d-none');
+        } else {
+          card.classList.add('d-none');
+        }
+      });
+    }
+
+    
+    tousFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tousFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyTousCoursFilters();
+      });
+    });
+
+   
+    tousSearch.addEventListener('input', applyTousCoursFilters);
+
+   
+    const params = new URLSearchParams(window.location.search);
+    const q = params.get('q');
+    if (q) {
+      tousSearch.value = q;
+    }
+
+   
+    applyTousCoursFilters();
+  }
+});

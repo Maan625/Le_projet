@@ -12071,24 +12071,20 @@ body {
 
 .nav-item {
   background-color: #FFFFFF;
-  border-radius: 15px;
+  border-radius: 10px;
   margin: 5px;
-  padding: 0 10px;
   margin-top: 30px;
   text-align: center;
   font-size: 15px;
-  font-weight: lighter;
 }
 
-.nav-item .nav-link {
-  color: black;
+.nav-item a {
+  color: #000000;
+  border-radius: 10px;
 }
 
-.nav-item:hover {
+.nav-item :hover {
   background-color: #154875;
-}
-
-.nav-item a:hover {
   color: #FFFFFF;
 }
 
@@ -12181,7 +12177,6 @@ input::placeholder {
 }
 
 .link_drop {
-  color: #000000;
   font-weight: bold;
   text-decoration: none;
   padding: 4px;
@@ -12191,8 +12186,7 @@ input::placeholder {
   border-radius: 10px;
 }
 
-.link_drop:hover {
-  color: white;
+.link_drop a {
   background-color: #154875;
 }
 
@@ -12642,12 +12636,13 @@ input::placeholder {
 }
 #modeButton {
   position: fixed;
-  top: 100px;
+  top: 110px;
   right: 15px;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #00162B;
   color: #222;
-  border: none;
+  opacity: 0.8;
+  border: 2px solid #B88E00;
   padding: 10px 18px;
   border-radius: 25px;
   font-size: 1rem;
@@ -12731,7 +12726,12 @@ input::placeholder {
   color: #B88E00;
 }
 
+.dark-mode .dropdown-menu {
+  background-color: #FFFFFF;
+}
+
 .main_cours {
+  background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
   background-color: #ece6e6;
   padding: 40px;
 }
@@ -12752,12 +12752,12 @@ input::placeholder {
 }
 
 .titre_cours {
-  color: #00162B;
+  color: #B88E00;
   font-weight: bold;
 }
 
 .para_cours {
-  color: #212529;
+  color: #FFFFFF;
   font-size: 16px;
   line-height: 1.5;
   font-family: Arial, sans-serif;
@@ -12804,18 +12804,6 @@ input::placeholder {
   justify-content: space-around;
   gap: 30px;
   align-items: center;
-}
-
-.dark-mode .main_cours {
-  background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
-}
-
-.dark-mode .titre_cours {
-  color: #B88E00;
-}
-
-.dark-mode .para_cours {
-  color: #FFFFFF;
 }
 
 .créer_compte {
@@ -13249,6 +13237,10 @@ aside {
 .dark-mode .btn_filter:hover,
 .dark-mode .btn_filter:focus {
   background-color: #B88E00;
+  color: #FFFFFF;
+}
+
+.dark-mode .text-article {
   color: #FFFFFF;
 }
 

@@ -21,11 +21,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item text-bg-warning">
+                        <li class="nav-item  text-bg-warning">
                             <a class="nav-link  " aria-current="page" href="#"> Accueil</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link  " aria-current="page" href="#"> A propos</a>
+                            <a class="nav-link  " aria-current="page" href="A propos.html"> A propos</a>
 
                         </li>
                         <li class="nav-item dropdown">
@@ -35,25 +35,28 @@
                             </a>
                             <ul class="dropdown-menu">
 
-                                <li><a class="link_drop" href="cours_communication.html"> cours en communication</a></li>
-                                <li><a class="link_drop" href="cours_réseaux_informatiques.html"> cours en Réseaux informatiques</a></li>
+                                <li><a class="link_drop" href="cours_communication.html"> cours en communication</a>
+                                </li>
+                                <li><a class="link_drop" href="cours_réseaux_informatiques.html"> cours en Réseaux
+                                        informatiques</a></li>
                                 <li><a class="link_drop" href="Tous_les_cours.html">tous les cours</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#"> Articles techniques </a>
+                            <a class="nav-link " aria-current="page" href="Articles_techniques.html"> Articles
+                                techniques </a>
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#"> Contactez-Nous </a>
+                            <a class="nav-link " aria-current="page" href="contact.html"> Contactez-Nous </a>
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#">Nouveau compte</a>
+                            <a class="nav-link " aria-current="page" href="nouveau_compte.html">Nouveau compte</a>
 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#">Connexion</a>
+                            <a class="nav-link " aria-current="page" href="connexion.html">Connexion</a>
 
                         </li>
 
@@ -67,22 +70,29 @@
     </header>
     <main class="main_accueil">
         <section class="section1_accueil">
-  <button onclick="changerMode()" id="modeButton">🌙 Mode nuit</button>
+            <button onclick="changerMode()" id="modeButton">🌙</button>
 
             <div class="container1-section1">
                 <h1 class="h1_accueil ">Élevez votre carrière professionnelle <br> avec <span>TélécomFacile</span> </h1>
-                <h4 class="h4_accueil">Plus de 20 formations en ligne</h4>
+                <h4 class="h4_accueil">Plus de 20 cours en ligne</h4>
 
             </div>
-            <div id="input-group" class="input-group flex-nowrap   ">
-                <span class="input-group-text border-5 " id="addon-wrapping"><a href="#"><i
-                            class="bi bi-search text-black"></i></a></span>
+            <form id="input-group" class="input-group w-50 flex-nowrap" action="Tous_les_cours.html" method="get">
 
-                <input type="text" placeholder="Rechercher d'une formation" class="input_recherche">
+                <button id="rech" class="btn btn-warning fw-semibold" type="submit">
+                    Rechercher
+                </button>
 
-            </div>
+                <input type="search" name="q" class="form-control input_recherche"
+                    placeholder="Rechercher un cours (5G, fibre, IoT, CCNA...)">
+
+            
+            </form>
+
+
             <div class="container2-section1">
-                <div class="row  mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
+                <div
+                    class="row  mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
                     <div class=" col-auto mb-sm-4">
 
 
@@ -132,8 +142,10 @@
             </div>
             <div class="buttun_section2_accueil">
                 <div class="button_group_section2">
-                    <button type="button" class="btn_accueille btn btn-outline-secondary py-2"> Nos meilleures formations</button>
-                    <button type="button" class="btn_accueille btn btn-outline-secondary"> Les nouvelles formations</button>
+                    <button type="button" class="btn_accueille btn btn-outline-secondary py-2"> Nos meilleures
+                        formations</button>
+                    <button type="button" class="btn_accueille btn btn-outline-secondary"> Les nouvelles
+                        formations</button>
                 </div>
                 <button type="button" class="btn_accueille btn btn-outline-secondary"> Formation la plus vendue</button>
             </div>
@@ -141,7 +153,8 @@
 
         </section>
         <section class="section3_accueil">
-            <div class="row   mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
+            <div
+                class="row   mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
                 <div class="col-auto mb-4">
                     <div class="card mx-auto" style="width: 18rem;">
                         <img src="Images/cv image.png" class="card-img-top" alt="image cv">
@@ -279,13 +292,13 @@
                                     mobile) BOUT à BOUT</h5>
                             </a>
                             <div class="line_time">
-                                <span class="time"><i class="bi bi-clock text-secondary  "></i> 400h</span>
-                                <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>196
+                                <span class="time"><i class="bi bi-clock text-secondary  "></i> 180h</span>
+                                <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>96
                                     licons</span>
 
                             </div>
                             <div class="line_price">
-                                <span class="price">399€</span>
+                                <span class="price">299€</span>
                                 <div class="formateur">
                                     <span class="name">John Doe</span>
                                     <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
@@ -293,9 +306,10 @@
                                 </div>
 
                             </div>
-                            <button class="button_commence"><a href=""></a>Commence</button>
 
                         </div>
+                        <button class="button_commence"><a href=""></a>Commence</button>
+
                     </div>
                 </div>
                 <div class="col-auto mb-4">
@@ -331,9 +345,10 @@
                                 </div>
 
                             </div>
-                            <button class="button_commence"><a href=""></a>Commence</button>
 
                         </div>
+                        <button class="button_commence"><a href=""></a>Commence</button>
+
                     </div>
                 </div>
                 <div class="col-auto mb-4">
@@ -352,7 +367,7 @@
                                 <span>4.5</span>
                             </div>
                             <a href="">
-                                <h5 class="card-title">Cours en communications  satellitaires</h5>
+                                <h5 class="card-title">Cours en communications satellitaires</h5>
                             </a>
                             <div class="line_time">
                                 <span class="time"><i class="bi bi-clock text-secondary  "></i> 400h</span>
@@ -412,9 +427,10 @@
                                 </div>
 
                             </div>
-                            <button class="button_commence"><a href=""></a>Commence</button>
 
                         </div>
+                        <button class="button_commence"><a href=""></a>Commence</button>
+
                     </div>
                 </div>
 
@@ -480,8 +496,9 @@
                         <div class="card-body  ">
                             <h3 class="title12_section4 fw-bold text-center "> Une fois inscrit, vous bénéficiez d’un
                                 accès à vie aux évolutions et mises à jour du contenu</h3>
-                                <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
-                            <p class="text-center"> Dans un secteur des télécommunications en perpétuelle évolution et à rythme accéléré,
+                            <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+                            <p class="text-center"> Dans un secteur des télécommunications en perpétuelle évolution et à
+                                rythme accéléré,
                                 TélécomFacile offre à ses étudiants un accès illimité et permanent aux dernières mises à
                                 jour ainsi qu’aux technologies les plus innovantes du marché de l’emploi</p>
                         </div>
@@ -499,11 +516,13 @@
                                 alt="accee a la vie">
                         </div>
                         <div class="card-body  ">
-                            <h5 class="title12_section4 fw-bold  text-center">Des réunions hebdomadaires  et régulières
-                               <br> avec le formateur</h5>
-                                <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+                            <h5 class="title12_section4 fw-bold  text-center">Des réunions hebdomadaires et régulières
+                                <br> avec le formateur
+                            </h5>
+                            <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
 
-                            <p class="text-center"> Parce qu’à l’Académie TélécomFacile, nous ne nous contentons pas de créer des solutions
+                            <p class="text-center"> Parce qu’à l’Académie TélécomFacile, nous ne nous contentons pas de
+                                créer des solutions
                                 , nous veillons à les offrir sous leur meilleure forme , nous avons mis en place des
                                 réunions hebdomadaires et régulières pour permettre à nos stagiaires de poser toutes
                                 leurs questions et obtenir des réponses claires à leurs préoccupations.
@@ -525,9 +544,10 @@
                         <div class="card-body  ">
                             <h5 class="title12_section4 fw-bold text-center"> Une couverture complète de tout ce dont
                                 vous avez besoin dans le domaine des télécommunications</h5>
-                                <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+                            <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
 
-                            <p class="text-center">Avec une sélection des meilleurs ingénieurs et formateurs, nous avons mis en place des
+                            <p class="text-center">Avec une sélection des meilleurs ingénieurs et formateurs, nous avons
+                                mis en place des
                                 formations variées couvrant tous les aspects essentiels du domaine des
                                 télécommunications pour réussir votre insertion sur le marché du travail.
 
@@ -550,7 +570,8 @@
                         </div>
                         <div class="card-body mb-5">
                             <h3 class="title1_section4 fw-bold text-center ">Êtes-vous prêt?</h3>
-                            <p class="text-center">Pour construire et développer votre expertise professionnelle avec nous</p>
+                            <p class="text-center">Pour construire et développer votre expertise professionnelle avec
+                                nous</p>
                         </div>
                         <div class="spinner">
                             <div></div>
@@ -561,7 +582,7 @@
                             <div></div>
                         </div>
                         <div class="button_voir mt-5">
-                            <a href="#"><button> Commencez maintenant</button></a>
+                            <a href="Tous_les_cours.html"><button> Commencez maintenant</button></a>
                         </div>
 
 
@@ -580,7 +601,8 @@
                     <div class="card_evenement mx-auto mb-sm-4 mb-3" style="width: 18rem;">
                         <img src="Images/evenements gratuits/article.png" class="card-img-top" alt="article">
                         <div class="card-body_evenement mt-5">
-                            <a class="text_evenement text-secondary text-decoration-none " href="#">
+                            <a class="text_evenement text-secondary text-decoration-none "
+                                href="livres_informatique.html">
                                 <h4> Livres <br> en informatique</h4>
                             </a>
                         </div>
@@ -591,8 +613,8 @@
                     <div class="card_evenement mx-auto mb-3 " style="width: 18rem;">
                         <img src="Images/evenements gratuits/faqq.png" class="card-img-top" alt="faq">
                         <div class="card-body_evenement mt-5">
-                            <a class="text_evenement text-secondary text-decoration-none " href="#">
-                                <h4> FAQ <br> techniques</h4>
+                            <a class="text_evenement text-secondary text-decoration-none " href="faq.html">
+                                <h4> Foir aux questions <br> (FAQ)</h4>
                             </a>
                         </div>
                     </div>
@@ -602,7 +624,8 @@
                     <div class="card_evenement mx-auto" style="width: 18rem;">
                         <img src="Images/evenements gratuits/book.png" class="card-img-top" alt="book">
                         <div class="card-body_evenement  mt-5">
-                            <a class="text_evenement text-secondary text-decoration-none " href="#">
+                            <a class="text_evenement text-secondary text-decoration-none "
+                                href="Articles_techniques.html">
                                 <h4>Articles <br> Techniques</h4>
                             </a>
                         </div>
@@ -730,11 +753,11 @@
     </main>
     <footer class="footer">
         <div class="lines_footer">
-            <a class="line_footer active" href="">Accueil</a>
-            <a class="line_footer" href="">A propos</a>
-            <a class="line_footer" href="">Essais</a>
-            <a class="line_footer" href="">Nos formations</a>
-            <a class="line_footer" href="">Contactez-Nous</a>
+            <a class="line_footer active" href="index.html">Accueil</a>
+            <a class="line_footer" href="A propos.html">A propos</a>
+            <a class="line_footer" href="Articles_techniques.html">Articles techniques</a>
+            <a class="line_footer" href="Tous_les_cours.html">Nos formations</a>
+            <a class="line_footer" href="contact.html">Contactez-Nous</a>
         </div>
         <div class="rejoin_contact ">
             <div class="rejoin">
