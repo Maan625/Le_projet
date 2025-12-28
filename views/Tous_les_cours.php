@@ -1,60 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="scss/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <title>Cours en Réseaux informatiques</title>
-</head>
-
-<body>
-    <header class="header_accueil">
-        <nav class="navbar navbar-expand-lg bg-secondary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="Images/logo.png" alt="logo" width="80" height="80"></a>
-                <button class="navbar-toggler text-white text-bg-primary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html"> Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="A propos.html"> A propos</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Nos Cours
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="link_drop" href="cours_communication.html"> cours en communication</a></li>
-                                <li><a class="link_drop" href="cours_réseaux_informatiques.html"> cours en Réseaux informatiques</a></li>
-                                <li><a class="link_drop" href="Tous_les_cours.html">tous les cours</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="Articles_techniques.html"> Articles techniques </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="contact.html"> Contactez-Nous </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="nouveau_compte.html">Nouveau compte</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="connexion.html">Connexion</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+ <?php
+    include __DIR__ . '/header.php';
+    ?>
     <main class="main_cours_2">
 
     <div class="présentation_du_cours ">
@@ -124,7 +70,7 @@
                  data-category="coeur5g"
                  data-keywords="coeur 5g architecture protocoles noyau reseau mobile">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours Cœur 5G  Architecture, Protocoles et Déploiement.png"
+                    <img src="/Images/cours_communication/Cours Cœur 5G  Architecture, Protocoles et Déploiement.png"
                          class="card-img-top" alt="Cours Cœur 5G | Architecture, Protocoles et Déploiement"
                          height="235">
                     <div class="card-body">
@@ -150,7 +96,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -163,7 +109,7 @@
                  data-category="satellite"
                  data-keywords="communications satellitaires satellite liaison reseaux">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours en communications satellitaires.png"
+                    <img src="/Images/cours_communication/Cours en communications satellitaires.png"
                          class="card-img-top" alt="Cours en communications satellitaires"
                          height="235">
                     <div class="card-body">
@@ -189,7 +135,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -202,7 +148,7 @@
                  data-category="coeur5g"
                  data-keywords="5g complete de a a z reseaux mobiles">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours 5G complète  de A à Z.png"
+                    <img src="/Images/cours_communication/Cours 5G complète  de A à Z.png"
                          class="card-img-top" alt="Cours 5G complète de A à Z"
                          height="235">
                     <div class="card-body">
@@ -228,7 +174,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -241,7 +187,7 @@
                  data-category="coeur5g"
                  data-keywords="coeur reseau backbone telecom core">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours sur le cœur de réseau.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours sur le cœur de réseau.png"
                          class="card-img-top" style="height: 230px;" alt="Cours sur le cœur de réseau">
                     <div class="card-body">
                         <div class="line_star">
@@ -266,7 +212,7 @@
                             <span class="price fw-bold">90€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -279,7 +225,7 @@
                  data-category="mobiles"
                  data-keywords="reseaux mobiles technicien terrain radio cellule">
                 <div class="card_2 mx-auto" style="width: 18rem">
-                    <img src="Images/cours_réseaux_informatiques/Cours aux réseaux mobiles pour technicien de terrain.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours aux réseaux mobiles pour technicien de terrain.png"
                          class="card-img-top" alt="Cours aux réseaux mobiles pour technicien de terrain"
                          height="230">
                     <div class="card-body">
@@ -305,7 +251,7 @@
                             <span class="price fw-bold">149€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/télécharger.jpeg" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/télécharger.jpeg" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -318,7 +264,7 @@
                  data-category="outils"
                  data-keywords="pathloss logiciel planification radio micro ondes">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours au logiciel Pathloss.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours au logiciel Pathloss.png"
                          class="card-img-top" style="height: 230px;" alt="Cours au logiciel Pathloss">
                     <div class="card-body">
                         <div class="line_star">
@@ -343,7 +289,7 @@
                             <span class="price fw-bold">299€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -356,7 +302,7 @@
                  data-category="reseaux"
                  data-keywords="communications integrees reseaux telecom entreprise">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours des communications intégrées.png"
+                    <img src="/Images/cours_communication/Cours des communications intégrées.png"
                          class="card-img-top" alt="Cours des communications intégrées" height="235">
                     <div class="card-body">
                         <div class="line_star">
@@ -381,7 +327,7 @@
                             <span class="price fw-bold">499€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -394,7 +340,7 @@
                  data-category="mobiles"
                  data-keywords="sans fil forfait mobile bout a bout reseaux mobiles">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours sans fil (forfait mobile) BOUT à BOUT.png"
+                    <img src="/Images/cours_communication/Cours sans fil (forfait mobile) BOUT à BOUT.png"
                          class="card-img-top" alt="Cours sans fil (forfait mobile) BOUT à BOUT"
                          height="235">
                     <div class="card-body">
@@ -420,7 +366,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -433,7 +379,7 @@
                  data-category="fibre"
                  data-keywords="transmission fibre optique reseaux optiques">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours de transmission par fibre optique.png"
+                    <img src="/Images/cours_communication/Cours de transmission par fibre optique.png"
                          class="card-img-top" alt="Cours de transmission par fibre optique"
                          height="235">
                     <div class="card-body">
@@ -459,7 +405,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -472,7 +418,7 @@
                  data-category="mobiles"
                  data-keywords="simulation systemes sans fil radio reseaux mobiles">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours en simulation de systèmes sans fil.png"
+                    <img src="/Images/cours_communication/Cours en simulation de systèmes sans fil.png"
                          class="card-img-top" style="height: 235px;" alt="Cours en simulation de systèmes sans fil">
                     <div class="card-body">
                         <div class="line_star">
@@ -497,7 +443,7 @@
                             <span class="price fw-bold">399€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -510,7 +456,7 @@
                  data-category="fibre"
                  data-keywords="introduction fibre optique debutants ftth">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours  Introduction à la fibre optique pour débutants.png"
+                    <img src="/Images/cours_communication/Cours  Introduction à la fibre optique pour débutants.png"
                          class="card-img-top" style="height: 235px;"
                          alt="Cours : Introduction à la fibre optique pour débutants">
                     <div class="card-body">
@@ -536,7 +482,7 @@
                             <span class="price fw-bold">1199€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -549,7 +495,7 @@
                  data-category="fibre"
                  data-keywords="cables sous marins fibre internationale backbone">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours sur les câbles sous-marins.png"
+                    <img src="/Images/cours_communication/Cours sur les câbles sous-marins.png"
                          class="card-img-top" style="height: 235px;" alt="Cours sur les câbles sous-marins">
                     <div class="card-body">
                         <div class="line_star">
@@ -574,7 +520,7 @@
                             <span class="price fw-bold">399€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -587,7 +533,7 @@
                  data-category="certif"
                  data-keywords="a+ technologies information hardware support certification">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours A.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours A.png"
                          class="card-img-top" style="height: 235px;" alt="Cours A+ en technologies de l'information">
                     <div class="card-body">
                         <div class="line_star">
@@ -612,7 +558,7 @@
                             <span class="price fw-bold">399€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -625,7 +571,7 @@
                  data-category="reseaux"
                  data-keywords="reseaux entreprise avancés routage commutation serveurs pare feu">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours sur les réseaux d’entreprise avancés  routage, commutation, serveurs et pare-feu.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours sur les réseaux d’entreprise avancés  routage, commutation, serveurs et pare-feu.png"
                          class="card-img-top" style="height: 235px;"
                          alt="Cours sur les réseaux d’entreprise avancés : routage, commutation, serveurs et pare-feu">
                     <div class="card-body">
@@ -651,7 +597,7 @@
                             <span class="price fw-bold">1199€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -664,7 +610,7 @@
                  data-category="mobiles"
                  data-keywords="ibs indoor building solution couverture interieure reseaux mobiles">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours sur les systèmes IBS (Indoor Building Solution) – niveaux 1 à 3.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours sur les systèmes IBS (Indoor Building Solution) – niveaux 1 à 3.png"
                          class="card-img-top" style="height: 235px;"
                          alt="Cours sur les systèmes IBS (Indoor Building Solution) – niveaux 1 à 3">
                     <div class="card-body">
@@ -690,7 +636,7 @@
                             <span class="price fw-bold">399€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -703,7 +649,7 @@
                  data-category="mobiles"
                  data-keywords="acces mobile coeur reseau 4g 5g telecom">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours de l'accès mobile au cœur du réseau.png"
+                    <img src="/Images/cours_communication/Cours de l'accès mobile au cœur du réseau.png"
                          class="card-img-top" style="height: 230px;"
                          alt="Cours de l'accès mobile au cœur du réseau">
                     <div class="card-body">
@@ -729,7 +675,7 @@
                             <span class="price fw-bold">90€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -742,7 +688,7 @@
                  data-category="mobiles"
                  data-keywords="micro ondes faisceaux hertziens transmission bout a bout">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours de transmission micro-ondes (BOUT à BOUT).png"
+                    <img src="/Images/cours_communication/Cours de transmission micro-ondes (BOUT à BOUT).png"
                          class="card-img-top" alt="Cours de transmission micro-ondes (BOUT à BOUT)"
                          height="230">
                     <div class="card-body">
@@ -768,7 +714,7 @@
                             <span class="price fw-bold">149€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/télécharger.jpeg" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/télécharger.jpeg" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -781,7 +727,7 @@
                  data-category="mobiles"
                  data-keywords="modulation codage numerique analogique communications">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_communication/Cours en techniques de modulation et de codage.png"
+                    <img src="/Images/cours_communication/Cours en techniques de modulation et de codage.png"
                          class="card-img-top" style="height: 230px;" alt="Cours en techniques de modulation et de codage">
                     <div class="card-body">
                         <div class="line_star">
@@ -806,7 +752,7 @@
                             <span class="price fw-bold">299€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -819,7 +765,7 @@
                  data-category="certif"
                  data-keywords="ccna fondamentaux reseau cisco certification">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours complet CCNA  Maîtrisez les fondamentaux du réseau.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours complet CCNA  Maîtrisez les fondamentaux du réseau.png"
                          class="card-img-top" alt="Cours complet CCNA : Maîtrisez les fondamentaux du réseau"
                          height="235">
                     <div class="card-body">
@@ -845,7 +791,7 @@
                             <span class="price fw-bold">499€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -858,7 +804,7 @@
                  data-category="certif"
                  data-keywords="ccnp reseaux professionnels cisco certification">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours complet CCNP – Préparation aux réseaux professionnels Cisco.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours complet CCNP – Préparation aux réseaux professionnels Cisco.png"
                          class="card-img-top" alt="Cours complet CCNP – Préparation aux réseaux professionnels Cisco"
                          height="235">
                     <div class="card-body">
@@ -884,7 +830,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                         <button class="button_commence"><a href=""></a>Commence</button>
@@ -897,7 +843,7 @@
                  data-category="iotvoip"
                  data-keywords="iot internet des objets transformation digitale">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/iot.png"
+                    <img src="/Images/cours_réseaux_informatiques/iot.png"
                          class="card-img-top" alt="Introduction à l’IoT (IdO) et à la transformation digitale"
                          height="235">
                     <div class="card-body">
@@ -923,7 +869,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -936,7 +882,7 @@
                  data-category="reseaux"
                  data-keywords="cours avance reseaux informatiques switching routage">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours avencée en réseaux informatiques.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours avencée en réseaux informatiques.png"
                          class="card-img-top" alt="Cours avancée en réseaux informatiques"
                          height="235">
                     <div class="card-body">
@@ -962,7 +908,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -975,7 +921,7 @@
                  data-category="outils"
                  data-keywords="mikrotik administration routage pratique">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours MikroTik – Administration et routage pratique.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours MikroTik – Administration et routage pratique.png"
                          class="card-img-top" alt="Cours MikroTik – Administration et routage pratique"
                          height="235">
                     <div class="card-body">
@@ -1001,7 +947,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -1014,7 +960,7 @@
                  data-category="iotvoip"
                  data-keywords="voip telephonie ip sip rtp">
                 <div class="card_2 mx-auto" style="width: 18rem;">
-                    <img src="Images/cours_réseaux_informatiques/Cours VoIP – De l’installation à la configuration avancée.png"
+                    <img src="/Images/cours_réseaux_informatiques/Cours VoIP – De l’installation à la configuration avancée.png"
                          class="card-img-top" alt="Cours VoIP – De l’installation à la configuration avancée"
                          height="235">
                     <div class="card-body">
@@ -1040,7 +986,7 @@
                             <span class="price fw-bold">100€</span>
                             <div class="formateur">
                                 <span class="name">John Doe</span>
-                                <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50" height="50">
+                                <img class="image_formateur" src="/Images/Adam.avif" alt="adam" width="50" height="50">
                             </div>
                         </div>
                     </div>
@@ -1051,47 +997,6 @@
         </div>
     </section>
 </main>
-
-     <footer class="footer">
-     <div class="lines_footer">
-         <a class="line_footer active" href="index.html">Accueil</a>
-         <a class="line_footer" href="A propos.html">A propos</a>
-         <a class="line_footer" href="Articles_techniques.html">Articles techniques</a>
-         <a class="line_footer" href="Nos_formations.html">Nos formations</a>
-         <a class="line_footer" href="contact.html">Contactez-Nous</a>
-     </div>
-     <div class="rejoin_contact ">
-         <div class="rejoin">
-             <h3 class="text-light fw-bold">Rejoignez-nous</h3>
-             <p id="para_rejoindre">Rejoindre en tant qu’entraîneur</p>
-         </div>
-         <div class="contact">
-             <h3 class="text-light fw-bold">Contactez-nous</h3>
-             <a class="text-decoration-none" href=""><i class="bi bi-map-fill"> 12 rue de la paix, 75000
-                     Paris</i></a><br><br>
-             <a class="text-decoration-none" href=""><i class="bi bi-telephone-fill"> +33 1 23 45 67 89</i></a>
-             <br><br>
-             <a class="text-decoration-none" href=""><i class="bi bi-envelope-fill"> Maanali@example.com</i></a>
-         </div>
-     </div>
-     <div class="suivez-nous text-center ">
-         <h3 class="text-light fw-bold mb-5">Suivez-nous</h3>
-         <div class="line_social d-flex justify-content-center gap-5">
-             <a class="icon_sociale" href=""><i class="bi bi-facebook"></i></a>
-             <a class="icon_sociale" href=""><i class="bi bi-twitter"></i></a>
-             <a class="icon_sociale" href=""><i class="bi bi-instagram"></i></a>
-             <a class="icon_sociale" href=""><i class="bi bi-linkedin"></i></a>
-             <a class="icon_sociale" href=""><i class="bi bi-youtube"></i></a>
-         </div>
-     </div>
- </footer>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+<?php
+   include __DIR__ . '/footer.php';
+   ?>

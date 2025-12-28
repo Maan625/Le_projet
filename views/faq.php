@@ -1,0 +1,221 @@
+ <?php
+    include __DIR__ . '/header.php';
+    ?>
+ <style>
+     .faq-category-title {
+         border-left: 4px solid var(--primary);
+         padding-left: .75rem;
+     }
+
+     #faq-search::placeholder {
+         font-size: .9rem;
+     }
+ </style>
+
+ <main id="main">
+
+     <!-- HERO FAQ -->
+     <section class="py-5 text-white bg-brand-gradient">
+         <div class="container">
+             <div class="row align-items-center g-4">
+                 <div class="col-lg-8 ">
+                     <h1 class="display-5 fw-bold mb-3">FAQ – Questions fréquentes</h1>
+                     <p class="lead mb-0">
+                         Trouvez rapidement les réponses à vos questions sur TélécomFacile :
+                         formations, inscriptions, compte, aspects techniques…
+                     </p>
+                 </div>
+                 <div class="col-lg-4">
+                     <form class="mt-3 mt-lg-0">
+                         <label for="faq-search" class="form-label fw-semibold">
+                             Rechercher dans la FAQ
+                         </label>
+                         <div class="input-group">
+                             <span class="input-group-text"><i class="bi bi-search"></i></span>
+                             <input type="search" id="faq-search" class="form-control"
+                                 placeholder="Ex : inscription, certificat, paiement…">
+                         </div>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- FAQ CONTENT -->
+     <section class="section_faq py-5 ">
+         <div class="container">
+
+             <!-- GENERAL -->
+             <h2 class="h3 fw-bold faq-category-title mb-3">Général</h2>
+             <div class="accordion mb-4" id="faqGeneral">
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="gen-q1">
+                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#gen-q1-content" aria-expanded="true" aria-controls="gen-q1-content">
+                             Qu’est-ce que TélécomFacile ?
+                         </button>
+                     </h2>
+                     <div id="gen-q1-content" class="accordion-collapse collapse show" aria-labelledby="gen-q1"
+                         data-bs-parent="#faqGeneral">
+                         <div class="accordion-body">
+                             TélécomFacile est une plateforme de formation en ligne spécialisée
+                             dans les télécommunications et les réseaux informatiques :
+                             cours vidéo, exercices, projets pratiques et accompagnement.
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="gen-q2">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#gen-q2-content" aria-expanded="false" aria-controls="gen-q2-content">
+                             À qui s’adressent vos formations ?
+                         </button>
+                     </h2>
+                     <div id="gen-q2-content" class="accordion-collapse collapse" aria-labelledby="gen-q2"
+                         data-bs-parent="#faqGeneral">
+                         <div class="accordion-body">
+                             Nos parcours s’adressent aux débutants, étudiants, personnes en
+                             reconversion et techniciens souhaitant se spécialiser dans les
+                             réseaux, la fibre optique, la 5G ou l’IoT.
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- FORMATIONS -->
+             <h2 class="h3 fw-bold faq-category-title mb-3">Formations & cours</h2>
+             <div class="accordion mb-4" id="faqFormations">
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="form-q1">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#form-q1-content" aria-expanded="false" aria-controls="form-q1-content">
+                             Comment se déroulent les cours en ligne ?
+                         </button>
+                     </h2>
+                     <div id="form-q1-content" class="accordion-collapse collapse" aria-labelledby="form-q1"
+                         data-bs-parent="#faqFormations">
+                         <div class="accordion-body">
+                             Les cours sont composés de vidéos courtes, de supports à télécharger,
+                             de quiz et parfois de projets pratiques à réaliser. Vous progressez
+                             à votre rythme, 100 % en ligne.
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="form-q2">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#form-q2-content" aria-expanded="false" aria-controls="form-q2-content">
+                             Est-ce que j’obtiens un certificat à la fin ?
+                         </button>
+                     </h2>
+                     <div id="form-q2-content" class="accordion-collapse collapse" aria-labelledby="form-q2"
+                         data-bs-parent="#faqFormations">
+                         <div class="accordion-body">
+                             Oui, une attestation de formation TélécomFacile est délivrée pour
+                             chaque parcours complété avec succès. Elle résume les compétences
+                             acquises et les modules suivis.
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- INSCRIPTION & PAIEMENT -->
+             <h2 class="h3 fw-bold faq-category-title mb-3">Inscriptions & paiement</h2>
+             <div class="accordion mb-4" id="faqPaiement">
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="pay-q1">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#pay-q1-content" aria-expanded="false" aria-controls="pay-q1-content">
+                             Comment m’inscrire à une formation ?
+                         </button>
+                     </h2>
+                     <div id="pay-q1-content" class="accordion-collapse collapse" aria-labelledby="pay-q1"
+                         data-bs-parent="#faqPaiement">
+                         <div class="accordion-body">
+                             Créez un compte, choisissez une formation puis cliquez sur
+                             “S’inscrire”. Vous serez guidé étape par étape jusqu’à la
+                             confirmation d’inscription.
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="pay-q2">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#pay-q2-content" aria-expanded="false" aria-controls="pay-q2-content">
+                             Quels moyens de paiement acceptez-vous ?
+                         </button>
+                     </h2>
+                     <div id="pay-q2-content" class="accordion-collapse collapse" aria-labelledby="pay-q2"
+                         data-bs-parent="#faqPaiement">
+                         <div class="accordion-body">
+                             Nous acceptons les paiements par carte bancaire, portefeuille
+                             électronique et virement selon les formations. Les paiements sont
+                             sécurisés et chiffrés.
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- COMPTE & TECHNIQUE -->
+             <h2 class="h3 fw-bold faq-category-title mb-3">Compte & support technique</h2>
+             <div class="accordion mb-4" id="faqCompte">
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="acc-q1">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#acc-q1-content" aria-expanded="false" aria-controls="acc-q1-content">
+                             J’ai oublié mon mot de passe, que faire ?
+                         </button>
+                     </h2>
+                     <div id="acc-q1-content" class="accordion-collapse collapse" aria-labelledby="acc-q1"
+                         data-bs-parent="#faqCompte">
+                         <div class="accordion-body">
+                             Cliquez sur “Mot de passe oublié” sur la page de connexion puis
+                             suivez les instructions pour recevoir un lien de réinitialisation
+                             par e-mail.
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="accordion-item faq-item">
+                     <h2 class="accordion-header" id="acc-q2">
+                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                             data-bs-target="#acc-q2-content" aria-expanded="false" aria-controls="acc-q2-content">
+                             Je rencontre un problème technique, comment vous contacter ?
+                         </button>
+                     </h2>
+                     <div id="acc-q2-content" class="accordion-collapse collapse" aria-labelledby="acc-q2"
+                         data-bs-parent="#faqCompte">
+                         <div class="accordion-body">
+                             Vous pouvez nous écrire via la page “Contactez-nous” ou à l’adresse
+                             suivante : <a class="text-warning" href="mailto:support@telecomfacile.fr">support@telecomfacile.fr</a>.
+                             Notre équipe vous répond généralement sous 24 à 48h.
+                         </div>
+                     </div>
+                 </div>
+             </div>
+
+             <!-- CTA CONTACT -->
+             <div class="mt-5 p-4 p-md-5  rounded-4 shadow-sm text-center">
+                 <h2 class="h4 fw-bold mb-2">Vous n’avez pas trouvé votre réponse ?</h2>
+                 <p class="mb-3">
+                     Envoyez-nous votre question et nous reviendrons vers vous rapidement.
+                 </p>
+
+                 <a href="/views/contact.php"
+                     class="btn_lire text-decoration-none  p-2 border-1 border-light  fw-semibold w-50 mx-auto">
+                     Contactez notre équipe
+                 </a>
+             </div>
+
+         </div>
+     </section>
+
+ </main>
+
+
+ <?php
+    include __DIR__ . '/footer.php';
+    ?>

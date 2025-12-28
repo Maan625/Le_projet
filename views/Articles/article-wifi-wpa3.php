@@ -1,0 +1,116 @@
+<?php
+    include __DIR__ . '/../header.php';
+    ?>
+<main class="py-5">
+    <div class="container">
+    <button onclick="changerMode()" id="modeButton">🌙</button>
+
+        <!-- TITRE -->
+        <h1 class="fw-bold mb-3">
+            Sécuriser son réseau WiFi : WPA3 et bonnes pratiques
+        </h1>
+        <p class="text-article">
+            Publié le 29/10/2025 • Temps de lecture : 6 minutes
+        </p>
+
+        <!-- IMAGE PRINCIPALE -->
+        <img src="images-les articles/Réseau WiFi sécurisé avec WPA3.webp" class="img-fluid w-75 rounded-4 shadow mb-4"
+            alt="Réseau WiFi sécurisé avec WPA3">
+
+        <!-- INTRODUCTION -->
+        <p class="lead">
+            Le WiFi est souvent la porte d’entrée de votre réseau domestique ou professionnel.
+            Une mauvaise configuration peut permettre à un intrus d’accéder à vos données.
+            Découvrons comment le <strong>WPA3</strong> et quelques bonnes pratiques renforcent
+            la sécurité de votre réseau sans fil.
+        </p>
+
+        <hr class="my-4">
+
+        <!-- SECTION 1 -->
+        <h2 class="fw-bold mt-4 mb-3">1. WPA, WPA2, WPA3 : quelles différences ?</h2>
+        <p>
+            Les protocoles de sécurité WiFi ont évolué au fil du temps :
+        </p>
+        <ul>
+            <li><strong>WEP</strong> : ancien et totalement obsolète.</li>
+            <li><strong>WPA / WPA2</strong> : longtemps utilisés, mais avec des faiblesses connues.</li>
+            <li><strong>WPA3</strong> : la version la plus récente, plus résistante aux attaques.</li>
+        </ul>
+
+        <div class="text-center my-4">
+            <img src="images-les articles/Évolution des protocoles de sécurité WiFi.jpeg" class="img-fluid w-75 rounded shadow" style="max-width:650px;"
+                alt="Évolution des protocoles de sécurité WiFi">
+        </div>
+
+        <!-- SECTION 2 -->
+        <h2 class="fw-bold mt-4 mb-3">2. Les avantages de WPA3</h2>
+        <p>
+            WPA3 apporte plusieurs améliorations importantes :
+        </p>
+        <ul>
+            <li>Meilleure protection contre les attaques par force brute.</li>
+            <li>Chiffrement plus robuste entre chaque client et le point d’accès.</li>
+            <li>Mode <strong>WPA3-Personal</strong> pour les particuliers, et <strong>WPA3-Enterprise</strong> pour les
+                entreprises.</li>
+        </ul>
+
+        <div class="alert alert-info">
+            💡 <strong>Astuce :</strong> si votre box ou routeur est récent, vérifiez dans l’interface
+            de configuration si le WPA3 est disponible.
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 class="fw-bold mt-4 mb-3">3. Bonnes pratiques pour sécuriser son WiFi</h2>
+        <ul>
+            <li>Utiliser un mot de passe long et complexe (au moins 12–16 caractères).</li>
+            <li>Désactiver le <strong>WPS</strong> (Wi-Fi Protected Setup), souvent vulnérable.</li>
+            <li>Séparer le WiFi invité du réseau principal.</li>
+            <li>Mettre à jour régulièrement le firmware du routeur.</li>
+        </ul>
+
+        <div class="text-center my-4">
+            <img src="images-les articles/Configuration d’un routeur WiFi sécurisé.png" class="img-fluid w-75 rounded shadow" style="max-width:650px;"
+                alt="Configuration d’un routeur WiFi sécurisé">
+        </div>
+
+        <!-- SECTION 4 -->
+        <h2 class="fw-bold mt-4 mb-3">4. Créer un réseau invité séparé</h2>
+        <p>
+            Pour éviter que les visiteurs accèdent à votre réseau interne, il est recommandé
+            de créer un <strong>réseau WiFi invité</strong> avec :
+        </p>
+        <ul>
+            <li>un mot de passe distinct ;</li>
+            <li>un accès uniquement à Internet, sans accès aux autres appareils ;</li>
+            <li>un débit éventuellement limité.</li>
+        </ul>
+
+        <!-- SECTION 5 -->
+        <h2 class="fw-bold mt-4 mb-3">5. Surveiller les appareils connectés</h2>
+        <p>
+            La plupart des routeurs modernes permettent de voir la liste des appareils connectés.
+            Pensez à :
+        </p>
+        <ul>
+            <li>vérifier régulièrement cette liste ;</li>
+            <li>bloquer les appareils inconnus ;</li>
+            <li>désactiver le WiFi lorsque vous ne l’utilisez pas sur de longues périodes.</li>
+        </ul>
+
+        <!-- CONCLUSION -->
+        <h2 class="fw-bold mt-4 mb-3">Conclusion</h2>
+        <p>
+            Sécuriser son réseau WiFi ne se limite pas à choisir un bon mot de passe.
+            En combinant WPA3, une bonne configuration du routeur et des habitudes de vigilance,
+            vous réduisez fortement les risques d’intrusion.
+        </p>
+        <a href="../Articles_techniques.php" class="btn_lire text-decoration-none   fw-semibold w-50 mx-auto">
+            ← Retour aux articles
+        </a>
+
+    </div>
+</main>
+    <?php
+        include __DIR__ . '/../footer.php';
+        ?>

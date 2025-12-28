@@ -1,76 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../scss/main.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <title> Accueil</title>
-</head>
-<style>
-
-</style>
-<header class="header_accueil">
-  <button onclick="changerMode()" id="modeButton">🌙</button>
-
-  <nav class="navbar navbar-expand-lg bg-secondary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img src="../Images/logo.png" alt="logo" width="80" height="80"></a>
-      <button class="navbar-toggler text-white text-bg-primary" type="button" data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon "></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="../index.html"> Accueil</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link  " aria-current="page" href="../A propos.html"> A propos</a>
-
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Nos Cours
-            </a>
-            <ul class="dropdown-menu">
-
-              <li><a class="link_drop" href="../cours_communication.html"> cours en communication</a></li>
-              <li><a class="link_drop" href="../cours_réseaux_informatiques.html"> cours en Réseaux
-                  informatiques</a></li>
-              <li><a class="link_drop" href="../Tous_les_cours.html">tous les cours</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../Articles_techniques.html">Articles
-              techniques</A> </a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active " aria-current="page" href="../contact.html"> Contactez-Nous </a>
-
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="../nouveau_compte.html">Nouveau compte</a>
-
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link  " aria-current="page" href="../connexion.html">Connexion</a>
-          </li>
-
-        </ul>
-
-
-      </div>
-    </div>
-  </nav>
-
-
-</header>
+<?php
+    include __DIR__ . '/../header.php';
+    ?>
 <main class="py-5">
   <div class="container">
+  <button onclick="changerMode()" id="modeButton">🌙</button>
 
     <!-- TITRE -->
     <h1 class="fw-bold mb-3">
@@ -226,53 +159,12 @@
       Le choix dépend donc du contexte, du budget et du besoin de couverture.
     </p>
 
-    <a href="../Articles_techniques.html" class="btn_lire text-decoration-none   fw-semibold w-50 mx-auto">
+    <a href="../Articles_techniques.php" class="btn_lire text-decoration-none   fw-semibold w-50 mx-auto">
       ← Retour aux articles
     </a>
 
   </div>
 </main>
-<footer class="footer">
-  <div class="lines_footer">
-    <a class="line_footer active" href="../index.html">Accueil</a>
-    <a class="line_footer" href="../A propos.html">A propos</a>
-    <a class="line_footer" href="../Articles_techniques.html">Articles techniques</a>
-    <a class="line_footer" href="../Tous_les_cours.html">Nos cours</a>
-    <a class="line_footer" href="../contact.html">Contactez-Nous</a>
-  </div>
-  <div class="rejoin_contact ">
-    <div class="rejoin">
-      <h3 class="text-light fw-bold">Rejoignez-nous</h3>
-      <p id="para_rejoindre">Rejoindre en tant qu’entraîneur</p>
-    </div>
-    <div class="contact">
-      <h3 class="text-light fw-bold">Contactez-nous</h3>
-      <a class="text-decoration-none" href=""><i class="bi bi-map-fill"> 12 rue de la paix, 75000
-          Paris</i></a><br><br>
-      <a class="text-decoration-none" href=""><i class="bi bi-telephone-fill"> +33 1 23 45 67 89</i></a>
-      <br><br>
-      <a class="text-decoration-none" href=""><i class="bi bi-envelope-fill"> Maanali@example.com</i></a>
-    </div>
-  </div>
-  <div class="suivez-nous text-center ">
-    <h3 class="text-light fw-bold mb-5">Suivez-nous</h3>
-    <div class="line_social d-flex justify-content-center gap-5">
-      <a class="icon_sociale" href=""><i class="bi bi-facebook"></i></a>
-      <a class="icon_sociale" href=""><i class="bi bi-twitter"></i></a>
-      <a class="icon_sociale" href=""><i class="bi bi-instagram"></i></a>
-      <a class="icon_sociale" href=""><i class="bi bi-linkedin"></i></a>
-      <a class="icon_sociale" href=""><i class="bi bi-youtube"></i></a>
-    </div>
-  </div>
-</footer>
-<script src="../js/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
-  integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
-
-</body>
-
-</html>
-
-<body>
+    <?php
+        include __DIR__ . '/../footer.php';
+        ?>

@@ -1,0 +1,20 @@
+ <?php
+    include __DIR__ . '/header.php';
+    ?>
+ <main class="main_connexion">
+     <form class="formaulaire_connexion" method="post">
+         <label for="email">Email</label><br>
+         <input type="email" id="email" name="email" required><br>
+         <label for="password">Mot de passe</label><br>
+         <input type="password" id="password" name="password" required><br>
+         <p><a class="text-decoration-none" href="#">Mot de passe oublié ?</a></p>
+         <p>Vous n'avez pas de compte ? <a class="text-decoration-none" href="inscription.html">Inscrivez-vous</a></p>
+         <button class="button_connexion w-50 mx-auto text-center mt-3" type="submit">Se connecter</button>
+     </form>
+
+ </main>
+
+
+ <?php
+    include __DIR__ . '/footer.php';
+    ?>
