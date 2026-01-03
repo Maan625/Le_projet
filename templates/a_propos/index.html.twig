@@ -1,0 +1,267 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+ <main id="main">
+
+     <!-- HERO -->
+     <section class=" contener_about py-5   ">
+         <button onclick="changerMode()" id="modeButton">🌙</button>
+
+         <div class="container">
+             <div class=" row align-items-center g-4">
+                 <div class="col-lg-7">
+                     <h1 class="display-5 fw-bold mb-3 ">
+                         À propos de <span class="text-accent">TélécomFacile</span>
+                     </h1>
+                     <p class="lead mb-4">
+                         Notre mission est de rendre la formation en télécommunications
+                         accessible, moderne et orientée emploi – pour tous et partout.
+                     </p>
+                     <div class="d-flex gap-2">
+                         <a href="{{ path('cours') }}" class=" btnnn btn btn-accent btn-lg">Découvrir nos cours</a>
+                         <a href="#valeurs" class="btn  btn-accent btn-lg">Nos valeurs</a>
+                     </div>
+                 </div>
+                 <div class="col-lg-5">
+                     <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow">
+                         <img src="/Images/communication intégrées 1 (1).png" class="w-100 h-100 object-fit-cover"
+                             alt="Apprentissage en ligne dans le domaine des télécommunications">
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- HISTOIRE -->
+     <section class="py-5" id="histoire">
+         <div class="container">
+             <div class="row align-items-center g-4">
+                 <div class="col-md-6">
+                     <img src="/Images/image accueille.png" class="img-fluid rounded-4 shadow-sm"
+                         alt="Origines et évolution de TélécomFacile">
+                 </div>
+                 <div class="col-md-6">
+                     <h2 class="h1 fw-bold mb-3">Notre histoire</h2>
+                     <p class="mb-3">
+                         Fondée en 2025 par des passionnés des réseaux et du digital learning,
+                         <strong>TélécomFacile</strong> est née pour démocratiser les
+                         compétences télécom grâce à des parcours courts, pratiques et reconnus.
+                     </p>
+                     <p class="mb-0">
+                         Aujourd’hui, nous accompagnons débutants et professionnels vers les
+                         métiers en demande : fibre, réseau mobile, 5G, IoT…
+                     </p>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- VALEURS -->
+     <section class=" section_valeurs py-5 bg-light" id="valeurs">
+         <div class="container">
+             <h2 class="h1_valeurs fw-bold text-center mb-4">Nos valeurs</h2>
+             <div class="row g-4">
+                 <div class="col-md-4">
+                     <div class="card h-100 shadow-sm border-0">
+                         <div class="card-body p-4">
+                             <div class="display-6 mb-2">🌍</div>
+                             <h3 class="h5 fw-bold">Accessibilité</h3>
+                             <p class="mb-0">Formats flexibles et supports inclusifs (RGAA/WCAG).</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="card h-100 shadow-sm border-0">
+                         <div class="card-body p-4">
+                             <div class="display-6 mb-2">💡</div>
+                             <h3 class="h5 fw-bold">Innovation</h3>
+                             <p class="mb-0">Contenus à jour, labs pratiques et projets réels.</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="card h-100 shadow-sm border-0">
+                         <div class="card-body p-4">
+                             <div class="display-6 mb-2">🤝</div>
+                             <h3 class="h5 fw-bold">Accompagnement</h3>
+                             <p class="mb-0">Mentorat, feedback régulier et aide à l’insertion.</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- CHIFFRES -->
+     <section class="py-5">
+         <div class="container">
+             <div class="row text-center g-4">
+                 <div class="col-md-4">
+                     <div class="p-4 rounded-4 bg-soft-accent shadow-sm">
+                         <div class="display-5 fw-bold counter" data-target="20">0</div>
+                         <p class="mb-0">formations en ligne</p>
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="p-4 rounded-4 bg-soft-accent shadow-sm">
+                         <div class="display-5 fw-bold counter" data-target="500">0</div>
+                         <p class="mb-0">apprenants accompagnés</p>
+                     </div>
+                 </div>
+                 <div class="col-md-4">
+                     <div class="p-4 rounded-4 bg-soft-accent shadow-sm">
+                         <div class="display-5 fw-bold counter" data-target="95">0</div>
+                         <p class="mb-0">de satisfaction</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- ÉQUIPE -->
+     <section class="py-5 bg-light" id="equipe">
+         <div class="container">
+             <h2 class="titre_notre_equipe fw-bold text-center mb-4">Notre équipe</h2>
+             <div class="row g-4">
+                  <div class="col-6 col-md-4">
+                     <div class="card border-0 shadow-sm h-100 text-center">
+                         <div class="p-3">
+                             <img src="/Images/Adam.avif" class=" image__formateur" alt="Formatrice réseaux">
+                         </div>
+                         <div class="card-body">
+                             <h3 class="h6 fw-bold mb-1">Sara Ben</h3>
+                             <p class="text-dark text-bg-warning w-50 mx-auto rounded-2 mb-2">Formatrice Réseaux</p>
+                             <p class="small mb-0">10+ ans d’expérience opérateurs télécom.</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-6 col-md-4">
+                     <div class="card border-0 shadow-sm h-100 text-center">
+                         <div class="p-3">
+                             <img src="/Images/Adam.avif" class=" image__formateur" alt="Formatrice réseaux">
+                         </div>
+                         <div class="card-body">
+                             <h3 class="h6 fw-bold mb-1">Sara Ben</h3>
+                             <p class="text-dark text-bg-warning w-50 mx-auto rounded-2 mb-2">Formatrice Réseaux</p>
+                             <p class="small mb-0">10+ ans d’expérience opérateurs télécom.</p>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-6 col-md-4">
+                     <div class="card border-0 shadow-sm h-100 text-center">
+                         <div class="p-3">
+                             <img src="/Images/Adam.avif" class=" image__formateur" alt="Formatrice réseaux">
+                         </div>
+                         <div class="card-body">
+                             <h3 class="h6 fw-bold mb-1">Sara Ben</h3>
+                             <p class="text-dark text-bg-warning w-50 mx-auto rounded-2 mb-2">Formatrice Réseaux</p>
+                             <p class="small mb-0">10+ ans d’expérience opérateurs télécom.</p>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- … -->
+             </div>
+
+         </div>
+     </section>
+
+     <!-- TÉMOIGNAGES -->
+     <section class="cd py-5 mt-5">
+         <div class="container text-center">
+             <h2 id="titre_temoignages" class=" mb-5 fw-bold">Temoignages</h2>
+
+             <div id="carouselTemoignages" class="carousel slide" data-bs-ride="carousel">
+                 <div class="carousel-inner">
+
+                     <!-- Témoignage 1 -->
+                     <div class="carousel-item active ">
+                         <div class="testimonial ">
+                             <img class="image_témignage" src="https://randomuser.me/api/portraits/women/44.jpg"
+                                 alt="Claire Dupont">
+                             <blockquote class="blockquote">
+                                 <p>“Un service rapide, professionnel et à l’écoute. Mon site est superbe!”</p>
+                             </blockquote>
+                             <h5 class="mb-1">Claire Dupont</h5>
+                             <div class="stars">
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-half"></i>
+                             </div>
+                         </div>
+                     </div>
+
+                     <!-- Témoignage 2 -->
+                     <div class="carousel-item">
+                         <div class="testimonial">
+                             <img class="image_témignage" src="https://randomuser.me/api/portraits/men/32.jpg"
+                                 alt="Jean Martin">
+                             <blockquote class="blockquote">
+                                 <p>“L’équipe a su comprendre nos besoins et livrer un résultat au top.”</p>
+                             </blockquote>
+                             <h5 class="mb-1">Jean Martin</h5>
+                             <div class="stars">
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star"></i>
+                             </div>
+                         </div>
+                     </div>
+
+                     <!-- Témoignage 3 -->
+                     <div class="carousel-item">
+                         <div class="testimonial">
+                             <img class="image_témignage" src="https://randomuser.me/api/portraits/women/65.jpg"
+                                 alt="Sophie Bernard">
+                             <blockquote class="blockquote">
+                                 <p>“Un accompagnement personnalisé du début à la fin. Merci!”</p>
+                             </blockquote>
+                             <h5 class="mb-1">Sophie Bernard</h5>
+                             <div class="stars">
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+
+                 <!-- Contrôles -->
+                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages"
+                     data-bs-slide="prev">
+                     <span class="carousel-control-prev-icon"></span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages"
+                     data-bs-slide="next">
+                     <span class="carousel-control-next-icon"></span>
+                 </button>
+             </div>
+         </div>
+     </section>
+
+     <!-- CTA CONTACT -->
+     <section class="py-5 text-white bg-brand-gradient">
+         <div class="container">
+             <div class="row align-items-center g-3">
+                 <div class="col-lg-8 ">
+                     <h2 class="h1 fw-bold mb-2">Vous souhaitez collaborer avec nous ?</h2>
+                     <p class="mb-0">Parlons de vos besoins en formation télécom.</p>
+                 </div>
+                 <div class="col-lg-4 text-lg-end">
+                     <a href="{{ path('contact') }}" class="btn btn-accent btn-lg">Contactez-nous</a>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+ </main>
+
+{% endblock %}

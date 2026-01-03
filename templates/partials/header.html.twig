@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="{{ asset('css/main.css') }}">
+		<link rel="stylesheet" href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css') }}">
+		<title>
+			Accueil</title>
+	</head>
+	<!-- body -->
+
+	<body>
+		<header class="header_accueil">
+
+			<nav class="navbar navbar-expand-lg ">
+				{% set currentRoute = app.request.attributes.get('_route') %}
+				<div class="container-fluid">
+					<a class="navbar-brand " href="#"><img src="{{ asset('images/logo.png') }}" alt="logo" width="80" height="80"></a>
+					<button class="navbar-toggler text-white text-bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon "></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+							<li class="nav-item ">
+								<a class="nav-link {{ currentRoute == 'accueil' ? 'active' : '' }} " aria-current="page" href={{ path('accueil') }}>
+									Accueil</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {{ currentRoute == 'a_propos' ? 'active' : '' }}  " aria-current="page" href={{ path('a_propos') }}>
+									A propos</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link  dropdown-toggle {{ currentRoute in ['cours', 'cours_communication', 'cours_informatique'] ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+									Nos Cours
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a class="link_drop " href={{ path('cours_communication') }}>
+											cours en communication</a>
+									</li>
+									<li>
+										<a class="link_drop" href={{ path('cours_informatique') }}>
+											cours en Réseaux
+																																																							                                        informatiques</a>
+									</li>
+									<li>
+										<a class="link_drop" href={{ path('cours') }}>tous les cours</a>
+									</li>
+								</ul>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {{ currentRoute in ['articles-techniques', 'article_technique_show'] ? 'active' : '' }}" href="{{ path('articles-techniques') }}">
+									Articles techniques
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {{ currentRoute == 'contact' ? 'active' : '' }} " aria-current="page" href={{ path('contact') }}>
+									Contactez-Nous
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {{ currentRoute == 'inscription' ? 'active' : '' }} " aria-current="page" href={{ path('inscription') }}>Nouveau compte</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link {{ currentRoute == 'connexion' ? 'active' : '' }} " aria-current="page" href={{ path('connexion') }}>Connexion</a>
+							</li>
+							<li class="nav-item">
+								{% set panier = app.session.get('panier') ?? {} %}
+								{% set panierCount = 0 %}
+								{% for qty in panier %}
+									{% set panierCount = panierCount + qty %}
+								{% endfor %}
+
+								<a href="{{ path('panier_index') }}" class="nav-link position-relative">
+									<i class="bi bi-cart"></i>
+									Panier
+
+									<span id="panier-count-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-dark" style="{{ panierCount > 0 ? '' : 'display:none;' }}">
+										<span id="panier-count">{{ panierCount }}</span>
+									</span>
+								</a>
+
+
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+
+	 
+	</body>
+</html>

@@ -1,0 +1,94 @@
+.main_cours {
+  background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
+  background-color: #ece6e6;
+  padding: 40px;
+   
+}
+.main_cours_2{
+  background-image: url(../Images/cours_réseaux_informatiques/image\ de\ fond\ réseaux\ en\ informatiques.png);
+  padding:40px;
+}
+.main_tous_cours_2{
+  background-image: url(../Images/cours_communication/fond\ de\ écran\ tous\ les\ cours.png);
+}
+.présentation_du_cours {
+  padding: 30px;
+  border: 2px solid $button;
+  border-radius: 100px 0 100px 0;
+}
+.titre_cours {
+  color: $button;
+  font-weight: bold;
+}
+.para_cours {
+  color: $white;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+}
+
+//section cards du cours
+
+.card_2 {
+  background-color: $secondary;
+  color: $white;
+  transition: all 0.3s ease-out;
+  border: 2px solid $secondary;
+  border-radius: 30px;
+  border: 1px solid $primary;
+  text-align: center;
+}
+.card_2:hover {
+  transform: scale(1.05);
+  // transform: rotateY(360deg);
+  
+}
+ .card_2-img-top {
+     border-radius: 30px 30px 0 0;
+
+ }
+  .card_2-title {
+     font-weight: bold;
+     color: $white;
+     font-size: 15px;
+     padding: 10px;
+    
+
+ }
+  .line_2_time {
+     display: flex;
+     justify-content: center;
+     gap: 30px;
+     margin-bottom: 20px;
+     color: $button;
+     font-weight: bold;
+     font-size: 20px;
+    }
+     .line_2_price {
+     display: flex;
+     justify-content: space-around;
+     gap: 30px;
+     align-items: center;
+     margin-bottom: 20px;
+     
+ }
+
+
+ //dark_mode
+//  .dark-mode .main_cours{
+  
+//   background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
+
+//  }
+//  .dark-mode .titre_cours{
+//   color: $button;
+
+//  }
+//   .dark-mode .para_cours{
+//   color: $white;
+
+//  }
+
+ 
+ 

@@ -1,0 +1,65 @@
+.bg-brand-gradient{
+  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+}
+ 
+.object-fit-cover{ object-fit: cover; }
+
+/* بادج للمجالات التقنية */
+.badge-theme{
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* حالة إخفاء عند الفلترة */
+.article-card.d-none{
+  display: none !important;
+}
+
+
+.btn_lire{
+    background-color: $secondary;
+    color: $white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.btn_lire:hover,
+.btn_lire:focus{
+    background-color: $button;
+    color: $white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.dark-mode .article_affiche{
+    color:$black;
+}
+.dark-mode .btn_lire{
+    
+    color: $white;
+}
+
+
+
+.dark-mode .btn_filter{
+    background-color: $white;
+    color: $black;
+}
+.dark-mode .btn_filter:hover,
+.dark-mode .btn_filter:focus{
+    background-color: $button;
+    color: $white;
+}
+.dark-mode .text-article {
+    color: $white;
+  
+}

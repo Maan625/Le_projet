@@ -1,0 +1,362 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles techniques{% endblock %}
+
+{% block body %}
+ <main id="main">
+
+     <!-- HERO + RECHERCHE -->
+     <section class="py-5 text-white bg-brand-gradient">
+         <button onclick="changerMode()" id="modeButton">🌙</button>
+
+         <div class="container">
+             <div class="row align-items-center g-4">
+                 <div class="col-lg-7 ">
+                     <h1 class="display-5 fw-bold mb-3">
+                         Essais & articles techniques
+                     </h1>
+                     <p class="lead mb-4">
+                         Découvrez des articles clairs et pratiques sur les télécommunications,
+                         les réseaux informatiques, la fibre optique, la 5G et l’IoT.
+                     </p>
+                     <form class="input-group input-group-lg" id="search-form-articles">
+                         <span class="input-group-text"><i class="bi bi-search"></i></span>
+                         <input type="search" class="form-control" id="search-articles"
+                             placeholder="Rechercher un article (5G, fibre, IP, IoT…)">
+                     </form>
+                 </div>
+                 <div class="col-lg-5">
+                     <div class="ratio ratio-16x9 rounded-4 overflow-hidden shadow">
+                         <img src="/Images/articles techniques.png" class="w-100 h-100 object-fit-cover"
+                             alt="Illustration d’articles techniques en télécommunications">
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- ARTICLE MIS EN AVANT -->
+     <section class="py-5 bg-light">
+         <div class="container">
+             <div class="row g-4 align-items-center">
+                 <div class="col-lg-5">
+                     <img src="/Images/Schéma d’un réseau 5G moderne.png" class="img-fluid rounded-4 shadow-sm"
+                         alt="Schéma d’un réseau 5G moderne">
+                 </div>
+                 <div class="col-lg-7 article_affiche">
+                     <span class="badge badge-theme mb-2">5G & réseaux mobiles</span>
+                     <h2 class="h1 fw-bold mb-3">
+                         Comment la 5G transforme les réseaux télécom
+                     </h2>
+                     <p class="mb-3">
+                         Latence réduite, débits élevés, network slicing… La 5G n’est pas
+                         qu’une simple évolution de la 4G. Cet article vous guide à travers
+                         les concepts clés, avec des exemples concrets adaptés aux débutants.
+                     </p>
+                     <p class="text-muted mb-3 small">
+                         Publié le 10/11/2025 • Temps de lecture : 8 minutes
+                     </p>
+                     <a href="{{ path('article_technique_show', {slug: 'article-core-5g'}) }}" class="btn_lire fw-semibold text-decoration-none w-50 mx-auto">
+                         Lire l’article complet
+                     </a>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- FILTRES PAR THÈME -->
+     <section class="py-3 border-top">
+         <div class="container d-flex flex-wrap gap-2 align-items-center">
+             <span class="fw-semibold me-2">Filtrer par thème :</span>
+             <button class="btn_filter btn btn-sm btn-outline-dark active filter-btn" data-filter="all">
+                 Tous
+             </button>
+             <button class=" btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="reseaux">
+                 Réseaux IP
+             </button>
+             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="fibre">
+                 Fibre optique
+             </button>
+             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="5g">
+                 5G & mobiles
+             </button>
+             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="iot">
+                 IoT & objets connectés
+             </button>
+             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="securite">
+                 Sécurité
+             </button>
+         </div>
+     </section>
+
+     <!-- LISTE DES ARTICLES -->
+     <section class="py-4" id="articles-section">
+         <div class="container">
+             <div class="row g-4" id="articles-list">
+
+                 <!-- ARTICLE 1 -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="reseaux"
+                     data-keywords="tcp ip osi routage switch vlan">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Réseaux IP</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Comprendre le modèle OSI et TCP/IP
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 02/10/2025</p>
+                             <p class="mb-3">
+                                 Différence entre couches, encapsulation, ports, protocoles…
+                                 un rappel indispensable pour tout technicien réseau.
+                             </p>
+                           <a href="{{ path('article_technique_show', {slug: 'article-osi-tcpip'}) }}" class="btn_lire fw-semibold text-decoration-none w-50 mx-auto">
+                         Lire l’article complet
+                     </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 2 -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="fibre"
+                     data-keywords="fibre optique ftth pon gpon epn soudure">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Fibre optique</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Les bases de la fibre FTTH sur le terrain
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 15/09/2025</p>
+                             <p class="mb-3">
+                                 Architecture FTTH, rôle des PTO, jarretières, épissures,
+                                 règles de sécurité et bonnes pratiques d’installation.
+                             </p>
+                             <a href="{{ path('article_technique_show', {slug: 'article-ftth'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 3 -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="5g"
+                     data-keywords="5g nr core slicing latence bande passante">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">5G & mobiles</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Introduction au cœur de réseau 5G
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 28/08/2025</p>
+                             <p class="mb-3">
+                                 Du EPC 4G au 5GC : quelles évolutions, quels nouveaux services
+                                 et quels impacts pour les opérateurs ?
+                             </p>
+                            <a href="{{ path('article_technique_show', {slug: 'article-core-5g'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 4 -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="iot"
+                     data-keywords="iot lora nb-iot capteurs objet connecte">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">IoT & objets connectés</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 LoRaWAN vs NB-IoT : quel réseau pour vos capteurs ?
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 05/10/2025</p>
+                             <p class="mb-3">
+                                 Comparaison des technologies IoT bas débit, portée, consommation
+                                 énergétique et cas d’usage concrets.
+                             </p>
+                              <a href="{{ path('article_technique_show', {slug: 'article-lorawan-nbiot'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 5 -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="securite"
+                     data-keywords="securite firewall vpn chiffrement tls">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Sécurité</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 5 bonnes pratiques de sécurité réseau
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 21/09/2025</p>
+                             <p class="mb-3">
+                                 Segmentation, mises à jour, VPN, supervision… les réflexes à
+                                 adopter sur tout réseau professionnel.
+                             </p>
+                              <a href="{{ path('article_technique_show', {slug: 'article-securite-reseau'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 6 -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="reseaux"
+                     data-keywords="ipv6 adressage reseau sous-reseau">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Réseaux IP</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 IPv6 en pratique : pourquoi et comment s’y mettre ?
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 30/10/2025</p>
+                             <p class="mb-3">
+                                 Avantages d’IPv6, structure des adresses, exemples de
+                                 configuration et points de vigilance.
+                             </p>
+                              <a href="{{ path('article_technique_show', {slug: 'article-ipv4-vs-ipv6'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+                 <!-- ARTICLE 7 – Réseaux -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="reseaux"
+                     data-keywords="switching vlan trunking spanning-tree mac table">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Réseaux IP</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Introduction aux VLANs et au switching
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 05/11/2025</p>
+                             <p class="mb-3">
+                                 Découvrez comment les VLANs segmentent un réseau, le rôle du trunking
+                                 et l’importance du protocole Spanning Tree dans la prévention des boucles.
+                             </p>
+                            
+                              <a href="{{ path('article_technique_show', {slug: 'article-vlan-switching'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 8 – Fibre optique -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="fibre"
+                     data-keywords="otdr mesure fibre test reflechometrie signal perte">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Fibre optique</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Comment lire un test OTDR en fibre optique
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 17/10/2025</p>
+                             <p class="mb-3">
+                                 Courbes, pic de réflexion, atténuation… Apprenez à interpréter les
+                                 principales données d’un test OTDR en FTTH et backbone.
+                             </p>
+                            
+                              <a href="{{ path('article_technique_show', {slug: 'article-otdr-fibre'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                             
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 9 – 5G -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="5g"
+                     data-keywords="5g antenne beamforming mimo couverture reseau">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">5G & mobiles</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Beamforming et MIMO : les super-pouvoirs des antennes 5G
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 01/11/2025</p>
+                             <p class="mb-3">
+                                 Comment la 5G utilise le MIMO massif et le beamforming dynamique
+                                 pour améliorer la couverture et la qualité <br> du signal.
+                             </p>
+                           
+                               <a href="{{ path('article_technique_show', {slug: 'article-beamforming-mimo'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 10 – IoT -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="iot"
+                     data-keywords="iot zigbee wifi6 smart-home domotique capteurs">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">IoT & objets connectés</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Zigbee vs WiFi 6 : quel protocole pour la maison connectée ?
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 12/11/2025</p>
+                             <p class="mb-3">
+                                 Analyse des performances, de la portée et de la consommation des deux
+                                 technologies dans les installations <br> smart home.
+                             </p>
+                             
+                                <a href="{{ path('article_technique_show', {slug: 'article-zigbee-wifi6'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 11 – Sécurité -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="securite"
+                     data-keywords="securite wifi wpa3 chiffrement attaque reseau">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Sécurité</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Sécuriser son réseau WiFi : WPA3 et bonnes pratiques
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 29/10/2025</p>
+                             <p class="mb-3">
+                                 Découvrez comment fonctionne WPA3, l’importance des mots de passe
+                                 robustes et comment se protéger des attaques WiFi courantes.
+                             </p>
+                            
+                               <a href="{{ path('article_technique_show', {slug: 'article-wifi-wpa3'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- ARTICLE 12 – Réseaux & Cloud -->
+                 <div class="col-md-6 col-lg-4 article-card" data-category="reseaux"
+                     data-keywords="cloud virtualisation sd-wan reseau virtuel vpn">
+                     <div class="card h-100 shadow-sm border-1">
+                         <div class="card-body d-flex flex-column">
+                             <span class="badge badge-theme mb-2">Réseaux & Cloud</span>
+                             <h3 class="h5 fw-bold mb-2">
+                                 Introduction au SD-WAN et réseaux d’entreprise modernes
+                             </h3>
+                             <p class="text-muted small mb-2">Publié le 03/11/2025</p>
+                             <p class="mb-3">
+                                 Pourquoi les entreprises migrent vers le SD-WAN : virtualisation,
+                                 optimisation des liens, sécurité et gestion <br> centralisée.
+                             </p>
+                             
+                               <a href="{{ path('article_technique_show', {slug: 'article-sdwan'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
+                                 Lire l’article
+                             </a>
+                         </div>
+                     </div>
+                 </div>
+
+
+             </div>
+         </div>
+     </section>
+
+ </main>
+
+{% endblock %}

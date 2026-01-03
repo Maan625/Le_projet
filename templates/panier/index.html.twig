@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+{% block title %}Panier
+{% endblock %}
+
+{% block body %}
+	<div class="container my-4">
+
+		<div class="d-flex justify-content-between align-items-center mb-3">
+			<h1 class="h3 m-0">Mon panier</h1>
+			<a href="{{ path('cours') }}" class="btn btn-outline-secondary btn-sm">
+				Continuer mes achats
+			</a>
+		</div>
+
+		{% if count == 0 %}
+			<div class="alert alert-info">Votre panier est vide.</div>
+		{% else %}
+			<div class="card_panier shadow-sm">
+				<div class="card-body p-0">
+					<div class="table-responsive">
+						<table class="table table-hover align-middle mb-0">
+							<thead class="table-light">
+								<tr>
+									<th style="width:90px;"></th>
+									<th>Cours</th>
+									<th style="width:120px;">Prix</th>
+
+
+									<th style="width:70px;" class="text-center"></th>
+								</tr>
+							</thead>
+
+							<tbody>
+								{% for item in items %}
+									{% set c = item.cours %}
+									<tr>
+										<td>
+											{% if c.image %}
+												<img src="{{ c.image }}" class="rounded border" style="width:70px;height:50px;object-fit:cover;">
+											{% else %}
+												<div class="bg-light border rounded" style="width:70px;height:50px;"></div>
+											{% endif %}
+										</td>
+
+										<td>
+											<div class="fw-semibold">{{ c.titre }}</div>
+											{% if c.description %}
+												<div class="text-muted small">{{ c.description|slice(0, 90) }}
+													{% if c.description|length > 90 %}...
+													{% endif %}
+												</div>
+											{% endif %}
+										</td>
+
+										<td>{{ c.prix }}
+											€</td>
+
+
+										<td class="text-center">
+											<form method="post" action="{{ path('panier_remove', {id: c.id}) }}" class="d-inline">
+												<button type="submit" class="btn btn-sm btn-outline-danger" title="Supprimer">
+													✕
+												</button>
+											</form>
+										</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+
+						</table>
+					</div>
+				</div>
+
+				<div class="card-footer d-flex justify-content-between align-items-center">
+					<div class="text-muted">
+						Articles:
+						<span class="fw-semibold">{{ count }}</span>
+					</div>
+
+					<div class="d-flex align-items-center gap-3">
+						<div class="fs-5">
+							Total:
+							<span class="fw-bold">{{ totalGeneral|number_format(2, '.', ' ') }}
+								€</span>
+						</div>
+
+						<button class="btn btn-primary" disabled>Passer au paiement</button>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+
+	</div>
+{% endblock %}

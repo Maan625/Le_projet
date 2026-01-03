@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Introduction aux VLANs et au Switching réseau{% endblock %}
+
+{% block body %}
+<main class="py-5">
+    <div class="container">
+    <button onclick="changerMode()" id="modeButton">🌙</button>
+
+        <!-- TITRE -->
+        <h1 class="fw-bold mb-3">
+            Introduction aux VLANs et au Switching réseau
+        </h1>
+        <p class="text-article">
+            Publié le 10/11/2025 • Temps de lecture : 7 minutes
+        </p>
+
+        <!-- IMAGE PRINCIPALE -->
+        <img src="/images/images-les articles/Schéma du réseau VLAN et du switching Ethernet.avif" class="img-fluid w-75 rounded-4 shadow mb-4"
+            alt="Schéma du réseau VLAN et du switching Ethernet">
+
+        <!-- INTRODUCTION -->
+        <p class="lead">
+            Les VLANs et le switching constituent la base de toute infrastructure réseau moderne.
+            Ils permettent de séparer logiquement les équipements et d’optimiser les flux de données
+            tout en renforçant la sécurité.
+        </p>
+
+        <hr class="my-4">
+
+        <!-- SECTION 1 -->
+        <h2 class="fw-bold mt-4 mb-3">1. Qu’est-ce qu’un switch réseau ?</h2>
+        <p>
+            Un <strong>switch</strong> est un équipement de couche 2 du modèle OSI.
+            Il permet la communication entre plusieurs appareils d’un même réseau local (LAN)
+            en se basant sur les adresses MAC.
+        </p>
+        <p>
+            Le switch apprend dynamiquement quelle machine est connectée à quel port
+            grâce à une <strong>table MAC</strong> :
+        </p>
+
+        <div class="text-center my-4">
+            <img src="/images/images-les articles/Table MAC d’un switch Ethernet.jpg" class="img-fluid w-75 rounded shadow" style="max-width:600px;"
+                alt="Table MAC d’un switch Ethernet">
+        </div>
+
+        <ul>
+            <li>Il analyse les trames entrantes.</li>
+            <li>Il enregistre l’adresse MAC source et le port associé.</li>
+            <li>Il redirige la trame vers le port de destination correspondant.</li>
+        </ul>
+
+        <!-- SECTION 2 -->
+        <h2 class="fw-bold mt-4 mb-3">2. Comprendre le concept de VLAN</h2>
+        <p>
+            Un <strong>VLAN (Virtual Local Area Network)</strong> est une méthode permettant
+            de créer plusieurs réseaux logiques indépendants au sein d’un même commutateur physique.
+        </p>
+        <p>
+            Par exemple, on peut séparer le réseau des administrateurs, du service commercial et du Wi-Fi invité
+            sans utiliser plusieurs équipements physiques.
+        </p>
+
+        <div class="text-center my-4">
+            <img src="/images/images-les articles/Illustration d’un réseau VLAN.jpg" class="img-fluid w-75 rounded shadow" style="max-width:650px;"
+                alt="Illustration d’un réseau VLAN">
+        </div>
+
+        <div class="alert alert-info">
+            💡 <strong>Astuce :</strong> Chaque VLAN possède son propre identifiant (de 1 à 4094) et fonctionne comme un
+            réseau distinct.
+        </div>
+
+        <!-- SECTION 3 -->
+        <h2 class="fw-bold mt-4 mb-3">3. VLANs et Trunking</h2>
+        <p>
+            Quand un réseau contient plusieurs switches, il faut permettre le passage de plusieurs VLANs
+            sur un même lien.
+            Ce lien est appelé un <strong>trunk</strong>.
+        </p>
+        <p>
+            Le protocole <strong>IEEE 802.1Q</strong> ajoute une étiquette (tag) VLAN dans les trames Ethernet
+            pour indiquer à quel VLAN appartient chaque paquet.
+        </p>
+
+        <div class="text-center my-4">
+            <img src="/images/images-les articles/Lien trunk 802.1Q entre switches.png" class="img-fluid w-75 rounded shadow" style="max-width:700px;"
+                alt="Lien trunk 802.1Q entre switches">
+        </div>
+
+        <!-- SECTION 4 -->
+        <h2 class="fw-bold mt-4 mb-3">4. Spanning Tree Protocol (STP)</h2>
+        <p>
+            Pour éviter les boucles réseau causées par les connexions redondantes entre switches,
+            le <strong>Spanning Tree Protocol (STP)</strong> désactive automatiquement certains liens.
+        </p>
+
+        <div class="text-center my-4">
+            <img src="/images/images-les articles/Topologie STP d’un réseau Ethernet redondant.jpg" class="img-fluid w-75 rounded shadow" style="max-width:700px;"
+                alt="Topologie STP d’un réseau Ethernet redondant">
+        </div>
+
+        <div class="alert alert-warning">
+            ⚠️ <strong>Attention :</strong> une boucle réseau peut saturer un réseau local en quelques secondes !
+        </div>
+
+        <!-- SECTION 5 -->
+        <h2 class="fw-bold mt-4 mb-3">5. Bonnes pratiques de configuration VLAN</h2>
+        <ul>
+            <li>Attribuer un VLAN distinct à chaque service ou département.</li>
+            <li>Utiliser un VLAN spécifique pour la gestion réseau (ex: VLAN 99).</li>
+            <li>Configurer les ports inutilisés en mode “shutdown”.</li>
+            <li>Définir un VLAN natif sécurisé pour les liens trunk.</li>
+        </ul>
+
+        <!-- CONCLUSION -->
+        <h2 class="fw-bold mt-4 mb-3">Conclusion</h2>
+        <p>
+            Le VLAN et le switching sont des piliers du réseau d’entreprise.
+            Ils permettent une meilleure organisation, une sécurité accrue et une gestion simplifiée.
+            Maîtriser ces concepts est essentiel pour tout administrateur réseau.
+        </p>
+
+     <a href={{ path('articles-techniques') }} class="btn_lire text-decoration-none   fw-semibold w-50 mx-auto">
+            ← Retour aux articles
+        </a>
+
+    </div>
+</main>
+
+{% endblock %}
