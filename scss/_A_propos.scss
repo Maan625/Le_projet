@@ -1,0 +1,63 @@
+// .text-accent{ color: var(--primary) !important; }
+
+/* زر رئيسي بنفس هويتك */
+.btn-accent{
+
+      background-color: $secondary;
+    color: $white;
+    border: none;
+}
+.btn-accent:hover,
+.btn-accent:focus{
+  background-color: $button;
+  color: $white;
+}
+
+/* خلفية تدرّج من الثانوي إلى الثالثي */
+// .bg-brand-gradient{
+//   background: linear-gradient(135deg, var(--$secondary), var(--$tertiary));
+// }
+
+/* خلفيات ناعمة للبطاقات والإحصاءات */
+// .bg-soft-accent{
+//   background: color-mix(in srgb, var(--primary) 25%, white);
+// }
+
+/* تحسينات صغيرة */
+.rounded-4{ border-radius: 1rem; }
+.object-fit-cover{ object-fit: cover; }
+
+.section_valeurs{
+    background-color: $secondary;
+}
+ 
+.image__formateur{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+ 
+
+.dark-mode .btn-accent{
+ border: 2px solid $white;
+ color: $white;
+     
+}
+.dark-mode .btn-accent:hover{
+    background-color: $button;
+    color: $white;
+}
+.dark-mode .h1_valeurs .titre_notre_equipe{
+    color: $secondary;
+}
+.dark-mode .titre_notre_equipe{
+    color: $secondary;
+}
+
+#titre_temoignages {
+    color: $black;
+}
+.dark-mode #titre_temoignages {
+    color: $white;
+}

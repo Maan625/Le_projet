@@ -1,0 +1,596 @@
+ <?php
+    include 'views/header.php';
+
+    ?>
+ <!-- main -->
+ <main class="main_accueil">
+     <section class="section1_accueil">
+         <button onclick="changerMode()" id="modeButton">🌙</button>
+         <div class="container1-section1">
+             <h1 class="h1_accueil ">Élevez votre carrière professionnelle <br> avec <span>TélécomFacile</span> </h1>
+             <h4 class="h4_accueil">Plus de 20 cours en ligne</h4>
+         </div>
+         <form id="input-group" class="input-group w-50 flex-nowrap" action="Tous_les_cours.html" method="get">
+             <button id="rech" class="btn btn-warning fw-semibold" type="submit">
+                 Rechercher
+             </button>
+             <input type="search" name="q" class="form-control input_recherche"
+                 placeholder="Rechercher un cours (5G, fibre, IoT, CCNA...)">
+         </form>
+         <div class="container2-section1">
+             <div
+                 class="row  mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
+                 <div class=" col-auto mb-sm-4">
+                     <img class="w-50" src="Images/Accès à vie.png" alt="">
+                     <div class="text_container2">
+                         <h5>Accès à vie</h5>
+                         <p> Apprenez à tout moment et depuis n’importe où,<br> et accédez à vos formations dès
+                             <br>que
+                             vous en avez besoin.
+                         </p>
+                     </div>
+                 </div>
+                 <div class="col-auto mb-sm-4">
+                     <img class="w-25" src="Images/Formation dispensée par des experts.png" alt="">
+                     <div class="text_container2">
+                         <h5> Apprentissage avec des experts</h5>
+                         <p>Formateurs certifiés avec <br> une vaste expérience pratique dans les plus <br> grandes
+                             entreprises
+                             informatiques.</p>
+                     </div>
+                 </div>
+                 <div class="col-auto mb-4">
+                     <img class="w-50 text-center" src="Images/Plus de 20 formations en ligne.png" alt="">
+                     <div class="text_container2">
+                         <h5> Plus de 20 formations en ligne</h5>
+                         <p> Une vaste bibliothèque couvrant les technologies <br> les plus récentes dans le domaine
+                             des <br>
+                             télécommunications et de l’informatique.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <section class="section2_accueil">
+         <div class="text_section2">
+             <h2 class="h2_section2"> Entre l’essentiel et l’excellence, nos formations couvrent tout le spectre.
+             </h2>
+             <p class="p_section2"> Nos formations couvrent un large éventail de domaines gravitant autour de
+                 l’informatique.</p>
+         </div>
+         <div class="buttun_section2_accueil">
+             <div class="button_group_section2">
+                 <button type="button" class="btn_accueille btn btn-outline-secondary py-2"> Nos meilleures
+                     formations</button>
+                 <button type="button" class="btn_accueille btn btn-outline-secondary"> Les nouvelles
+                     formations</button>
+             </div>
+             <button type="button" class="btn_accueille btn btn-outline-secondary"> Formation la plus vendue</button>
+         </div>
+     </section>
+     <section class="section3_accueil">
+         <div
+             class="row   mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
+             <div class="col-auto mb-4">
+                 <div class="card mx-auto" style="width: 18rem;">
+                     <img src="Images/cv image.png" class="card-img-top" alt="image cv">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title">Le CV d’un ingénieur en télécommunications</h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock text-secondary  "></i> 6h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>3
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">90€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+             <div class="col-auto mb-4">
+                 <div class="card mx-auto" style="width: 18rem">
+                     <img src="Images/introduction fibre optique.png" class="card-img-top" alt="image cv"
+                         height="230">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title">Cours d’introduction à la fibre optique</h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock text-secondary  "></i> 20h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>10
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">149€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/télécharger.jpeg" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+             <div class="col-auto ">
+                 <div class="card mx-auto" style="width: 18rem;">
+                     <img src="Images/coeur 5G.png" class="card-img-top" alt="image cv">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title  "> Formation Cœur 5G | Architecture, Protocoles </h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock text-secondary  "></i> 180h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>96
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">299€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+             <div class="col-auto mb-4">
+                 <div class="card mx-auto" style="width: 18rem;">
+                     <img src="Images/sansfils bout about.png" class="card-img-top" alt="image cv">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title"> Formation sans fil (forfait
+                                 mobile) BOUT à BOUT</h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock text-secondary  "></i> 180h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>96
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">299€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+             <div class="col-auto mb-4">
+                 <div class="card mx-auto" style="width: 18rem;">
+                     <img src="Images/communication intégrées 1 (1).png" class="card-img-top" alt="image cv">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title">Formation des communications intégrées</h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock text-secondary  "></i> 920h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>450
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">1199€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+             <div class="col-auto mb-4">
+                 <div class="card mx-auto" style="width: 18rem;">
+                     <img src="Images/communication sataitaire.png" class="card-img-top" alt="image cv">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title">Cours en communications satellitaires</h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock text-secondary  "></i> 400h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>150
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">399€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+             <div class="col-auto mb-4">
+                 <div class="card mx-auto" style="width: 18rem;">
+                     <img src="Images/cloud computing.png" class="card-img-top" alt="image cv" height="235">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title">Formation au cloud computing</h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock"></i> 300h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play "> </i>130
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">499€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+             <div class="col-auto mb-4">
+                 <div class="card mx-auto" style="width: 18rem;">
+                     <img src="Images/Formation au logiciel Pathloss1 (1).png" class="card-img-top" alt="image cv"
+                         height="235">
+                     <div class="card-body">
+                         <div class="line_star">
+                             <span>(15)</span>
+                             <div class="star_rating">
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-fill text-warning"></i>
+                                 <i class="bi bi-star-half text-warning"></i>
+                             </div>
+                             <span>4.5</span>
+                         </div>
+                         <a href="">
+                             <h5 class="card-title">Formation au logiciel Pathloss</h5>
+                         </a>
+                         <div class="line_time">
+                             <span class="time"><i class="bi bi-clock text-secondary  "></i> 2h</span>
+                             <span class="liçon"><i class="bi bi-file-earmark-play text-secondary  "> </i>5
+                                 licons</span>
+                         </div>
+                         <div class="line_price">
+                             <span class="price">100€</span>
+                             <div class="formateur">
+                                 <span class="name">John Doe</span>
+                                 <img class="image_formateur" src="Images/Adam.avif" alt="adam" width="50"
+                                     height="50">
+                             </div>
+                         </div>
+                     </div>
+                     <button class="button_commence"><a href=""></a>Commence</button>
+                 </div>
+             </div>
+         </div>
+         <div class="button_voir">
+             <a href="#"><button> Toutes les formations</button></a>
+         </div>
+     </section>
+     <section class="section4_accueil">
+         <h2 id="titre_section4">Pourquoi choisir TélécomFacile ?</h2>
+         <div class="row mt-5   mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
+             <div class=" col-auto mb-5">
+                 <div class="card_1 mx-auto" style="width: 16rem;">
+                     <div class="icon1_section4">
+                         <img src="Images/icon section 4/acce a la vie icon.png" class="card-img-top1 w-50 "
+                             alt="accee a la vie">
+                     </div>
+                     <div class="card-body  ">
+                         <h3 class="title12_section4 fw-bold text-center "> Une fois inscrit, vous bénéficiez d’un
+                             accès à vie aux évolutions et mises à jour du contenu</h3>
+                         <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+                         <p class="text-center"> Dans un secteur des télécommunications en perpétuelle évolution et à
+                             rythme accéléré,
+                             TélécomFacile offre à ses étudiants un accès illimité et permanent aux dernières mises à
+                             jour ainsi qu’aux technologies les plus innovantes du marché de l’emploi</p>
+                     </div>
+                 </div>
+             </div>
+             <div class=" col-auto mb-5">
+                 <div class="card_1 mx-auto" style="width: 16rem;">
+                     <div class="icon1_section4_1">
+                         <img src="Images/icon section 4/Rencontres hebdomadaires.png" class="card-img-top1 w-50 "
+                             alt="accee a la vie">
+                     </div>
+                     <div class="card-body  ">
+                         <h5 class="title12_section4 fw-bold  text-center">Des réunions hebdomadaires et régulières
+                             <br> avec le formateur
+                         </h5>
+                         <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+                         <p class="text-center"> Parce qu’à l’Académie TélécomFacile, nous ne nous contentons pas de
+                             créer des solutions
+                             , nous veillons à les offrir sous leur meilleure forme , nous avons mis en place des
+                             réunions hebdomadaires et régulières pour permettre à nos stagiaires de poser toutes
+                             leurs questions et obtenir des réponses claires à leurs préoccupations.
+                         </p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-auto mb-5">
+                 <div class="card_1 mx-auto" style="width: 16rem; ">
+                     <div class="icon1_section4_2">
+                         <img src="Images/icon section 4/Une couverture complète .png" class="card-img-top1 w-50 "
+                             alt="accee a la vie">
+                     </div>
+                     <div class="card-body  ">
+                         <h5 class="title12_section4 fw-bold text-center"> Une couverture complète de tout ce dont
+                             vous avez besoin dans le domaine des télécommunications</h5>
+                         <hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+                         <p class="text-center">Avec une sélection des meilleurs ingénieurs et formateurs, nous avons
+                             mis en place des
+                             formations variées couvrant tous les aspects essentiels du domaine des
+                             télécommunications pour réussir votre insertion sur le marché du travail.
+                             Inutile de vous disperser entre différentes sources : nous avons fait de TélécomFacile
+                             votre référence numéro un. </p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-auto mb-5">
+                 <div class="card_1 mx-auto" style="width: 16rem;">
+                     <div class="icon_section4_3">
+                         <img src="Images/icon section 4/vous etes pret.png" class="card-img-top1 w-50 "
+                             alt="accee a la vie">
+                     </div>
+                     <div class="card-body mb-5">
+                         <h3 class="title1_section4 fw-bold text-center ">Êtes-vous prêt?</h3>
+                         <p class="text-center">Pour construire et développer votre expertise professionnelle avec
+                             nous</p>
+                     </div>
+                     <div class="spinner">
+                         <div></div>
+                         <div></div>
+                         <div></div>
+                         <div></div>
+                         <div></div>
+                         <div></div>
+                     </div>
+                     <div class="button_voir mt-5">
+                         <a href="Tous_les_cours.html"><button> Commencez maintenant</button></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <section class="evenement_gratuit">
+         <div class="row mt-5    justify-content-around text-center">
+             <div class="col-auto">
+                 <div class="card_evenement mx-auto mb-sm-4 mb-3" style="width: 18rem;">
+                     <img src="Images/evenements gratuits/article.png" class="card-img-top" alt="article">
+                     <div class="card-body_evenement mt-5">
+                         <a class="text_evenement text-secondary text-decoration-none "
+                             href="/views/livres_informatique.php">
+                             <h4> Livres <br> en informatique</h4>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-auto">
+                 <div class="card_evenement mx-auto mb-3 " style="width: 18rem;">
+                     <img src="Images/evenements gratuits/faqq.png" class="card-img-top" alt="faq">
+                     <div class="card-body_evenement mt-5">
+                         <a class="text_evenement text-secondary text-decoration-none " href="/views/faq.php">
+                             <h4> Foir aux questions <br> (FAQ)</h4>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-auto">
+                 <div class="card_evenement mx-auto" style="width: 18rem;">
+                     <img src="Images/evenements gratuits/book.png" class="card-img-top" alt="book">
+                     <div class="card-body_evenement  mt-5">
+                         <a class="text_evenement text-secondary text-decoration-none "
+                             href="/views/articles_techniques.php">
+                             <h4>Articles <br> Techniques</h4>
+                         </a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+     <section class="cd py-5 mt-5">
+         <div class="container text-center">
+             <h2 id="titre_temoignages" class="mb-5 fw-bold">Temoignages</h2>
+             <div id="carouselTemoignages" class="carousel slide" data-bs-ride="carousel">
+                 <div class="carousel-inner">
+                     <!-- Témoignage 1 -->
+                     <div class="carousel-item active ">
+                         <div class="testimonial ">
+                             <img class="image_témignage" src="https://randomuser.me/api/portraits/women/44.jpg"
+                                 alt="Claire Dupont">
+                             <blockquote class="blockquote">
+                                 <p>“Un service rapide, professionnel et à l’écoute. Mon site est superbe!”</p>
+                             </blockquote>
+                             <h5 class="mb-1">Claire Dupont</h5>
+                             <div class="stars">
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-half"></i>
+                             </div>
+                         </div>
+                     </div>
+
+                     <!-- Témoignage 2 -->
+                     <div class="carousel-item">
+                         <div class="testimonial">
+                             <img class="image_témignage" src="https://randomuser.me/api/portraits/men/32.jpg"
+                                 alt="Jean Martin">
+                             <blockquote class="blockquote">
+                                 <p>“L’équipe a su comprendre nos besoins et livrer un résultat au top.”</p>
+                             </blockquote>
+                             <h5 class="mb-1">Jean Martin</h5>
+                             <div class="stars">
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star"></i>
+                             </div>
+                         </div>
+                     </div>
+
+                     <!-- Témoignage 3 -->
+                     <div class="carousel-item">
+                         <div class="testimonial">
+                             <img class="image_témignage" src="https://randomuser.me/api/portraits/women/65.jpg"
+                                 alt="Sophie Bernard">
+                             <blockquote class="blockquote">
+                                 <p>“Un accompagnement personnalisé du début à la fin. Merci!”</p>
+                             </blockquote>
+                             <h5 class="mb-1">Sophie Bernard</h5>
+                             <div class="stars">
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                                 <i class="bi bi-star-fill"></i>
+                             </div>
+                         </div>
+                     </div>
+
+                 </div>
+
+                 <!-- Contrôles -->
+                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages"
+                     data-bs-slide="prev">
+                     <span class="carousel-control-prev-icon"></span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages"
+                     data-bs-slide="next">
+                     <span class="carousel-control-next-icon"></span>
+                 </button>
+             </div>
+         </div>
+     </section>
+     <section class="newsletter text-bg-secondary">
+         <div class="row mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
+             <div class="col-auto">
+                 <div class="text_newsletter">
+                     <h4>Rejoignez plus de 
+                         5 000
+                         personnes
+                         abonnés à la newsletter</h4>
+                     <p>Une newsletter hebdomadaire contenant les mises à jour les plus importantes de TélécomFacilec
+                         dans le monde de l’ingénierie TIC</p>
+                 </div>
+             </div>
+             <div class="col-auto">
+                 <form class=" form_newsletter text-center  ">
+                     <h6 class="fw-bold p-4 text-bg-secondary text-warning">Abonnez-vous maintenant à notre
+                         newsletter</h6>
+                     <div class="email p-4 mb-3">
+                         <i class="bi bi-envelope-fill text-secondary" width="30" height="30"></i> <br><br>
+                         <!-- <p>Entrez votre adresse email</p> -->
+                         <input class="bg-body-light p-2 border-2 " type="email"
+                             placeholder="Entrez votre adresse email">
+                     </div>
+                     <div class="nom p-2 mb-5">
+                         <i class="bi bi-person-fill text-secondary "></i> <br> <br>
+                         <input class="bg-body-light p-2 border-2" type="text" placeholder="Entrez votre nom">
+                     </div>
+
+                     <button id="btn_newsletter" type="button" class="btn btn-secondary  mb-4">Abonnez-vous</button>
+
+
+                 </form>
+             </div>
+
+     </section>
+ </main>
+ <?php
+    include 'views/footer.php';
+    ?>
