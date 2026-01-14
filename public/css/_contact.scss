@@ -1,12 +1,12 @@
 .créer_compte{
-  color: $button;
+  color: $white;
   margin-top: 20px;
   font-weight: bolder;
 }
 .form_contact {
   background-color: $secondary;
   //   text-align: center;
-  width: 350px;
+  width: 400px;
   margin: 60px auto;
   padding: 20px;
  border-radius: 20px;
@@ -38,30 +38,9 @@
   height: 600px; // Add a height to make the image visible
 }
 
-@keyframes slider {
-  0% {
-    background-image: url(/Images/image\ accueille.png);
-  }
-  25% {
-    background-image: url(https://images.unsplash.com/photo-1661332549696-7367960fcd42?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
-  }
-  50% {
-    background-image: url(https://images.unsplash.com/photo-1661332549696-7367960fcd42?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
-  }
-  100% {
-    background-image: url(https://images.unsplash.com/photo-1703113690885-8caf0c77a7cf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
-  }
-}
-
- @media screen and (max-width: 768px) {
-  .main_compte {
-    grid-template-columns: 1fr;
-  }
  
-}
-.dark-mode .créer_compte{
-  color: $white;
-}
+
+  
 
 
 
@@ -77,54 +56,14 @@
 
 // page contactez-nous
 
-.section_formaulaire_contact{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-
-}
-.images_contact{
-   display: flex;
-   flex-wrap: wrap;
-   width: 800px;
-   
+ 
 
    
-}
-.image_contact {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  margin: 20px auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
+
+ 
 
 /* الطبقة التي تقوم بالأنيميشن */
-.image_contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  animation: imageSlideshow 15s ease-in-out infinite;
-  z-index: 0;
-  transform: scale(1);
-  transition: transform 2s ease-in-out;
-}
-
-/* طبقة التعتيم الخفيف لزيادة وضوح النص فوق الصورة */
-.image_contact::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.4));
-  border-radius: 20px;
-  z-index: 1;
-}
+ 
 
 @keyframes imageSlideshow {
   0% {
@@ -162,30 +101,23 @@
     .formaulair_contact {
         display: flex;
         width: 400px;
-        margin: 30px;
+        padding: 10px;
         flex-direction: column;
-        // gap: 10px;
-       
         background-color: $secondary;
         color: $white;
-        padding: 30px;
         border-radius: 20px;
+      }
+       
+       
         
-    }
+        
     .textarea{
-      height: 200px;
+      height: 100px;
     }
 
 
 
-    .dark-mode input{
-      background-color: $evenement;
-      color: $secondary;
-    }
-    .dark-mode textarea{
-      background-color: $evenement;
-      color: $secondary;
-    }
+    
 
 
 

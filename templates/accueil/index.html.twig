@@ -6,7 +6,7 @@
 {% block body %}
 	<main class="main_accueil">
 		<section class="section1_accueil">
-			<button onclick="changerMode()" id="modeButton">🌙</button>
+			<button class="mt-2" onclick="changerMode()" id="modeButton">🌙</button>
 			<div class="container1-section1">
 				<h1 class="h1_accueil ">Élevez votre carrière professionnelle
 					<br>
@@ -15,56 +15,70 @@
 				</h1>
 				<h4 class="h4_accueil">Plus de 20 cours en ligne</h4>
 			</div>
-			<form id="input-group" class="input-group w-50 flex-nowrap" action={{ path('cours') }} method="get">
-				<button id="rech" class="btn btn-warning fw-semibold" type="submit">
-					Rechercher
-				</button>
-				<input type="search" name="q" class="form-control input_recherche" placeholder="Rechercher un cours (5G, fibre, IoT, CCNA...)">
-			</form>
-			<div class="container2-section1">
-				<div class="row  mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
-					<div class=" col-auto mb-sm-4">
-						<img class="w-50" src="Images/Accès à vie.png" alt="">
-						<div class="text_container2">
-							<h5>Accès à vie</h5>
-							<p>
-								Apprenez à tout moment et depuis n’importe où,<br>
-								et accédez à vos formations dès
-								<br>que
-																								                             vous en avez besoin.
-							</p>
-						</div>
-					</div>
-					<div class="col-auto mb-sm-4">
-						<img class="w-25" src="Images/Formation dispensée par des experts.png" alt="">
-						<div class="text_container2">
-							<h5>
-								Apprentissage avec des experts</h5>
-							<p>Formateurs certifiés avec
-								<br>
-								une vaste expérience pratique dans les plus
-								<br>
-								grandes
-																								                             entreprises
-																								                             informatiques.</p>
-						</div>
-					</div>
-					<div class="col-auto mb-4">
-						<img class="w-50 text-center" src="Images/Plus de 20 formations en ligne.png" alt="">
-						<div class="text_container2">
-							<h5>
-								Plus de 20 formations en ligne</h5>
-							<p>
-								Une vaste bibliothèque couvrant les technologies
-								<br>
-								les plus récentes dans le domaine
-																								                             des
-								<br>
-								télécommunications et de l’informatique.</p>
-						</div>
+			<form id="input-group" action="{{ path('cours') }}" method="get" class="w-75 mx-auto mb-5">
+				<div class="d-flex justify-content-center">
+					<div class="input-group search-box">
+
+						<input type="search" name="q" class="form-control" placeholder="Rechercher un cours (5G, Fibre, IoT, CCNA...) ">
+
+						<button class="btn btn-warning fw-semibold px-4" type="submit">
+							🔍 Rechercher
+						</button>
+
 					</div>
 				</div>
+			</form>
+
+
+			<div class="container py-4 pm-5">
+				<div
+					class="row g-4 justify-content-center text-center">
+
+					<!-- Item 1 -->
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="h-100 p-3">
+							<img class="img-fluid mb-3 feature-img" src="Images/Accès à vie.png" alt="Accès à vie">
+							<div class="text_container2">
+								<h5 class="fw-semibold">Accès à vie</h5>
+								<p class="mb-0">
+									Apprenez à tout moment et depuis n’importe où,
+									            et accédez à vos cours dès que vous en avez besoin.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item 2 -->
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="h-100 p-3">
+							<img class="img-fluid mb-3 feature-img-sm" src="Images/Formation dispensée par des experts.png" alt="Apprentissage avec des experts">
+							<div class="text_container2">
+								<h5 class="fw-semibold">Apprentissage avec des experts</h5>
+								<p class="mb-0">
+									Cours certifiés avec une vaste expérience pratique dans les plus grandes
+									            entreprises informatiques.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<!-- Item 3 -->
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="h-100 p-3">
+							<img class="img-fluid mb-3 feature-img" src="Images/Plus de 20 formations en ligne.png" alt="Plus de 20 formations en ligne">
+							<div class="text_container2">
+								<h5 class="fw-semibold">Plus de 20 formations en ligne</h5>
+								<p class="mb-0">
+									Une vaste bibliothèque couvrant les technologies les plus récentes dans le domaine
+									            des télécommunications et de l’informatique.
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
+
 		</section>
 		<section class="section2_accueil">
 			<div class="text_section2">
@@ -73,338 +87,342 @@
 				</h2>
 				<p class="p_section2">
 					Nos cours couvrent un large éventail de domaines gravitant autour de
-															                 l’informatique et des telecoms.</p>
+																																								                 l’informatique et des telecoms.</p>
 			</div>
 			<div class="buttun_section2_accueil">
 				<div class="button_group_section2">
-					<div class="button_voir">
-						<a href={{ path('cours_best') }}>
-							<button>Nos meilleures cours</button>
+					<div>
+						<a class="button-cours p-2" href={{ path('cours_best') }}>
+							Nos meilleures cours
 						</a>
 					</div>
-					<div class="button_voir">
-						<a href={{ path('cours_new') }}>
-							<button>Nos nouveaux cours</button>
-						</a>
-					</div>
+
 				</div>
-				<div class="button_voir">
-					<a href={{ path('cours_populaire') }}>
-						<button>Nos cours populaires</button>
+				<div>
+					<a class="button-cours p-2" href={{ path('cours_new') }}>
+						Nos nouveaux cours
 					</a>
 				</div>
 			</div>
 		</section>
-		<section class="section3_accueil">
-			<div class="row   mx-md-auto  justify-content-md-around align-content-center  justify-content-center text-sm-center">
+		<section class="py-4">
+			<div class="container">
+				<div class="row g-4 justify-content-center">
 
-				{% for c in cours %}
-					<div class="col-auto mb-4 tous-cours-card" data-category="all" data-keywords="{{ c.titre|lower }} {{ c.description|default('')|lower }}">
+					{% for c in cours %}
+						<div class="col-12 col-sm-6 col-md-4 col-lg-3 tous-cours-card" data-category="all" data-keywords="{{ c.titre|lower }} {{ c.description|default('')|lower }}">
+							<div class="card h-100 shadow-sm border-2-primary">
 
-						<div
-							class="card_2 mx-auto" style="width: 18rem;height: 33rem;">
+								<img src="/{{ c.image }}" class="card-img-top" alt="{{ c.titre }}" style="height: 235px; object-fit: cover;">
 
-							{# الصورة من DB: أنت خزّنت المسار مثل Images/... أو images/... #}
-							<img src="/{{ c.image }}" class="card-img-top" alt="{{ c.titre }}" height="235">
+								<div class="card-body d-flex flex-column">
 
-							<div class="card-body">
-								<div class="line_star">
-									<span>(15)</span>
-									<div class="star_rating">
-										<i class="bi bi-star-fill text-warning"></i>
-										<i class="bi bi-star-fill text-warning"></i>
-										<i class="bi bi-star-fill text-warning"></i>
-										<i class="bi bi-star-fill text-warning"></i>
-										<i class="bi bi-star-half text-warning"></i>
+									<div class="d-flex align-items-center justify-content-between mb-2">
+										<div class="d-flex align-items-center">
+											<span class="me-1 small text-muted">(15)</span>
+											<div class="small">
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-half text-warning"></i>
+											</div>
+										</div>
+										<span class="fw-semibold">4.5</span>
 									</div>
-									<span>4.5</span>
+
+
+									<a href="{{ path('cours_show', { id: c.id }) }}" class="text-decoration-none text-dark">
+										<h5 class=" mb-2">{{ c.titre }}</h5>
+									</a>
+
+
+									<div class="d-flex align-items-center justify-content-between mb-3">
+										<span class="fw-bold text-primary">{{ c.prix }}€</span>
+										<span class="small text-muted">
+											<i class="bi bi-file-earmark-play me-1"></i>
+											{{ c.nombreLecons }}
+											leçons
+										</span>
+									</div>
+
+
+									<div class="mt-auto">
+										<button type="button" class="btn btn-sm btn-primary w-100 mb-3 js-add-to-panier" data-url="{{ path('panier_add_ajax', { id: c.id }) }}">
+											Ajouter au panier
+											<i class="bi bi-cart-plus ms-1"></i>
+										</button>
+
+
+									</div>
 								</div>
 
-								<a href="">
-									<h5 class="card_2-title">{{ c.titre }}</h5>
-								</a>
 
-								<div class="line_2_time">
-									<span class="price fw-bold">{{ c.prix }}€</span>
-
-
-									<span class="liçon">
-										<i class="bi bi-file-earmark-play text-light"></i>
-										{{ c.nombreLecons }}
-										leçons</span>
-								</div>
-
-								<div class="line_2_price">
-									<button type="button" class="button_ajouter text-light js-add-to-panier" data-url="{{ path('panier_add_ajax', { id: c.id }) }}">
-										 <span class="text_ajouter">Ajouter au <i class="bi bi-cart-plus"></i></span>
-									</button>
-
-
-									<div class="formateur">
-										<img class="image_formateur" src="/Images/Adam.avif" alt="formateur" width="50" height="50">
-									</br>
-									<span class="name">{{ c.formateur }}</span>
+								<div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+									<a href="{{ path('cours_show', { id: c.id }) }}" class="btn btn-outline-primary w-100 btn-sm">
+										Commencer
+									</a>
 								</div>
 							</div>
 						</div>
-
-						{# زر التفاصيل: نستعمل id #}
-						<a class="button_commence" href="{{ path('cours_show', { id: c.id }) }}">Commencer</a>
-
-					</div>
-				</div>
-			{% else %}
-				<p>Aucun cours trouvé.</p>
-			{% endfor %}
-		</div>
-		<div class="button_voir">
-			<a href={{ path('cours') }}>
-				<button>
-					Toutes les formations</button>
-			</a>
-		</div>
-	</section>
-	<section class="section4_accueil">
-		<h2 id="titre_section4">Pourquoi choisir TélécomFacile ?</h2>
-		<div class="row mt-5   mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
-			<div class=" col-auto mb-5">
-				<div class="card_1 mx-auto" style="width: 16rem;">
-					<div class="icon1_section4">
-						<img src="Images/icon section 4/acce a la vie icon.png" class="card-img-top1 w-50 " alt="accee a la vie">
-					</div>
-					<div class="card-body  ">
-						<h3 class="title12_section4 fw-bold text-center ">
-							Une fois inscrit, vous bénéficiez d’un
-																						                             accès à vie aux évolutions et mises à jour du contenu</h3>
-						<hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
-						<p class="text-center">
-							Dans un secteur des télécommunications en perpétuelle évolution et à
-																						                             rythme accéléré,
-																						                             TélécomFacile offre à ses étudiants un accès illimité et permanent aux dernières mises à
-																						                             jour ainsi qu’aux technologies les plus innovantes du marché de l’emploi</p>
-					</div>
-				</div>
-			</div>
-			<div class=" col-auto mb-5">
-				<div class="card_1 mx-auto" style="width: 16rem;">
-					<div class="icon1_section4_1">
-						<img src="Images/icon section 4/Rencontres hebdomadaires.png" class="card-img-top1 w-50 " alt="accee a la vie">
-					</div>
-					<div class="card-body  ">
-						<h5 class="title12_section4 fw-bold  text-center">Des réunions hebdomadaires et régulières
-							<br>
-							avec le formateur
-						</h5>
-						<hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
-						<p class="text-center">
-							Parce qu’à l’Académie TélécomFacile, nous ne nous contentons pas de
-																						                             créer des solutions
-																						                             , nous veillons à les offrir sous leur meilleure forme , nous avons mis en place des
-																						                             réunions hebdomadaires et régulières pour permettre à nos stagiaires de poser toutes
-																						                             leurs questions et obtenir des réponses claires à leurs préoccupations.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-auto mb-5">
-				<div class="card_1 mx-auto" style="width: 16rem; ">
-					<div class="icon1_section4_2">
-						<img src="Images/icon section 4/Une couverture complète .png" class="card-img-top1 w-50 " alt="accee a la vie">
-					</div>
-					<div class="card-body  ">
-						<h5 class="title12_section4 fw-bold text-center">
-							Une couverture complète de tout ce dont
-																						                             vous avez besoin dans le domaine des télécommunications</h5>
-						<hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
-						<p class="text-center">Avec une sélection des meilleurs ingénieurs et formateurs, nous avons
-																						                             mis en place des
-																						                             formations variées couvrant tous les aspects essentiels du domaine des
-																						                             télécommunications pour réussir votre insertion sur le marché du travail.
-																						                             Inutile de vous disperser entre différentes sources : nous avons fait de TélécomFacile
-																						                             votre référence numéro un.
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-auto mb-5">
-				<div class="card_1 mx-auto" style="width: 16rem;">
-					<div class="icon_section4_3">
-						<img src="Images/icon section 4/vous etes pret.png" class="card-img-top1 w-50 " alt="accee a la vie">
-					</div>
-					<div class="card-body mb-5">
-						<h3 class="title1_section4 fw-bold text-center ">Êtes-vous prêt?</h3>
-						<p class="text-center">Pour construire et développer votre expertise professionnelle avec
-																						                             nous</p>
-					</div>
-					<div class="spinner">
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-						<div></div>
-					</div>
-					<div class="button_voir mt-5">
-						<a href={{ path('contact') }}>
-							<button>
-								Commencez maintenant</button>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="evenement_gratuit">
-		<div class="row mt-5    justify-content-around text-center">
-			<div class="col-auto">
-				<div class="card_evenement mx-auto mb-sm-4 mb-3" style="width: 18rem;">
-
-					<img src="Images/evenements gratuits/article.png" class="card-img-top" alt="article">
-					<div class="card-body_evenement mt-5">
-						<a class="text_evenement  text-decoration-none " href={{ path('livres_informatiques') }}>
-							<h4>
-								Livres
-								<br>
-								en informatique</h4>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-auto">
-				<div class="card_evenement mx-auto mb-3 " style="width: 18rem;">
-					<img src="Images/evenements gratuits/faqq.png" class="card-img-top" alt="faq">
-					<div class="card-body_evenement mt-5">
-						<a class="text_evenement  text-decoration-none " href={{ path('faq') }}>
-							<h4>
-								Foir aux questions
-								<br>
-								(FAQ)</h4>
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-auto">
-				<div class="card_evenement mx-auto" style="width: 18rem;">
-					<img src="Images/evenements gratuits/book.png" class="card-img-top" alt="book">
-					<div class="card-body_evenement  mt-5">
-						<a class="text_evenement  text-decoration-none " href={{ path('articles-techniques') }}>
-							<h4>Articles
-								<br>
-								Techniques</h4>
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="cd py-5 mt-5">
-		<div class="container text-center">
-			<h2 id="titre_temoignages" class="mb-5 fw-bold">Temoignages</h2>
-			<div id="carouselTemoignages" class="carousel slide" data-bs-ride="carousel">
-				<div
-					class="carousel-inner">
-					<!-- Témoignage 1 -->
-					<div class="carousel-item active ">
-						<div class="testimonial ">
-							<img class="image_témignage" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Claire Dupont">
-							<blockquote class="blockquote">
-								<p>“Un service rapide, professionnel et à l’écoute. Mon site est superbe!”</p>
-							</blockquote>
-							<h5 class="mb-1">Claire Dupont</h5>
-							<div class="stars">
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-half"></i>
+					{% else %}
+						<div class="col-12">
+							<div class="alert alert-info text-center mb-0">
+								Aucun cours trouvé.
 							</div>
 						</div>
-					</div>
-
-					<!-- Témoignage 2 -->
-					<div class="carousel-item">
-						<div class="testimonial">
-							<img class="image_témignage" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean Martin">
-							<blockquote class="blockquote">
-								<p>“L’équipe a su comprendre nos besoins et livrer un résultat au top.”</p>
-							</blockquote>
-							<h5 class="mb-1">Jean Martin</h5>
-							<div class="stars">
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star"></i>
-							</div>
-						</div>
-					</div>
-
-					<!-- Témoignage 3 -->
-					<div class="carousel-item">
-						<div class="testimonial">
-							<img class="image_témignage" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sophie Bernard">
-							<blockquote class="blockquote">
-								<p>“Un accompagnement personnalisé du début à la fin. Merci!”</p>
-							</blockquote>
-							<h5 class="mb-1">Sophie Bernard</h5>
-							<div class="stars">
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-								<i class="bi bi-star-fill"></i>
-							</div>
-						</div>
-					</div>
+					{% endfor %}
 
 				</div>
 
-				<!-- Contrôles -->
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="next">
-					<span class="carousel-control-next-icon"></span>
-				</button>
-			</div>
-		</div>
-	</section>
-	<section class="newsletter ">
-		<div class="row mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
-			<div class="col-auto">
-				<div class="text_newsletter">
-					<h4>Rejoignez plus de 
-																			                         5 000
-																			                         personnes
-																			                         abonnés à la newsletter</h4>
-					<p>Une newsletter hebdomadaire contenant les mises à jour les plus importantes de TélécomFacilec
-																			                         dans le monde de l’ingénierie TIC</p>
+
+				<div class="text-center mt-4">
+					<a href="{{ path('cours') }}" class="button-cours p-2 ">
+						Toutes les cours
+					</a>
 				</div>
 			</div>
-			<div class="col-auto">
-				<form class=" form_newsletter text-center  ">
-					<h6 class="fw-bold p-4 text-bg-secondary text-warning">Abonnez-vous maintenant à notre
-																			                         newsletter</h6>
-					<div class="email p-4 mb-3">
-						<i class="bi bi-envelope-fill text-secondary" width="30" height="30"></i>
-						<br><br>
-						<!-- <p>Entrez votre adresse email</p> -->
-						<input class="bg-body-light p-2 border-2 " type="email" placeholder="Entrez votre adresse email">
-					</div>
-					<div class="nom p-2 mb-5">
-						<i class="bi bi-person-fill text-secondary "></i>
-						<br>
-						<br>
-						<input class="bg-body-light p-2 border-2" type="text" placeholder="Entrez votre nom">
-					</div>
-
-					<button id="btn_newsletter" type="button" class="btn btn-secondary  mb-4">Abonnez-vous</button>
-
-
-				</form>
-			</div>
-
 		</section>
-	</main>
+		<section class="section4_accueil">
+			<h2 id="titre_section4">Pourquoi choisir TélécomFacile ?</h2>
+			<div class="row mt-5   mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
+				<div class=" col-auto mb-5">
+					<div class="card_1 mx-auto" style="width: 16rem;">
+						<div class="icon1_section4">
+							<img src="Images/icon section 4/acce a la vie icon.png" class="card-img-top1 w-50 " alt="accee a la vie">
+						</div>
+						<div class="card-body  ">
+							<h3 class="title12_section4 fw-bold text-center ">
+								Une fois inscrit, vous bénéficiez d’un
+																							    accès à vie aux évolutions et mises à jour du contenu</h3>
+							<hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+							<p class="text-center">
+								Dans un secteur des communications en perpétuelle évolution et à
+																							     rythme accéléré,
+																							     TélécomFacile offre à ses étudiants un accès illimité et permanent aux dernières mises à
+																							     jour ainsi qu’aux technologies les plus innovantes du marché de l’emploi</p>
+						</div>
+					</div>
+				</div>
+				<div class=" col-auto mb-5">
+					<div class="card_1 mx-auto" style="width: 16rem;">
+						<div class="icon1_section4_1">
+							<img src="Images/icon section 4/Rencontres hebdomadaires.png" class="card-img-top1 w-50 " alt="accee a la vie">
+						</div>
+						<div class="card-body  ">
+							<h5 class="title12_section4 fw-bold  text-center">Des réunions hebdomadaires et régulières
+								<br>
+								avec le formateur
+							</h5>
+							<hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+							<p class="text-center">
+								Parce qu’à l’Académie TélécomFacile, nous ne nous contentons pas de
+																							    créer des solutions
+																							    , nous veillons à les offrir sous leur meilleure forme , nous avons mis en place des
+																							    réunions hebdomadaires et régulières pour permettre à nos stagiaires de poser toutes
+																							    leurs questions et obtenir des réponses claires à leurs préoccupations.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto mb-5">
+					<div class="card_1 mx-auto" style="width: 16rem; ">
+						<div class="icon1_section4_2">
+							<img src="Images/icon section 4/Une couverture complète .png" class="card-img-top1 w-50 " alt="accee a la vie">
+						</div>
+						<div class="card-body  ">
+							<h5 class="title12_section4 fw-bold text-center">
+								Une couverture complète de tout ce dont
+																							 vous avez besoin dans le domaine des télécommunications et de l’informatique</h5>
+							<hr class="text-dark fw-bold border-3 w-50 text-center mx-auto ">
+							<p class="text-center">Avec une sélection des meilleurs ingénieurs et formateurs, nous avons
+																						     mis en place des
+																						    cours variées couvrant tous les aspects essentiels du domaine de l’informatique pour réussir votre insertion sur le marché du travail.
+																					        Inutile de vous disperser entre différentes sources : nous avons fait de TélécomFacile
+																					        votre référence numéro un.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto mb-5">
+					<div class="card_1 mx-auto" style="width: 16rem;">
+						<div class="icon_section4_3">
+							<img src="Images/icon section 4/vous etes pret.png" class="card-img-top1 w-50 " alt="accee a la vie">
+						</div>
+						<div class="card-body mb-5">
+							<h3 class="title1_section4 fw-bold text-center ">Êtes-vous prêt?</h3>
+							<p class="text-center">Pour construire et développer votre expertise professionnelle avec
+																																																												                             nous</p>
+						</div>
+						<div class="spinner">
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<div class="button_voir mt-5">
+							<a href={{ path('contact') }}>
+								<button>
+									Commencez maintenant</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="evenement_gratuit">
+			<div class="row mt-5    justify-content-around text-center">
+				<div class="col-auto">
+					<div class="card_evenement mx-auto mb-sm-4 mb-3" style="width: 18rem;">
 
-{% endblock %}
+						<img src="Images/evenements gratuits/article.png" class="card-img-top" alt="article">
+						<div class="card-body_evenement mt-5">
+							<a class="text_evenement  text-decoration-none " href={{ path('livres_informatiques') }}>
+								<h4>
+									Livres
+									<br>
+									en informatique</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="card_evenement mx-auto mb-3 " style="width: 18rem;">
+						<img src="Images/evenements gratuits/faqq.png" class="card-img-top" alt="faq">
+						<div class="card-body_evenement mt-5">
+							<a class="text_evenement  text-decoration-none " href={{ path('faq') }}>
+								<h4>
+									Foir aux questions
+									<br>
+									(FAQ)</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-auto">
+					<div class="card_evenement mx-auto" style="width: 18rem;">
+						<img src="Images/evenements gratuits/book.png" class="card-img-top" alt="book">
+						<div class="card-body_evenement  mt-5">
+							<a class="text_evenement  text-decoration-none " href={{ path('articles-techniques') }}>
+								<h4>Articles
+									<br>
+									Techniques</h4>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="cd py-5 mt-5">
+			<div class="container text-center">
+				<h2 id="titre_temoignages" class="mb-5 fw-bold">Temoignages</h2>
+				<div id="carouselTemoignages" class="carousel slide" data-bs-ride="carousel">
+					<div
+						class="carousel-inner">
+						<!-- Témoignage 1 -->
+						<div class="carousel-item active ">
+							<div class="testimonial ">
+								<img class="image_témignage" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Claire Dupont">
+								<blockquote class="blockquote">
+									<p>“Un service rapide, professionnel et à l’écoute. Mon site est superbe!”</p>
+								</blockquote>
+								<h5 class="mb-1">Claire Dupont</h5>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-half"></i>
+								</div>
+							</div>
+						</div>
+
+						<!-- Témoignage 2 -->
+						<div class="carousel-item">
+							<div class="testimonial">
+								<img class="image_témignage" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean Martin">
+								<blockquote class="blockquote">
+									<p>“L’équipe a su comprendre nos besoins et livrer un résultat au top.”</p>
+								</blockquote>
+								<h5 class="mb-1">Jean Martin</h5>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star"></i>
+								</div>
+							</div>
+						</div>
+
+						<!-- Témoignage 3 -->
+						<div class="carousel-item">
+							<div class="testimonial">
+								<img class="image_témignage" src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sophie Bernard">
+								<blockquote class="blockquote">
+									<p>“Un accompagnement personnalisé du début à la fin. Merci!”</p>
+								</blockquote>
+								<h5 class="mb-1">Sophie Bernard</h5>
+								<div class="stars">
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+									<i class="bi bi-star-fill"></i>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<!-- Contrôles -->
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselTemoignages" data-bs-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</button>
+				</div>
+			</div>
+		</section>
+		<section class="newsletter ">
+			<div class="row mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
+				<div class="col-auto">
+					<div class="text_newsletter">
+						<h4>Rejoignez plus de 
+																																																				                         5 000
+																																																				                         personnes
+																																																				                         abonnés à la newsletter</h4>
+						<p>Une newsletter hebdomadaire contenant les mises à jour les plus importantes de TélécomFacilec
+																																																				                         dans le monde de l’ingénierie TIC</p>
+					</div>
+				</div>
+				<div class="col-auto">
+					<form class=" form_newsletter text-center  ">
+						<h6 class="fw-bold p-4 text-bg-secondary text-warning">Abonnez-vous maintenant à notre
+																																																				                         newsletter</h6>
+						<div class="email p-4 mb-3">
+							<i class="bi bi-envelope-fill text-secondary" width="30" height="30"></i>
+							<br><br>
+							<!-- <p>Entrez votre adresse email</p> -->
+							<input class="bg-body-light p-2 border-2 " type="email" placeholder="Entrez votre adresse email">
+						</div>
+						<div class="nom p-2 mb-5">
+							<i class="bi bi-person-fill text-secondary "></i>
+							<br>
+							<br>
+							<input class="bg-body-light p-2 border-2" type="text" placeholder="Entrez votre nom">
+						</div>
+
+						<button id="btn_newsletter" type="button" class="btn btn-secondary  mb-4">Abonnez-vous</button>
+
+
+					</form>
+				</div>
+
+			</section>
+		</main>
+
+	{% endblock %}

@@ -1,6 +1,6 @@
-// .text-accent{ color: var(--primary) !important; }
+ 
 
-/* زر رئيسي بنفس هويتك */
+ 
 .btn-accent{
 
       background-color: $secondary;
@@ -13,17 +13,11 @@
   color: $white;
 }
 
-/* خلفية تدرّج من الثانوي إلى الثالثي */
-// .bg-brand-gradient{
-//   background: linear-gradient(135deg, var(--$secondary), var(--$tertiary));
-// }
+ 
 
-/* خلفيات ناعمة للبطاقات والإحصاءات */
-// .bg-soft-accent{
-//   background: color-mix(in srgb, var(--primary) 25%, white);
-// }
+ 
 
-/* تحسينات صغيرة */
+ 
 .rounded-4{ border-radius: 1rem; }
 .object-fit-cover{ object-fit: cover; }
 

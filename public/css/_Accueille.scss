@@ -1,11 +1,18 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-.navbar{
-  background-color: $secondary;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+.header_accueil{
+  background-color:$secondary;
+}
+ 
 .navbar-nav {
   padding: 10px;
+  
 }
  .nav-link.active {
   background-color: $white;
@@ -84,6 +91,19 @@ input::placeholder {
   text-align: center;
   font-weight: bold;
 }
+.search-box{
+    width: 600px;
+    max-width: 100%;
+}
+.search-box input{
+    border-radius: 50px 0 0 50px;
+}
+
+.search-box button{
+    border-radius: 0 50px 50px 0;
+}
+
+
 
 .container2-section1 {
   padding-top: 60px;
@@ -638,13 +658,11 @@ input::placeholder {
 }
 
 .dark-mode .card {
-  background-color: $tertiary;
-  color: white;
+ // background-color: $tertiary;
+  color: black;
 }
 
-.dark-mode a {
-  color: $primary;
-}
+ 
 
 #modeButton:hover {
   background-color: $secondary;
@@ -724,3 +742,51 @@ input::placeholder {
     border: 1px solid $white;
 }
 
+
+
+
+.button_ajouter {
+  background-color: $secondary;
+  padding: 5px 10px;
+  border: 1px solid $white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button_ajouter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13,110,253,0.3);
+}
+
+/* عند الإضافة */
+.button_ajouter.added {
+  background: linear-gradient(135deg, #198754, #146c43);
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.page-cours-show {
+  background-color: $secondary;
+  color: $white;
+}
+
+
+
+ .nom_lecon{
+    color:black;
+    
+}
+
+
+.dark-mode .mode_dark{
+    background-color: $button;
+    color: $white;
+}

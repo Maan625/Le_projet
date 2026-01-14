@@ -12070,7 +12070,13 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header_accueil {
   background-color: #00162B;
 }
 
@@ -12152,6 +12158,19 @@ input::-moz-placeholder {
 input::placeholder {
   text-align: center;
   font-weight: bold;
+}
+
+.search-box {
+  width: 600px;
+  max-width: 100%;
+}
+
+.search-box input {
+  border-radius: 50px 0 0 50px;
+}
+
+.search-box button {
+  border-radius: 0 50px 50px 0;
 }
 
 .container2-section1 {
@@ -12693,12 +12712,7 @@ input::placeholder {
 }
 
 .dark-mode .card {
-  background-color: #154875;
-  color: white;
-}
-
-.dark-mode a {
-  color: #FFFD55;
+  color: black;
 }
 
 #modeButton:hover {
@@ -12779,6 +12793,53 @@ input::placeholder {
   border: 1px solid #FFFFFF;
 }
 
+.button_ajouter {
+  background-color: #00162B;
+  padding: 5px 10px;
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.button_ajouter:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+}
+
+/* عند الإضافة */
+.button_ajouter.added {
+  background: linear-gradient(135deg, #198754, #146c43);
+  animation: pulse 0.4s ease;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.page-cours-show {
+  background-color: #00162B;
+  color: #FFFFFF;
+}
+
+.nom_lecon {
+  color: black;
+}
+
+.dark-mode .mode_dark {
+  background-color: #B88E00;
+  color: #FFFFFF;
+}
+
 .main_cours {
   background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
   background-color: #ece6e6;
@@ -12832,10 +12893,8 @@ input::placeholder {
 }
 
 .card_2-title {
-  font-weight: bold;
   color: #FFFFFF;
-  font-size: 15px;
-  padding: 10px;
+  font-size: 10px;
 }
 
 .line_2_time {
@@ -12856,15 +12915,36 @@ input::placeholder {
   margin-bottom: 20px;
 }
 
+.button-cours {
+  background-color: #00162B;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+  text-decoration: none;
+}
+
+.button-cours:hover {
+  background-color: #FFFFFF;
+  color: #00162B;
+  padding: 2px 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #B88E00;
+}
+
 .créer_compte {
-  color: #B88E00;
+  color: #FFFFFF;
   margin-top: 20px;
   font-weight: bolder;
 }
 
 .form_contact {
   background-color: #00162B;
-  width: 350px;
+  width: 400px;
   margin: 60px auto;
   padding: 20px;
   border-radius: 20px;
@@ -12896,75 +12976,7 @@ input::placeholder {
   height: 600px;
 }
 
-@keyframes slider {
-  0% {
-    background-image: url(/Images/image\ accueille.png);
-  }
-  25% {
-    background-image: url(https://images.unsplash.com/photo-1661332549696-7367960fcd42?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
-  }
-  50% {
-    background-image: url(https://images.unsplash.com/photo-1661332549696-7367960fcd42?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
-  }
-  100% {
-    background-image: url(https://images.unsplash.com/photo-1703113690885-8caf0c77a7cf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=687);
-  }
-}
-@media screen and (max-width: 768px) {
-  .main_compte {
-    grid-template-columns: 1fr;
-  }
-}
-.dark-mode .créer_compte {
-  color: #FFFFFF;
-}
-
-.section_formaulaire_contact {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.images_contact {
-  display: flex;
-  flex-wrap: wrap;
-  width: 800px;
-}
-
-.image_contact {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  margin: 20px auto;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-}
-
 /* الطبقة التي تقوم بالأنيميشن */
-.image_contact::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  animation: imageSlideshow 15s ease-in-out infinite;
-  z-index: 0;
-  transform: scale(1);
-  transition: transform 2s ease-in-out;
-}
-
-/* طبقة التعتيم الخفيف لزيادة وضوح النص فوق الصورة */
-.image_contact::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
-  border-radius: 20px;
-  z-index: 1;
-}
-
 @keyframes imageSlideshow {
   0% {
     background-image: url(../Images/image\ accueille.png);
@@ -12999,26 +13011,15 @@ input::placeholder {
 .formaulair_contact {
   display: flex;
   width: 400px;
-  margin: 30px;
+  padding: 10px;
   flex-direction: column;
   background-color: #00162B;
   color: #FFFFFF;
-  padding: 30px;
   border-radius: 20px;
 }
 
 .textarea {
-  height: 200px;
-}
-
-.dark-mode input {
-  background-color: #f2f2f2;
-  color: #00162B;
-}
-
-.dark-mode textarea {
-  background-color: #f2f2f2;
-  color: #00162B;
+  height: 100px;
 }
 
 .main_connexion {
@@ -13096,85 +13097,6 @@ input::placeholder {
   color: #00162B;
 }
 
-.déscription_du_cours {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 80px;
-  gap: 10px;
-}
-
-.card_de_cours {
-  width: 350px;
-  height: 450px;
-  margin: 30px;
-  position: sticky;
-  top: 20px;
-}
-
-aside {
-  margin-bottom: 40px;
-}
-
-.card-text {
-  text-align: left;
-  font-size: 14px;
-  color: #FFFFFF;
-  padding: 10px;
-}
-
-.card--body {
-  background-color: #00162B;
-  padding: 10px;
-}
-
-.span_cours {
-  color: #B88E00;
-}
-
-.titre_card_description {
-  text-align: center;
-  color: #B88E00;
-  background-color: #00162B;
-  padding: 10px;
-}
-
-.para_card_description {
-  background-color: #00162B;
-  color: #FFFFFF;
-  font-size: 14px;
-  padding: 10px;
-  width: 700px;
-}
-
-.card_description_cours {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .déscription_du_cours {
-    display: flex;
-    flex-direction: column;
-    -moz-columns: 1;
-         columns: 1;
-    align-items: center;
-  }
-  .para_card_description {
-    width: 100%;
-  }
-  article {
-    order: 2;
-  }
-  aside {
-    order: 1;
-    margin-bottom: 80px;
-  }
-}
-.dark-mode .button_tous_cours {
-  border: 1px solid #FFFFFF;
-  background-color: #00162B;
-}
-
-/* زر رئيسي بنفس هويتك */
 .btn-accent {
   background-color: #00162B;
   color: #FFFFFF;
@@ -13187,9 +13109,6 @@ aside {
   color: #FFFFFF;
 }
 
-/* خلفية تدرّج من الثانوي إلى الثالثي */
-/* خلفيات ناعمة للبطاقات والإحصاءات */
-/* تحسينات صغيرة */
 .rounded-4 {
   border-radius: 1rem;
 }
@@ -13234,63 +13153,6 @@ aside {
 }
 
 .dark-mode #titre_temoignages {
-  color: #FFFFFF;
-}
-
-.bg-brand-gradient {
-  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
-}
-
-.object-fit-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
-/* بادج للمجالات التقنية */
-.badge-theme {
-  background-color: var(--primary);
-  color: var(--secondary);
-  font-weight: 600;
-}
-
-/* حالة إخفاء عند الفلترة */
-.article-card.d-none {
-  display: none !important;
-}
-
-.btn_lire {
-  background-color: #00162B;
-  color: #FFFFFF;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-
-.btn_lire:hover,
-.btn_lire:focus {
-  background-color: #B88E00;
-  color: #FFFFFF;
-}
-
-.dark-mode .article_affiche {
-  color: #000000;
-}
-
-.dark-mode .btn_lire {
-  color: #FFFFFF;
-}
-
-.dark-mode .btn_filter {
-  background-color: #FFFFFF;
-  color: #000000;
-}
-
-.dark-mode .btn_filter:hover,
-.dark-mode .btn_filter:focus {
-  background-color: #B88E00;
-  color: #FFFFFF;
-}
-
-.dark-mode .text-article {
   color: #FFFFFF;
 }
 

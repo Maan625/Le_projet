@@ -73,6 +73,9 @@ class PanierController extends AbstractController
         $session->set('panier', $panier);
 
         return $this->json([
+            'seccess' => true,
+             'type' => 'success',
+            'message' => 'Le cours a bien ajouté au panier',
             'count' => array_sum($panier),
         ]);
     }

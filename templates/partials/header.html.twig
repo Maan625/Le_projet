@@ -12,12 +12,12 @@
 	<!-- body -->
 
 	<body>
-		<header class="header_accueil">
+		<header class="header_accueil sticky-top">
 
-			<nav class="navbar navbar-expand-lg ">
+			<nav class="navbar navbar-expand-lg sticky-top ">
 				{% set currentRoute = app.request.attributes.get('_route') %}
 				<div class="container-fluid">
-					<a class="navbar-brand " href="#"><img src="{{ asset('images/logo.png') }}" alt="logo" width="80" height="80"></a>
+					<a class="navbar-brand " href="{{ path('accueil') }}"><img src="{{ asset('images/logo.png') }}" alt="logo" width="80" height="80"></a>
 					<button class="navbar-toggler text-white text-bg-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon "></span>
 					</button>
@@ -43,7 +43,7 @@
 									<li>
 										<a class="link_drop" href={{ path('cours_informatique') }}>
 											cours en Réseaux
-																																																							                                        informatiques</a>
+																																																																		                                        informatiques</a>
 									</li>
 									<li>
 										<a class="link_drop" href={{ path('cours') }}>tous les cours</a>
@@ -89,8 +89,12 @@
 				</div>
 			</nav>
 		</header>
+     <div id="toast-container"
+     class="toast-container position-fixed top-0 end-0 p-3"
+     style="z-index: 1100;">
+</div>
 
 
-	 
+
 	</body>
 </html>

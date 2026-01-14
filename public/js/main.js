@@ -1,3 +1,6 @@
+
+
+
 function changerMode() {
     const body = document.body; // Récupère l'élément <body> de la page
 
@@ -61,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let hasScrolledOnce = false; // عشان ما يكرر السْكرول كثير
 
     function applyFilters(options = {}) {
-        const { scroll = false } = options;
+      //  const { scroll = false } = options;
 
         const activeFilterBtn = document.querySelector(".filter-btn.active");
         const categoryFilter = activeFilterBtn
@@ -72,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         cards.forEach((card) => {
             const cardCategory = card.getAttribute("data-category");
-            const title = card.querySelector("h3").innerText.toLowerCase();
+            const title = card.querySelector("h3").textContent.toLowerCase();
             const keywords = (
                 card.getAttribute("data-keywords") || ""
             ).toLowerCase();
@@ -90,10 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        if (scroll && term !== "" && articlesSection && !hasScrolledOnce) {
-            articlesSection.scrollIntoView({ behavior: "smooth" });
-            hasScrolledOnce = true;
-        }
+       
 
         if (term === "") {
             hasScrolledOnce = false;
@@ -277,20 +277,28 @@ document.addEventListener('click', async (e) => {
   try {
     const res = await fetch(url, {
       method: 'POST',
-      headers: { 'X-Requested-With': 'XMLHttpRequest' }
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+      }
     });
 
     if (!res.ok) return;
 
-    const data = await res.json(); // { count: ... }
+    const data = await res.json();
+     btn.classList.add('added');
+    btn.textContent = '✔ Ajouté';
 
+    // تحديث العداد
     const badge = document.getElementById('panier-count-badge');
     const countEl = document.getElementById('panier-count');
 
-    countEl.textContent = data.count;
+    if (countEl) {
+      countEl.textContent = data.count;
+      badge.style.display = data.count > 0 ? 'inline-block' : 'none';
+    }
 
-    if (data.count > 0) badge.style.display = 'inline-block';
-    else badge.style.display = 'none';
+    // ✅ رسالة النجاح
+    showToast(data.message);
 
   } catch (err) {
     console.error(err);
@@ -300,5 +308,50 @@ document.addEventListener('click', async (e) => {
 
 
 
+
+//ajouter un message success 
+
+function showToast(message) {
+  const container = document.getElementById('toast-container');
+  if (!container) return;
+
+  const toastEl = document.createElement('div');
+  toastEl.className = 'toast align-items-center text-bg-success border-0';
+  toastEl.setAttribute('role', 'alert');
+  toastEl.setAttribute('aria-live', 'assertive');
+  toastEl.setAttribute('aria-atomic', 'true');
+
+  toastEl.innerHTML = `
+    <div class="d-flex">
+      <div class="toast-body">${message}</div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  `;
+
+  container.appendChild(toastEl);
+
+  const toast = new bootstrap.Toast(toastEl, {
+    delay: 2000
+  });
+
+  toast.show();
+
+  toastEl.addEventListener('hidden.bs.toast', () => {
+    toastEl.remove();
+  });
+}
+
+
+console.log('hello');
+
+
+ 
+
+
+ 
+
  
  
+ 
+ 
+
