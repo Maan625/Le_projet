@@ -1,6 +1,3 @@
-
-
-
 function changerMode() {
     const body = document.body; // Récupère l'élément <body> de la page
 
@@ -48,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         },
-        { threshold: 0.5 }
+        { threshold: 0.5 },
     );
 
     counters.forEach((c) => io.observe(c));
@@ -64,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let hasScrolledOnce = false; // عشان ما يكرر السْكرول كثير
 
     function applyFilters(options = {}) {
-      //  const { scroll = false } = options;
+        //  const { scroll = false } = options;
 
         const activeFilterBtn = document.querySelector(".filter-btn.active");
         const categoryFilter = activeFilterBtn
@@ -92,8 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.classList.add("d-none");
             }
         });
-
-       
 
         if (term === "") {
             hasScrolledOnce = false;
@@ -147,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function applyLivreFilters() {
         const activeFilterBtn = document.querySelector(
-            ".livre-filter-btn.active"
+            ".livre-filter-btn.active",
         );
         const categoryFilter = activeFilterBtn
             ? activeFilterBtn.getAttribute("data-filter")
@@ -192,9 +187,6 @@ document.addEventListener("DOMContentLoaded", () => {
     applyLivreFilters();
 });
 
- 
- 
-
 // recherche et filtrage dans  la page tous les cours
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -205,32 +197,51 @@ document.addEventListener("DOMContentLoaded", () => {
     if (tousSearch && tousFilterBtns.length && tousCards.length) {
         function applyTousCoursFilters() {
             const activeBtn = document.querySelector(
-                ".tous-cours-filter-btn.active"
+                ".tous-cours-filter-btn.active",
             );
-            const filter = activeBtn
+            const filterRaw = activeBtn
                 ? activeBtn.getAttribute("data-filter")
                 : "all";
+
+            // filters array (e.g. ["5g","coeur-reseau"])
+            const filters =
+                !filterRaw || filterRaw === "all"
+                    ? ["all"]
+                    : filterRaw
+                          .split(",")
+                          .map((s) => s.trim())
+                          .filter(Boolean);
+
             const term = tousSearch.value.trim().toLowerCase();
 
             tousCards.forEach((card) => {
-                const cat = card.getAttribute("data-category");
+                // card categories array (supports "cat1,cat2" too)
+                const cardCatRaw = card.getAttribute("data-category") || "";
+                const cardCats = cardCatRaw
+                    .split(",")
+                    .map((s) => s.trim())
+                    .filter(Boolean);
+
                 const text = (
                     card.innerText +
                     " " +
                     (card.getAttribute("data-keywords") || "")
                 ).toLowerCase();
 
-                const matchCategory = filter === "all" || cat === filter;
+                const matchCategory =
+                    filters.includes("all") ||
+                    cardCats.some((c) => filters.includes(c));
+
                 const matchSearch = term === "" || text.includes(term);
 
-                if (matchCategory && matchSearch) {
-                    card.classList.remove("d-none");
-                } else {
-                    card.classList.add("d-none");
-                }
+                card.classList.toggle(
+                    "d-none",
+                    !(matchCategory && matchSearch),
+                );
             });
         }
 
+        // clicks
         tousFilterBtns.forEach((btn) => {
             btn.addEventListener("click", () => {
                 tousFilterBtns.forEach((b) => b.classList.remove("active"));
@@ -239,14 +250,10 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
+        // search typing
         tousSearch.addEventListener("input", applyTousCoursFilters);
 
-        const params = new URLSearchParams(window.location.search);
-        const q = params.get("q");
-        if (q) {
-            tousSearch.value = q;
-        }
-
+        // initial
         applyTousCoursFilters();
     }
 });
@@ -260,98 +267,74 @@ document.querySelectorAll(".tous-cours-card").forEach((card) => {
     }
 });
 
+document.addEventListener("click", async (e) => {
+    const btn = e.target.closest(".js-add-to-panier");
+    if (!btn) return;
 
+    e.preventDefault();
 
+    const url = btn.dataset.url;
 
+    try {
+        const res = await fetch(url, {
+            method: "POST",
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",
+            },
+        });
 
+        if (!res.ok) return;
 
+        const data = await res.json();
+        btn.classList.add("added");
+        btn.textContent = "✔ Ajouté";
 
-document.addEventListener('click', async (e) => {
-  const btn = e.target.closest('.js-add-to-panier');
-  if (!btn) return;
+        // تحديث العداد
+        const badge = document.getElementById("panier-count-badge");
+        const countEl = document.getElementById("panier-count");
 
-  e.preventDefault();
+        if (countEl) {
+            countEl.textContent = data.count;
+            badge.style.display = data.count > 0 ? "inline-block" : "none";
+        }
 
-  const url = btn.dataset.url;
-
-  try {
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'X-Requested-With': 'XMLHttpRequest'
-      }
-    });
-
-    if (!res.ok) return;
-
-    const data = await res.json();
-     btn.classList.add('added');
-    btn.textContent = '✔ Ajouté';
-
-    // تحديث العداد
-    const badge = document.getElementById('panier-count-badge');
-    const countEl = document.getElementById('panier-count');
-
-    if (countEl) {
-      countEl.textContent = data.count;
-      badge.style.display = data.count > 0 ? 'inline-block' : 'none';
+        // ✅ رسالة النجاح
+        showToast(data.message);
+    } catch (err) {
+        console.error(err);
     }
-
-    // ✅ رسالة النجاح
-    showToast(data.message);
-
-  } catch (err) {
-    console.error(err);
-  }
 });
 
-
-
-
-
-//ajouter un message success 
+//ajouter un message success
 
 function showToast(message) {
-  const container = document.getElementById('toast-container');
-  if (!container) return;
+    const container = document.getElementById("toast-container");
+    if (!container) return;
 
-  const toastEl = document.createElement('div');
-  toastEl.className = 'toast align-items-center text-bg-success border-0';
-  toastEl.setAttribute('role', 'alert');
-  toastEl.setAttribute('aria-live', 'assertive');
-  toastEl.setAttribute('aria-atomic', 'true');
+    const toastEl = document.createElement("div");
+    toastEl.className = "toast align-items-center text-bg-success border-0";
+    toastEl.setAttribute("role", "alert");
+    toastEl.setAttribute("aria-live", "assertive");
+    toastEl.setAttribute("aria-atomic", "true");
 
-  toastEl.innerHTML = `
+    toastEl.innerHTML = `
     <div class="d-flex">
       <div class="toast-body">${message}</div>
       <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
     </div>
   `;
 
-  container.appendChild(toastEl);
+    container.appendChild(toastEl);
 
-  const toast = new bootstrap.Toast(toastEl, {
-    delay: 2000
-  });
+    const toast = new bootstrap.Toast(toastEl, {
+        delay: 2000,
+    });
 
-  toast.show();
+    toast.show();
 
-  toastEl.addEventListener('hidden.bs.toast', () => {
-    toastEl.remove();
-  });
+    toastEl.addEventListener("hidden.bs.toast", () => {
+        toastEl.remove();
+    });
 }
 
-
-console.log('hello');
-
-
- 
-
-
- 
-
- 
- 
- 
- 
-
+console.count("PANIER_HANDLER");

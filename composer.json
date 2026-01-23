@@ -12,14 +12,20 @@
         "doctrine/doctrine-bundle": "^3.2.2",
         "doctrine/doctrine-migrations-bundle": "^4.0",
         "doctrine/orm": "^3.6.1",
+        "easycorp/easyadmin-bundle": "^4.27",
         "symfony/asset": "7.4.*",
         "symfony/console": "7.4.*",
         "symfony/dotenv": "7.4.*",
         "symfony/flex": "^2.10",
+        "symfony/form": "7.4.*",
         "symfony/framework-bundle": "7.4.*",
+        "symfony/http-client": "7.4.*",
+        "symfony/mailer": "7.4.*",
         "symfony/runtime": "7.4.*",
         "symfony/security-bundle": "7.4.*",
-        "symfony/yaml": "7.4.*"
+        "symfony/validator": "7.4.*",
+        "symfony/yaml": "7.4.*",
+        "symfonycasts/reset-password-bundle": "^1.24"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^4.3.1",

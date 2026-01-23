@@ -36,7 +36,7 @@
 									<tr>
 										<td>
 											{% if c.image %}
-												<img src="{{ c.image }}" class="rounded border" style="width:70px;height:50px;object-fit:cover;">
+												<img src="{{ asset('images/cours/' ~ c.image) }}" class="rounded border" style="width:70px;height:50px;object-fit:cover;">
 											{% else %}
 												<div class="bg-light border rounded" style="width:70px;height:50px;"></div>
 											{% endif %}

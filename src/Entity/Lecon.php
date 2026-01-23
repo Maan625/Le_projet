@@ -93,4 +93,11 @@ class Lecon
 
         return $this;
     }
+ 
+public function getTitle(): ?string
+{
+    return $this->titre;
+
+
+}
 }

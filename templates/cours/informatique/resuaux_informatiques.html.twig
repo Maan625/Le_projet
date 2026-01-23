@@ -32,11 +32,11 @@
                         <button class="btn btn-sm btn-outline-dark active tous-cours-filter-btn" data-filter="all">
                             Tous
                         </button>
-                        <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="5g,coeur-reseau">
-                            5G &amp; cœur de réseau
+                        <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="coeur-reseau">
+                             Cœur de réseau
                         </button>
-                        <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="reseaux-mobiles,sans-fil">
-                            Informatique
+                       <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="reseaux informatique">
+                             Réseaux informatique
                         </button>
                         <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="reseaux-entreprise">
                             Réseaux d’entreprise
@@ -44,6 +44,9 @@
                         <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="iot,voip">
                             IoT &amp; VoIP
                         </button>
+                        	<button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="outils,logiciels">
+									Outils &amp; logiciels
+								</button>
                     </div>
                 </div>
 
@@ -75,13 +78,13 @@
                 {% for c in cours %}
                     <div
                         class="col-12 col-sm-6 col-md-4 col-lg-3 tous-cours-card"
-                        data-category="all"
+                        data-category="{{ c.tag|default('all')|lower }}"
                         data-keywords="{{ c.titre|lower }} {{ c.description|default('')|lower }}"
                     >
                         <div class="card h-100 shadow-sm border-0">
                             {# صورة الكورس #}
                             <img
-                                src="/{{ c.image }}"
+                                src="{{ asset('images/cours/' ~ c.image) }}"
                                 class="card-img-top"
                                 alt="{{ c.titre }}"
                                 style="height: 235px; object-fit: cover;"

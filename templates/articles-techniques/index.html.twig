@@ -32,7 +32,7 @@
      </section>
 
      <!-- ARTICLE MIS EN AVANT -->
-     <section class="py-5 bg-light">
+     <section class="py-5">
          <div class="container">
              <div class="row g-4 align-items-center">
                  <div class="col-lg-5">
@@ -49,7 +49,7 @@
                          qu’une simple évolution de la 4G. Cet article vous guide à travers
                          les concepts clés, avec des exemples concrets adaptés aux débutants.
                      </p>
-                     <p class="text-muted mb-3 small">
+                     <p class=" mb-3 small">
                          Publié le 10/11/2025 • Temps de lecture : 8 minutes
                      </p>
                      <a href="{{ path('article_technique_show', {slug: 'article-core-5g'}) }}" class="btn_lire fw-semibold text-decoration-none w-50 mx-auto">
@@ -62,24 +62,24 @@
 
      <!-- FILTRES PAR THÈME -->
      <section class="py-3 border-top">
-         <div class="container d-flex flex-wrap gap-2 align-items-center">
+         <div class="container text-bg-dark d-flex flex-wrap gap-2 align-items-center p-2">
              <span class="fw-semibold me-2">Filtrer par thème :</span>
-             <button class="btn_filter btn btn-sm btn-outline-dark active filter-btn" data-filter="all">
+             <button class="btn_filter btn btn-sm btn-outline-light active filter-btn" data-filter="all">
                  Tous
              </button>
-             <button class=" btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="reseaux">
+             <button class=" btn_filter btn btn-sm btn-outline-light filter-btn" data-filter="reseaux">
                  Réseaux IP
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="fibre">
+             <button class="btn_filter btn btn-sm btn-outline-light filter-btn" data-filter="fibre">
                  Fibre optique
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="5g">
+             <button class="btn_filter btn btn-sm btn-outline-light filter-btn" data-filter="5g">
                  5G & mobiles
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="iot">
+             <button class="btn_filter btn btn-sm btn-outline-light filter-btn" data-filter="iot">
                  IoT & objets connectés
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark filter-btn" data-filter="securite">
+             <button class="btn_filter btn btn-sm btn-outline-light filter-btn" data-filter="securite">
                  Sécurité
              </button>
                  <form class="input-group input-group-lg" id="search-form-articles">
@@ -98,7 +98,7 @@
                  <!-- ARTICLE 1 -->
                  <div class="col-md-6 col-lg-4 article-card" data-category="reseaux"
                      data-keywords="tcp ip osi routage switch vlan">
-                     <div class="card h-100 shadow-sm border-1">
+                     <div class="card  h-100 shadow-sm border-1">
                          <div class="card-body d-flex flex-column">
                              <span class="badge badge-theme mb-2">Réseaux IP</span>
                              <h3 class="h5 fw-bold mb-2">
@@ -109,7 +109,7 @@
                                  Différence entre couches, encapsulation, ports, protocoles…
                                  un rappel indispensable pour tout technicien réseau.
                              </p>
-                           <a href="{{ path('article_technique_show', {slug: 'article-osi-tcpip'}) }}" class="btn_lire fw-semibold text-decoration-none w-50 mx-auto">
+                           <a href="{{ path('article_technique_show', {slug: 'article-osi-tcpip'}) }}" class="btn_lire   fw-semibold w-50 mx-auto">
                          Lire l’article complet
                      </a>
                          </div>

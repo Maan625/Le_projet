@@ -4,6 +4,7 @@
 
 {% block body %}
   <main id="main">
+         <button onclick="changerMode()" id="modeButton">🌙</button>
 
      <!-- HERO -->
      <section class="section_présentation py-5 text-white ">
@@ -32,27 +33,27 @@
 
      <!-- FILTRES -->
      <section class=" section_filter py-3  border-top">
-         <div class="container d-flex flex-wrap gap-2 align-items-center">
+         <div class="container d-flex text-bg-dark p-2 text-light flex-wrap gap-2 align-items-center">
              <span class="fw-semibold me-2">Filtrer par thème :</span>
-             <button class="btn_filter btn btn-sm btn-outline-dark active livre-filter-btn" data-filter="all">
+             <button class="btn_filter btn btn-sm btn-outline-light active livre-filter-btn" data-filter="all">
                  Tous
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark livre-filter-btn" data-filter="bases">
+             <button class="btn_filter btn btn-sm btn-outline-light livre-filter-btn" data-filter="bases">
                  Bases réseaux
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark livre-filter-btn" data-filter="fibre">
+             <button class="btn_filter btn btn-sm btn-outline-light livre-filter-btn" data-filter="fibre">
                  Fibre optique
              </button>
-             <button class="btn_filter btn   btn-sm btn-outline-dark livre-filter-btn" data-filter="5g">
+             <button class="btn_filter btn   btn-sm btn-outline-light livre-filter-btn" data-filter="5g">
                  5G & mobiles
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark livre-filter-btn" data-filter="wifi">
+             <button class="btn_filter btn btn-sm btn-outline-light livre-filter-btn" data-filter="wifi">
                  Wi-Fi & sans fil
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark livre-filter-btn" data-filter="securite">
+             <button class="btn_filter btn btn-sm btn-outline-light livre-filter-btn" data-filter="securite">
                  Sécurité réseau
              </button>
-             <button class="btn_filter btn btn-sm btn-outline-dark livre-filter-btn" data-filter="iot">
+             <button class="btn_filter btn btn-sm btn-outline-light livre-filter-btn" data-filter="iot">
                  IoT & télécoms avancées
              </button>
          </div>

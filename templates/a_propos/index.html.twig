@@ -125,40 +125,42 @@
          <div class="container">
              <h2 class="titre_notre_equipe fw-bold text-center mb-4">Notre équipe</h2>
              <div class="row g-4">
+             {% set formateur=["Adam", "Formateur réseaux","10+ ans d'expérience dans les réseaux informatiques"] %}
                   <div class="col-6 col-md-4">
                      <div class="card border-0 shadow-sm h-100 text-center">
                          <div class="p-3">
                              <img src="/Images/Adam.avif" class=" image__formateur" alt="Formatrice réseaux">
                          </div>
                          <div class="card-body">
-                             <h3 class="h6 fw-bold mb-1"></h3>
-                             <p class="text-dark text-bg-warning w-50 mx-auto rounded-2 mb-2">Formatrice Réseaux</p>
-                             <p class="small mb-0">10+ ans d’expérience opérateurs télécom.</p>
+                             <h3 class="h6 fw-bold mb-1">{{formateur[0] }}</h3>
+                             <p class="text-light text-bg-success w-75 mx-auto rounded-2 mb-2">{{formateur[1] }}</p>
+                             <p class="small mb-0">{{formateur[2] }}</p>
                          </div>
                      </div>
                  </div>
                  <div class="col-6 col-md-4">
-                     
+                     {% set formateur=["Nadia zen", "Formatrice télécmmunication","5+ ans d'expérience dans les télécommunications"] %} 
                      <div class="card border-0 shadow-sm h-100 text-center">
                          <div class="p-3">
                              <img src="/Images/Adam.avif" class=" image__formateur" alt="Formatrice réseaux">
                          </div>
                          <div class="card-body">
-                             <h3 class="h6 fw-bold mb-1">Sara Ben</h3>
-                             <p class="text-dark text-bg-warning w-50 mx-auto rounded-2 mb-2">Formatrice Réseaux</p>
-                             <p class="small mb-0">10+ ans d’expérience opérateurs télécom.</p>
+                             <h3 class="h6 fw-bold mb-1">{{formateur[0] }}</h3>
+                             <p class="text-light text-bg-success w-75 mx-auto rounded-2 mb-2">{{formateur[1] }}</p>
+                             <p class="small mb-0">{{formateur[2] }}</p>
                          </div>
                      </div>
                  </div>
                  <div class="col-6 col-md-4">
+                        {% set formateur=["John Doe", "Formateur fibre optique","8+ ans d'expérience dans la fibre optique"] %}
                      <div class="card border-0 shadow-sm h-100 text-center">
                          <div class="p-3">
                              <img src="/Images/Adam.avif" class=" image__formateur" alt="Formatrice réseaux">
                          </div>
                          <div class="card-body">
-                             <h3 class="h6 fw-bold mb-1">Sara Ben</h3>
-                             <p class="text-dark text-bg-warning w-50 mx-auto rounded-2 mb-2">Formatrice Réseaux</p>
-                             <p class="small mb-0">10+ ans d’expérience opérateurs télécom.</p>
+                             <h3 class="h6 fw-bold mb-1">{{formateur[0] }}</h3>
+                             <p class="text-light text-bg-success w-75 mx-auto rounded-2 mb-2">{{formateur[1] }}</p>
+                             <p class="small mb-0">{{formateur[2] }}</p>
                          </div>
                      </div>
                  </div>

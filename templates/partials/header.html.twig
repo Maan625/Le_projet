@@ -42,8 +42,7 @@
 									</li>
 									<li>
 										<a class="link_drop" href={{ path('cours_informatique') }}>
-											cours en Réseaux
-																																																																		                                        informatiques</a>
+											cours en Réseaux informatiques</a>
 									</li>
 									<li>
 										<a class="link_drop" href={{ path('cours') }}>tous les cours</a>
@@ -60,12 +59,34 @@
 									Contactez-Nous
 								</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link {{ currentRoute == 'inscription' ? 'active' : '' }} " aria-current="page" href={{ path('inscription') }}>Nouveau compte</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link {{ currentRoute == 'connexion' ? 'active' : '' }} " aria-current="page" href={{ path('connexion') }}>Connexion</a>
-							</li>
+							{% if app.user %}
+								<li class="nav-item">
+
+
+									<a class="nav-link" href="{{ path('app_logout') }}">
+
+
+										<i class="bi bi-box-arrow-right"></i>
+										Déconnexion
+									</a>
+								</li>
+
+							{% else %}
+
+
+								<li class="nav-item">
+									<a class="nav-link {{ currentRoute == 'inscription' ? 'active' : '' }}" href="{{ path('inscription') }}">
+										Nouveau compte
+									</a>
+								</li>
+
+								<li class="nav-item">
+									<a class="nav-link {{ currentRoute == 'connexion' ? 'active' : '' }}" href="{{ path('connexion') }}">
+										Connexion
+									</a>
+								</li>
+							{% endif %}
+
 							<li class="nav-item">
 								{% set panier = app.session.get('panier') ?? {} %}
 								{% set panierCount = 0 %}
@@ -84,16 +105,20 @@
 
 
 							</li>
+							{%if is_granted('ROLE_ADMIN') %}
+								<li class="nav-item">
+									<a class="nav-link" href="{{ path('admin') }}">
+										<i class="bi bi-speedometer2"></i>
+										Admin
+									</a>
+								</li>
+							{% endif %}
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</header>
-     <div id="toast-container"
-     class="toast-container position-fixed top-0 end-0 p-3"
-     style="z-index: 1100;">
-</div>
-
+		<div id="toast-container" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 1100;"></div>
 
 
 	</body>

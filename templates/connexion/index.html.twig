@@ -4,15 +4,41 @@
 
 {% block body %}
  <main class="main_connexion">
-     <form class="formaulaire_connexion" method="post">
-         <label for="email">Email</label><br>
-         <input type="email" id="email" name="email" required><br>
-         <label for="password">Mot de passe</label><br>
-         <input type="password" id="password" name="password" required><br>
-         <p><a class="text-decoration-none" href="#">Mot de passe oublié ?</a></p>
-         <p>Vous n'avez pas de compte ? <a class="text-decoration-none" href="{{ path('inscription') }}">Inscrivez-vous</a></p>
-         <button class="button-cours w-50 mx-auto text-center mt-3" type="submit">Se connecter</button>
-     </form>
+     <form class="formaulaire_connexion" method="post" action="{{ path('connexion') }}">
+     <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+    
+    {% if error is defined and error %}
+        <div class="alert alert-danger">
+            Email ou mot de passe incorrect
+        </div>
+    {% endif %}
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="password">Mot de passe</label><br>
+    <input type="password" id="password" name="password" required><br>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}">
+
+    <p>
+        <a class="text-decoration-none" href="{{ path('app_forgot_password_request') }}">Mot de passe oublié ?</a>
+    </p>
+
+    <p>
+        Vous n'avez pas de compte ?
+        <a class="text-decoration-none" href="{{ path('inscription') }}">
+            Inscrivez-vous
+        </a>
+    </p>
+
+    <button class="button-cours w-50 mx-auto text-center mt-3" type="submit">
+        Se connecter
+    </button>
+</form>
+
 
  </main>
 {% endblock %}

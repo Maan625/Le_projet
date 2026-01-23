@@ -17,7 +17,7 @@ final class CoursController extends AbstractController
     #[Route('/cours', name: 'cours')]
     public function index(CoursRepository $coursRepository): Response
     {
-        // كل الدورات
+        
         $cours = $coursRepository->findAll();
 
         return $this->render('cours/tout_les_cours.html.twig', [

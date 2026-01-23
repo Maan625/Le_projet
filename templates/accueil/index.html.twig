@@ -87,12 +87,12 @@
 				</h2>
 				<p class="p_section2">
 					Nos cours couvrent un large éventail de domaines gravitant autour de
-																																								                 l’informatique et des telecoms.</p>
+					l’informatique et des telecoms.</p>
 			</div>
 			<div class="buttun_section2_accueil">
 				<div class="button_group_section2">
 					<div>
-						<a class="button-cours p-2" href={{ path('cours_best') }}>
+						<a class="button-cours p-2 w-50" href={{ path('cours_best') }}>
 							Nos meilleures cours
 						</a>
 					</div>
@@ -113,7 +113,7 @@
 						<div class="col-12 col-sm-6 col-md-4 col-lg-3 tous-cours-card" data-category="all" data-keywords="{{ c.titre|lower }} {{ c.description|default('')|lower }}">
 							<div class="card h-100 shadow-sm border-2-primary">
 
-								<img src="/{{ c.image }}" class="card-img-top" alt="{{ c.titre }}" style="height: 235px; object-fit: cover;">
+								<img src="{{ asset('images/cours/' ~ c.image) }}" class="card-img-top" alt="{{ c.titre }}" style="height: 235px; object-fit: cover;">
 
 								<div class="card-body d-flex flex-column">
 
@@ -387,42 +387,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="newsletter ">
-			<div class="row mx-md-auto  justify-content-md-around  justify-content-center text-sm-center">
-				<div class="col-auto">
-					<div class="text_newsletter">
-						<h4>Rejoignez plus de 
-																																																				                         5 000
-																																																				                         personnes
-																																																				                         abonnés à la newsletter</h4>
-						<p>Une newsletter hebdomadaire contenant les mises à jour les plus importantes de TélécomFacilec
-																																																				                         dans le monde de l’ingénierie TIC</p>
-					</div>
-				</div>
-				<div class="col-auto">
-					<form class=" form_newsletter text-center  ">
-						<h6 class="fw-bold p-4 text-bg-secondary text-warning">Abonnez-vous maintenant à notre
-																																																				                         newsletter</h6>
-						<div class="email p-4 mb-3">
-							<i class="bi bi-envelope-fill text-secondary" width="30" height="30"></i>
-							<br><br>
-							<!-- <p>Entrez votre adresse email</p> -->
-							<input class="bg-body-light p-2 border-2 " type="email" placeholder="Entrez votre adresse email">
-						</div>
-						<div class="nom p-2 mb-5">
-							<i class="bi bi-person-fill text-secondary "></i>
-							<br>
-							<br>
-							<input class="bg-body-light p-2 border-2" type="text" placeholder="Entrez votre nom">
-						</div>
-
-						<button id="btn_newsletter" type="button" class="btn btn-secondary  mb-4">Abonnez-vous</button>
-
-
-					</form>
-				</div>
-
-			</section>
+		 
 		</main>
 
 	{% endblock %}

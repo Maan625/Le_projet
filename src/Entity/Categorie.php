@@ -106,4 +106,12 @@ class Categorie
 
         return $this;
     }
+    public function getCoursCount(): int
+    {
+        return $this->cours->count();
+    }
+    public function __toString(): string
+    {
+        return $this->getNom();
+    }
 }

@@ -12840,6 +12840,10 @@ input::placeholder {
   color: #FFFFFF;
 }
 
+.dark-mode .article-card {
+  background-color: #B88E00;
+}
+
 .main_cours {
   background-image: url(../Images/cours_communication/imag_de_fond_communication.png);
   background-color: #ece6e6;
@@ -12918,9 +12922,8 @@ input::placeholder {
 .button-cours {
   background-color: #00162B;
   color: #FFFFFF;
-  padding: 5px 10px;
+  padding: 5px 30px;
   border-radius: 5px;
-  border: none;
   cursor: pointer;
   border: 1px solid #FFFFFF;
   text-decoration: none;
@@ -12931,7 +12934,6 @@ input::placeholder {
   color: #00162B;
   padding: 2px 10px;
   border-radius: 5px;
-  border: none;
   cursor: pointer;
   border: 2px solid #B88E00;
 }
@@ -13153,6 +13155,63 @@ input::placeholder {
 }
 
 .dark-mode #titre_temoignages {
+  color: #FFFFFF;
+}
+
+.bg-brand-gradient {
+  background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+}
+
+.object-fit-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* بادج للمجالات التقنية */
+.badge-theme {
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-weight: 600;
+}
+
+/* حالة إخفاء عند الفلترة */
+.article-card.d-none {
+  display: none !important;
+}
+
+.btn_lire {
+  background-color: #00162B;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.btn_lire:hover,
+.btn_lire:focus {
+  background-color: #B88E00;
+  color: #FFFFFF;
+}
+
+.dark-mode .article_affiche {
+  color: #000000;
+}
+
+.dark-mode .btn_lire {
+  color: #FFFFFF;
+}
+
+.dark-mode .btn_filter {
+  background-color: #FFFFFF;
+  color: #000000;
+}
+
+.dark-mode .btn_filter:hover,
+.dark-mode .btn_filter:focus {
+  background-color: #B88E00;
+  color: #FFFFFF;
+}
+
+.dark-mode .text-article {
   color: #FFFFFF;
 }
 
