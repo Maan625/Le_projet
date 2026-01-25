@@ -84,7 +84,13 @@
 								€</span>
 						</div>
 
-						<button class="btn btn-primary" disabled>Passer au paiement</button>
+						{% if items|length > 0 %}
+							<form action="{{ path('panier_checkout') }}">
+								<button type="submit" class="btn btn-primary">
+									Passer au paiement
+								</button>
+							</form>
+						{% endif %}
 					</div>
 				</div>
 			</div>

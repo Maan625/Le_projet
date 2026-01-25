@@ -51,9 +51,23 @@ class Cours
     #[ORM\OneToMany(targetEntity: Lecon::class, mappedBy: 'cours', orphanRemoval: true)]
     private Collection $lecons;
 
+    /**
+     * @var Collection<int, CommandeItem>
+     */
+    #[ORM\OneToMany(targetEntity: CommandeItem::class, mappedBy: 'cours')]
+    private Collection $commandeItems;
+
+    /**
+     * @var Collection<int, Inscription>
+     */
+    #[ORM\OneToMany(targetEntity: Inscription::class, mappedBy: 'cours')]
+    private Collection $inscriptions;
+
     public function __construct()
     {
         $this->lecons = new ArrayCollection();
+        $this->commandeItems = new ArrayCollection();
+        $this->inscriptions = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -198,6 +212,66 @@ class Cours
         return $this->getTitre();
        
 
+    }
+
+    /**
+     * @return Collection<int, CommandeItem>
+     */
+    public function getCommandeItems(): Collection
+    {
+        return $this->commandeItems;
+    }
+
+    public function addCommandeItem(CommandeItem $commandeItem): static
+    {
+        if (!$this->commandeItems->contains($commandeItem)) {
+            $this->commandeItems->add($commandeItem);
+            $commandeItem->setCours($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommandeItem(CommandeItem $commandeItem): static
+    {
+        if ($this->commandeItems->removeElement($commandeItem)) {
+            // set the owning side to null (unless already changed)
+            if ($commandeItem->getCours() === $this) {
+                $commandeItem->setCours(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Inscription>
+     */
+    public function getInscriptions(): Collection
+    {
+        return $this->inscriptions;
+    }
+
+    public function addInscription(Inscription $inscription): static
+    {
+        if (!$this->inscriptions->contains($inscription)) {
+            $this->inscriptions->add($inscription);
+            $inscription->setCours($this);
+        }
+
+        return $this;
+    }
+
+    public function removeInscription(Inscription $inscription): static
+    {
+        if ($this->inscriptions->removeElement($inscription)) {
+            // set the owning side to null (unless already changed)
+            if ($inscription->getCours() === $this) {
+                $inscription->setCours(null);
+            }
+        }
+
+        return $this;
     }
    
 }
