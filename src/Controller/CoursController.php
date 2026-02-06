@@ -8,6 +8,8 @@ use Doctrine\ORM\Mapping\Id;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use App\Repository\InscriptionRepository;
+
 
 use App\Repository\LeconRepository;
 
@@ -76,23 +78,55 @@ final class CoursController extends AbstractController
     }
 
     // صفحة تفاصيل كورس (مؤقتاً بالـ id لأن جدولك ما فيه slug)
-    #[Route('/cours/{id}', name: 'cours_show', requirements: ['id' => '\d+'])]
-    public function show(int $id, CoursRepository $coursRepo, LeconRepository $leconRepo): Response
-    {
-        $cours = $coursRepo->find($id);
 
-        if (!$cours) {
-            throw $this->createNotFoundException('Cours introuvable');
-        }
+// ...
 
-        $lecons = $leconRepo->findBy(
-            ['cours' => $cours],
-            ['position' => 'ASC']
-        );
+#[Route('/cours/{id}', name: 'cours_show', requirements: ['id' => '\d+'])]
+public function show(
+    int $id,
+    CoursRepository $coursRepo,
+    LeconRepository $leconRepo,
+    InscriptionRepository $inscriptionRepo
+): Response
+{
+    $cours = $coursRepo->find($id);
 
-        return $this->render('cours/show.html.twig', [
-            'cours' => $cours,
-            'lecons' => $lecons,
-        ]);
+    if (!$cours) {
+        throw $this->createNotFoundException('Cours introuvable');
     }
+     
+    $lecons = $leconRepo->findBy(
+        ['cours' => $cours],
+        ['position' => 'ASC']
+    );
+
+    $hasAccess = false;
+    $canAccessPremium = false;
+    
+    if ($this->getUser()) {
+        if ($this->isGranted('ROLE_ADMIN')) {
+            $canAccessPremium = true;
+        } else {
+            $inscription = $inscriptionRepo->findOneBy([
+                'user' => $this->getUser(),
+                'cours' => $cours,
+            ]);
+            $canAccessPremium = (bool) $inscription;
+        $hasAccess = (bool) $inscription;
+
+        }
+    }
+    $addToPainierRoute = $this->generateUrl('panier_add_ajax', ['id' => $cours->getId()]);
+    return $this->render('cours/show.html.twig', [
+        'cours' => $cours,
+        'lecons' => $lecons,
+        'hasAccess' => $hasAccess,
+        'addToPainierRoute' => $addToPainierRoute,
+        'canAccessPremium' => $canAccessPremium,
+    ]);
+}
+
+
+
+ 
 }

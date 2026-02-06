@@ -8,11 +8,11 @@
 		<button class="mt-2" onclick="changerMode()" id="modeButton">🌙</button>
 
 
-		<section class="py-4 bg-light">
+		<section class="py-4 bg-light container_tous_cours">
 			<div class="container">
 				<div class="row justify-content-center text-center">
 					<div class="col-lg-8">
-						<h1 class="mb-3 fw-bold">
+						<h1 class="mb-3 fw-bold tous_les_cours_title ">
 							{{ pageTitle |default('Tous les cours') }}
 						</h1>
 						<p class="text-muted">
@@ -32,7 +32,7 @@
 					<div class="row g-3 align-items-center">
 						<div class="col-lg-8">
 							<div class="d-flex flex-wrap gap-2 align-items-center">
-								<span class="fw-semibold me-2">Filtrer par thème :</span>
+								<span class="fw-semibold me-2 text-dark ">Filtrer par thème :</span>
 
 								<button class="btn btn-sm btn-outline-dark active tous-cours-filter-btn" data-filter="all">
 									Tous
@@ -68,7 +68,7 @@
 						</div>
 
 						<div class="col-lg-4">
-							<label for="tous-cours-search" class="form-label fw-semibold mb-1">
+							<label for="tous-cours-search" class="form-label fw-semibold mb-1 text-dark">
 								Rechercher un cours
 							</label>
 							<div class="input-group">
@@ -82,16 +82,7 @@
 				</div>
 			</section>
 		{% endif %}
-		{% set cats = {
-    1: '5G,coeur-reseau',
-    2: 'fibre,cables',
-    3: 'satellites',
-    4: 'reseaux-mobiles,sans-fil',
-    5: 'reseaux-entreprise',
-    6: 'iot,voip',
-    7: 'outils,logiciels'
-    
-} %}
+		 
 
 
 		{# 🟦 LISTE DE TOUS LES COURS #}
@@ -109,7 +100,7 @@
 
 									<div class="d-flex align-items-center justify-content-between mb-2">
 										<div class="d-flex align-items-center">
-											<span class="me-1 small text-muted">(15)</span>
+											<span class="me-1 small text-dark">(15)</span>
 											<div class="small">
 												<i class="bi bi-star-fill text-warning"></i>
 												<i class="bi bi-star-fill text-warning"></i>
@@ -118,18 +109,18 @@
 												<i class="bi bi-star-half text-warning"></i>
 											</div>
 										</div>
-										<span class="fw-semibold">4.5</span>
+										<span class="fw-semibold text-dark">4.5</span>
 									</div>
 
 
 									<a href="{{ path('cours_show', { id: c.id }) }}" class="text-decoration-none text-dark">
-										<h5 class="card-title mb-2">{{ c.titre }}</h5>
+										<h5 class="card-title text-dark mb-2">{{ c.titre }}</h5>
 									</a>
 
 
 									<div class="d-flex align-items-center justify-content-between mb-3">
 										<span class="fw-bold text-primary">{{ c.prix }}€</span>
-										<span class="small text-muted">
+										<span class="small text-dark">
 											<i class="bi bi-file-earmark-play me-1"></i>
 											{{ c.nombreLecons }}
 											leçons
@@ -148,7 +139,7 @@
 								</div>
 
 
-								<div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
+								<div class="card-footer  border-0 pt-0 pb-3 px-3">
 									<a href="{{ path('cours_show', { id: c.id }) }}" class="btn btn-outline-primary w-100 btn-sm">
 										Commencer
 									</a>

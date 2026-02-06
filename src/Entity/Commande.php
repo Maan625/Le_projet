@@ -124,4 +124,9 @@ class Commande
 
         return $this;
     }
+
+ public function __toString(): string
+    {
+        return $this->getStatut();
+    }
 }

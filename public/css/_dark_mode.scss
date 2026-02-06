@@ -1,0 +1,238 @@
+#modeButton {
+  position: fixed;
+  top: 110px;
+  right: 15px;
+
+  z-index: 999;
+
+  background-color: $secondary;
+  color: #222;
+  opacity: 0.8;
+  border: 2px solid $button;
+
+  padding: 10px 18px;
+
+  border-radius: 25px;
+
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  transition: all 0.3s ease;
+}
+.dark-mode {
+  background-color: #121212;
+  color: $white;
+}
+
+.dark-mode .card {
+ // background-color: $tertiary;
+  color: black;
+}
+.dark-mode .section1_accueil{
+    background-image: url("../img/accueil/accueil2.jpg");
+}
+
+
+#modeButton:hover {
+  background-color: $secondary;
+  color: white;
+  transform: scale(1.05);
+}
+
+.dark-mode .card_1 {
+  background-color: $secondary;
+  color: white;
+}
+
+.dark-mode .card-title {
+  color: $white;
+}
+
+.dark-mode .line_time {
+  color: $white;
+}
+.dark-mode .line_time .time i {
+  color: $white;
+}
+.dark-mode .line_footer,
+#para_rejoindre {
+  color: $button;
+}
+.dark-mode .text-decoration-none {
+  color: $button;
+}
+// .dark-mode .icon_sociale {
+//   color: $button;
+// }
+.dark-mode .section4_accueil {
+  background-color: $button;
+}
+.dark-mode .icon1_section4_2,
+.icon1_section4_1,
+.icon1_section4 {
+  border: 2px solid $button;
+}
+ 
+ 
+.dark-mode .btn_accueille{
+    background-color: $white;
+    color: $secondary;
+}
+.dark-mode .btn_accueille:hover{
+    background-color: $button;
+    color: $white;
+}
+.dark-mode .p_section2{
+    color: $button;
+}
+// .dark-mode .dropdown-menu {
+//     background-color: $white;
+// }
+
+.dark-mode .text_evenement{
+   
+    color: $secondary;
+}
+
+.dark-mode .mode_dark{
+    background-color: $button;
+    color: $white;
+}
+
+
+
+.dark-mode .article-card{
+    background-color:$button;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// page livres informatique
+
+.dark-mode .btn_télécharger {
+  background-color: $secondary;
+  color: $white;
+}
+.dark-mode .btn_télécharger:hover {
+  background-color:$white;
+  color: $secondary;
+  border: 1px solid $secondary;
+}
+.dark-mode .text-muted {
+  color: $white;
+}
+.section_livres {
+   background-color:$article_bg;
+ }
+ .dark-mode .section_livres {
+   background-color:#121212;
+ }
+
+ .dark-mode .section_présentation {
+   background-color: #121212;
+   
+ }  
+   .container {
+   color: $black;
+ }
+  .dark-mode .container {
+    color: $white;
+  }
+
+
+  .dark-mode .section_filter{
+    background-color: $article_bg;
+  }
+
+
+  //page A propos
+
+  .dark-mode .btn-accent{
+ border: 2px solid $white;
+ color: $white;
+     
+}
+.dark-mode .btn-accent:hover{
+    background-color: $button;
+    color: $white;
+}
+.dark-mode .h1_valeurs .titre_notre_equipe{
+    color: $secondary;
+}
+.dark-mode .titre_notre_equipe{
+    color: $secondary;
+}
+
+#titre_temoignages {
+    color: $black;
+}
+.dark-mode #titre_temoignages {
+    color: $white;
+}
+
+
+
+//tous les cours 
+
+.dark-mode .tous_les_cours_title{
+    color: $secondary;
+}
+
+ 
+
+// .dark-mode .container_tous_cours{
+//     background-color: $article_bg;
+// }
+
+.dark-mode .card{
+    background-color: $secondary;
+}
+
+.dark-mode{
+  .btn-primary{
+   @extend .btn-light;
+  }
+   
+  .btn-outline-primary{
+   @extend .btn-outline-light;
+  }
+  .text-primary{
+   @extend .text-light;
+  }
+  .text-dark{
+   @extend .text-light;
+  }
+ 
+  .bi-file-earmark-play{
+    color: $white;
+  }
+  .text-muted{
+    color: $white;
+  }
+
+}
+
+.dark-mode .prix_nombre
+{
+    color: $white;
+}
+
+
+
+.dark-mode .tous_les_cours_title{
+    color: $secondary;
+}

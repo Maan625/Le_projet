@@ -85,11 +85,9 @@
 						</div>
 
 						{% if items|length > 0 %}
-							<form action="{{ path('panier_checkout') }}">
-								<button type="submit" class="btn btn-primary">
-									Passer au paiement
-								</button>
-							</form>
+							<a href="{{ path('panier_checkout') }}" class="btn btn-primary">
+								Passer au paiement
+							</a>
 						{% endif %}
 					</div>
 				</div>

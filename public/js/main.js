@@ -252,11 +252,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // search typing
         tousSearch.addEventListener("input", applyTousCoursFilters);
+        const params = new URLSearchParams(window.location.search);
+        const q = params.get("q");
+
+        if (tousSearch && q) {
+            tousSearch.value = q;
+        }
 
         // initial
         applyTousCoursFilters();
     }
 });
+
+
+
+
+
 
 document.querySelectorAll(".tous-cours-card").forEach((card) => {
     const slug = card.dataset.slug;
@@ -304,6 +315,7 @@ document.addEventListener("click", async (e) => {
         console.error(err);
     }
 });
+
 
 //ajouter un message success
 

@@ -16,6 +16,10 @@ class LeconRepository extends ServiceEntityRepository
         parent::__construct($registry, Lecon::class);
     }
 
+
+
+    
+
     //    /**
     //     * @return Lecon[] Returns an array of Lecon objects
     //     */

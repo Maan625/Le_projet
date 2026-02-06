@@ -3,6 +3,9 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Categorie;
+use App\Entity\Commande;
+use App\Entity\CommandeItem;
+use App\Entity\ContactMessage;
 use App\Entity\Cours;
 use App\Entity\Lecon;
 use App\Entity\User;
@@ -51,11 +54,18 @@ class DashboardController extends AbstractDashboardController
     {
          yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
 
-    yield MenuItem::section('Catalogue');
+    yield MenuItem::section('Détails les cours');
     yield MenuItem::linkToCrud('Catégories', 'fa fa-tags', Categorie::class);
     yield MenuItem::linkToCrud('Cours', 'fa fa-book', Cours::class);
     yield MenuItem::linkToCrud('Leçons', 'fa fa-play-circle', Lecon::class);
     yield MenuItem::section('Utilisateurs');
     yield MenuItem::linkToCrud('Utilisateurs', 'fa fa-users', User::class);
+    yield MenuItem::section('Messages');
+    yield MenuItem::linkToCrud('Messages', 'fa fa-envelope', ContactMessage::class);
+    yield MenuItem::section('Commandes');
+    yield MenuItem::linkToCrud('Commandes', 'fa fa-shopping-cart', Commande::class);
+    yield MenuItem::linkToCrud('Commande Items', 'fa fa-shopping-basket', CommandeItem::class);
+
+
     }
 }

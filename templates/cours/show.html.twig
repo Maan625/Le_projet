@@ -1,165 +1,208 @@
- {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}{{ cours.titre }}{% endblock %}
+{% block title %}
+	{{ cours.titre }}
+{% endblock %}
 
-{% block body_class %}page-cours-show{% endblock %}
+{% block body_class %}page-cours-show
+{% endblock %}
 
 {% block body %}
-<main class="container py-4">
-			<button onclick="changerMode()" id="modeButton">🌙</button>
+	<main class="container py-4">
+		<button onclick="changerMode()" id="modeButton">🌙</button>
 
-  {# ===== Breadcrumb ===== #}
-  <nav aria-label="breadcrumb" class="mb-3">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="{{ path('cours') }}">Tous les cours</a></li>
-      <li class="breadcrumb-item"><a href="{{ path('cours_communication') }}">Cours en Communication</a></li>
-       <li class="breadcrumb-item"><a href="{{ path('cours_informatique') }}">Cours en résaux informatiques</a></li>
-      <li class="breadcrumb-item " aria-current="page">{{ cours.titre }}</li>
-    </ol>
-  </nav>
+		{# ===== Breadcrumb ===== #}
+		<nav aria-label="breadcrumb" class="mb-3">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a class="text-primary" href="{{ path('cours') }}">Tous les cours</a>
+				</li>
+				<li class="breadcrumb-item text-dark ">
+					<a class="text-primary" href="{{ path('cours_communication') }}">Cours en Communication</a>
+				</li>
+				<li class="breadcrumb-item">
+					<a class="text-primary" href="{{ path('cours_informatique') }}">Cours en résaux informatiques</a>
+				</li>
+				<li class="breadcrumb-item " aria-current="page">{{ cours.titre }}</li>
+			</ol>
+		</nav>
 
-  {# ===== HERO ===== #}
-  <div class="p-4 rounded-3 bg-light border mb-4">
-    <div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
-      <div>
-        <h1 class="nom_lecon mb-2">{{ cours.titre }}</h1>
+		{# ===== HERO ===== #}
+		<div class="p-4 rounded-3 bg-light border mb-4">
+			<div class="d-flex flex-column flex-lg-row justify-content-between gap-3">
+				<div>
+					<h1 class="nom_lecon mb-2">{{ cours.titre }}</h1>
 
-        {% if cours.description %}
-          <p class="text-muted mb-3">{{ cours.description }}</p>
-        {% endif %}
+					{% if cours.description %}
+						<p class="text-muted mb-3">{{ cours.description }}</p>
+					{% endif %}
 
-        <div class="d-flex flex-wrap gap-2">
-          
-          <span class="badge bg-secondary">Formateur : {{ cours.formateur }}</span>
-          <span class="badge bg-primary">{{ cours.prix }} €</span>
-        </div>
-      </div>
+					<div class="d-flex flex-wrap gap-2">
 
-      <div class="d-flex align-items-start justify-content-lg-end">
-        {% set firstLecon = lecons|first %}
-        {% if firstLecon %}
-          <a class="button-cours w-100"
-             href="{{ path('lecon_show', {id: firstLecon.id}) }}">
-            ▶ Commencer
-          </a>
-        {% else %}
-          <button class="btn btn-secondary btn-lg" disabled>Aucune leçon</button>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+						<span class="badge bg-secondary">Formateur :
+							{{ cours.formateur }}</span>
+						<span class="badge bg-primary">{{ cours.prix }}
+							€</span>
+					</div>
+				</div>
 
-  {# ===== STATS ===== #}
-  {% set total = lecons|length %}
-  {% set freeCount = 0 %}
-  {% for l in lecons %}
-    {% if l.estGratuite %}{% set freeCount = freeCount + 1 %}{% endif %}
-  {% endfor %}
-  {% set premiumCount = total - freeCount %}
+				<div class="d-flex align-items-start justify-content-lg-end">
+					{% set firstLecon = lecons|first %}
+					{% if firstLecon %}
+						{% if firstLecon.estGratuite or hasAccess %}
+							<a class="btn btn-dark w-100" href="{{ path('lecon_show', {id: firstLecon.id}) }}">
+								▶️ Commencer
+							</a>
+						{% else %}
+							<a class="btn btn-outline-secondary w-100" href="{{ path('connexion') }}">
+								🔒 Se connecter pour commencer
+							</a>
+						{% endif %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
 
-  <div class="row g-3 mb-4">
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <div class=" small  ">Leçons</div>
-          <div class="h4 mb-0">{{ total }}</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body ">
-          <div class=" small">Gratuites</div>
-          <div class="h4 mb-0 text-success">{{ freeCount }}</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="card shadow-sm">
-        <div class="card-body status">
-          <div class=" small">Premium</div>
-          <div class="h4 mb-0 text-secondary">{{ premiumCount }}</div>
-        </div>
-      </div>
-    </div>
-  </div>
+		{# ===== STATS ===== #}
+		{% set total = lecons|length %}
+		{% set freeCount = 0 %}
+		{% for l in lecons %}
+			{% if l.estGratuite %}
+				{% set freeCount = freeCount + 1 %}
+			{% endif %}
+		{% endfor %}
+		{% set premiumCount = total - freeCount %}
 
-  <div class="row g-4">
-    {# ===== LESSON LIST ===== #}
-    <div class="col-lg-8">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="h4 mb-0">Programme</h2>
-        <span class="text-muted small">{{ total }} leçon(s)</span>
-      </div>
+		<div class="row g-3 mb-4">
+			<div class="col-md-4">
+				<div class="card shadow-sm">
+					<div class="card-body ">
+						<div class=" small text-dark  ">Leçons</div>
+						<div class="h4 mb-0 text-dark">{{ total }}</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card shadow-sm">
+					<div class="card-body ">
+						<div class=" small text-dark">Gratuites</div>
+						<div class="h4 mb-0 text-primary">{{ freeCount }}</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="card shadow-sm">
+					<div class="card-body status">
+						<div class=" small text-dark">Premium</div>
+						<div class="h4 mb-0 text-dark">{{ premiumCount }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-      <div class="list-group shadow-sm">
-        {% for lecon in lecons %}
-          {% set isFree = lecon.estGratuite %}
-          <div class="list-group-item d-flex justify-content-between align-items-center">
-            <div class="me-3">
-              <div class="fw-semibold">
-                <span class="text-muted">{{ lecon.position }}.</span>
-                {{ lecon.titre }}
-              </div>
+		<div
+			class="row g-4">
+			{# ===== LESSON LIST ===== #}
+			<div class="col-lg-8">
+				<div class="d-flex justify-content-between align-items-center mb-3">
+					<h2 class="h4 mb-0">Programme</h2>
+					<span class="text-muted small">{{ total }}
+						leçon(s)</span>
+				</div>
 
-              <div class="small text-muted">
-                {% if isFree %}
-                  <span class="badge bg-success">Gratuite</span>
-                {% else %}
-                  <span class="badge bg-secondary">🔒 Premium</span>
-                {% endif %}
-              </div>
-            </div>
+				{# =========================
+								   PROGRAMME (Liste leçons)
+								   ========================= #}
+				<div class="list-group shadow-sm">
 
-            <div class="text-end">
-              {% if isFree %}
-                <a class="button-cours"
-                   href="{{ path('lecon_show', {id: lecon.id}) }}">
-                  ▶️ Voir
-                </a>
-              {% else %}
-                <button class="btn btn-sm btn-outline-secondary" disabled>
-                  🔒 Bloqué
-                </button>
-              {% endif %}
-            </div>
-          </div>
-        {% else %}
-          <div class="list-group-item">Aucune leçon trouvée.</div>
-        {% endfor %}
-      </div>
-    </div>
+					{% set canPremium = canAccessPremium ?? false %}
 
-    {# ===== SIDEBAR ===== #}
-    <div class="col-lg-4">
-      <div class="card shadow-sm">
-        {% if cours.image %}
-          <img src="{{ asset('images/cours/' ~ cours.image) }}" class="card-img-top" alt="{{ cours.titre }}">
-        {% endif %}
-        <div class="card-body">
-          <h3 class="h5 mb-3">Informations</h3>
+					{% for lecon in lecons %}
+						{% set isFree = lecon.estGratuite %}
+						{% set canOpen = isFree or canPremium %}
 
-          <ul class="list-unstyled mb-3">
-            <li class="mb-1"><strong>Prix :</strong> {{ cours.prix }} €</li>
-            <li class="mb-1"><strong>Formateur :</strong> {{ cours.formateur }}</li>
-           
-            <li class="mb-1"><strong>Leçons :</strong> {{ total }}</li>
-          </ul>
+						<div class="list-group-item d-flex justify-content-between align-items-center">
+							<div class="me-3">
+								<div class="fw-semibold">
+									<span class="text-muted">{{ lecon.position }}.</span>
+									{{ lecon.titre }}
+								</div>
 
-          {% if firstLecon %}
-            <a class="button-cours" 
-               href="{{ path('lecon_show', {id: firstLecon.id}) }}">
-              ▶ Commencer
-            </a>
-          {% endif %}
-        </div>
-      </div>
+								<div class="small text-muted">
+									{% if isFree %}
+										<span class="badge bg-success">Gratuite</span>
+									{% else %}
+										<span class="badge bg-secondary">🔒 Premium</span>
+									{% endif %}
+								</div>
+							</div>
 
-      <div class="alert alert-info mt-3">
-        <strong>Astuce :</strong> La première leçon est gratuite pour découvrir le cours.
-      </div>
-    </div>
-  </div>
+							<div class="text-end">
+								{% if canOpen %}
+									<a class="btn btn-sm btn-outline-dark" href="{{ path('lecon_show', {id: lecon.id}) }}">
+										▶️ Voir
+									</a>
+								{% else %}
+									<button class="btn btn-sm btn-outline-dark" disabled>🔒 Bloqué</button>
+								{% endif %}
+							</div>
+						</div>
+					{% endfor %}
 
-</main>
+				</div>
+			</div>
+
+			{# ===== SIDEBAR ===== #}
+			<div class="col-lg-4">
+				<div class="card shadow-sm">
+					{% if cours.image %}
+						<img src="{{ asset('images/cours/' ~ cours.image) }}" class="card-img-top" alt="{{ cours.titre }}">
+					{% endif %}
+					<div class="card-body">
+						<h3 class="h5 mb-3 text-dark">Informations</h3>
+
+						<ul class="list-unstyled mb-3">
+							<li class="mb-1 text-dark">
+								<strong class="text-primary">Prix :</strong>
+								{{ cours.prix }}
+								€</li>
+							<li class="mb-1 text-dark">
+								<strong class="text-primary">Formateur :</strong>
+								{{ cours.formateur }}</li>
+
+							<li class="mb-1 text-dark">
+								<strong class="text-primary">Leçons :</strong>
+								{{ total }}</li>
+						</ul>
+
+						{# =========================
+												   SIDEBAR (Actions)
+												   ========================= #}
+
+						{% if not hasAccess %}
+							<div
+								class="d-grid gap-2 mt-3">
+								{# button de l'achat #}
+								<a href="#" class="btn btn-primary js-add-to-panier" data-url="{{ addToPainierRoute }}">
+									🛒 Ajouter ce cours au panier
+								</a>
+
+								<a href="{{ path('panier_index') }}" class="btn btn-outline-primary">
+									Voir mon panier
+								</a>
+
+
+							</div>
+						{% endif %}
+					</div>
+				</div>
+
+				<div class="alert alert-info mt-3">
+					<strong>Astuce :</strong>
+					La première leçon est gratuite pour découvrir le cours.
+				</div>
+			</div>
+		</div>
+
+	</main>
 {% endblock %}

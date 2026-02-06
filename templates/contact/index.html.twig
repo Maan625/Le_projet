@@ -1,31 +1,42 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Contactez-nous{% endblock %}
+{% block title %}Contactez-nous
+{% endblock %}
 
 {% block body %}
- <main class="main_connexion >
-     <section class="main_connexion h-100 p-4">
-         <form class="formaulair_contact">
-             <h1>Contactez-nous</h1>
 
-             <label for="nom">Nom:</label>
-             <input type="text" id="nom" name="nom" required><br>
-             <label for="prrenom">Prrenom:</label>
-             <input type="text" id="prrenom" name="prrenom" required><br>
-             <label for="Téléphone">Téléphone:</label>
-             <input type="text" id="Téléphone" name="Téléphone" required><br>
-             <label for="email">Email:</label>
-             <input type="email" id="email" name="email" required><br>
-             <label for="message">Message:</label>
-             <textarea class="textarea" id="message" name="message" required></textarea><br>
-             <label for="">
-                 <input type="checkbox">
-                 J'accepte les conditions d'utilisation</label>
-             <input class="button-cours  w-50 mx-auto text-center mt-3" type="submit" value="Envoyer">
-         </form>
-         
-     </section>
+	<main class="main_connexion">
 
- </main>
 
+		<section class="h-100 p-4 d-flex justify-content-center align-items-center">
+
+
+			<form method="post" class="formaulair_contact" action="{{ path('contact') }}">
+				<div>
+					{% for label, messages in app.flashes %}
+						{% for msg in messages %}
+							<div class="alert alert-{{ label }} mb-3">{{ msg }}</div>
+						{% endfor %}
+					{% endfor %}
+				</div>
+				<h1 class="mb-4 text-center">Contactez-nous</h1>
+				<label for="nom">Nom</label>
+				<input type="text" id="nom" name="nom" class="form-control mb-3" required>
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" class="form-control mb-3" required>
+
+				<label for="sujet">Sujet</label>
+				<input type="text" id="sujet" name="sujet" class="form-control mb-3" required>
+
+				<label for="message">Message</label>
+				<textarea id="message" name="message" rows="5" class="form-control mb-3" required></textarea>
+
+				<button type="submit" class="button-cours w-100 mt-3">
+					Envoyer
+				</button>
+			</form>
+
+		</section>
+	</main>
 {% endblock %}

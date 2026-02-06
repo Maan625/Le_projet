@@ -1,168 +1,151 @@
- {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}Tous_les_cours{% endblock %}
+{% block title %}Tous_les_cours
+{% endblock %}
 
 {% block body %}
-<main class="py-4 main_cours_2">
+	<main class="py-4 main_cours_2">
+		<button class="mt-2" onclick="changerMode()" id="modeButton">🌙</button>
 
-    {# مقدمة الصفحة #}
-    <section class="py-4 bg-light">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="mb-3 fw-bold">Nos cours en communication</h1>
-                    <p class="text-muted">
-                        Apprenez la communication professionnelle à travers des modules courts,
-                        des exercices appliqués et des retours d’experts. Orale, écrite, digitale ou interculturelle :
-                        choisissez votre parcours, obtenez des compétences certifiantes et avancez vers vos objectifs
-                        avec confiance.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    {# 🔍 BARRE DE FILTRE #}
-    <section class="py-3 bg-white border-top">
-        <div class="container">
-            <div class="row g-3 align-items-center">
-                <div class="col-lg-8">
-                    <div class="d-flex flex-wrap gap-2 align-items-center">
-                        <span class="fw-semibold me-2">Filtrer par thème :</span>
+		<section class="py-4 bg-light">
+			<div class="container">
+				<div class="row justify-content-center text-center">
+					<div class="col-lg-8">
+						<h1 class="mb-3 fw-bold tous_les_cours_title">Nos cours en communication</h1>
+						<p class="text-muted">
+							Apprenez la communication professionnelle à travers des modules courts,
+							                        des exercices appliqués et des retours d’experts. Orale, écrite, digitale ou interculturelle :
+							                        choisissez votre parcours, obtenez des compétences certifiantes et avancez vers vos objectifs
+							                        avec confiance.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                        <button class="btn btn-sm btn-outline-dark active tous-cours-filter-btn" data-filter="all">
-                            Tous
-                        </button>
-                        	<button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="5g">
-									5G
-								</button>
-                        <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="reseaux-mobiles,sans-fil">
-                            Réseaux mobiles &amp; sans fil
-                        </button>
-                        <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="fibre,cables">
-                            Fibre &amp; câbles
-                        </button>
-                        <button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="satellites">
-                            Satellites
-                        </button>
-                        
-                    </div>
-                </div>
+		{# 🔍 BARRE DE FILTRE #}
+		<section class="py-3 bg-white border-top">
+			<div class="container">
+				<div class="row g-3 align-items-center">
+					<div class="col-lg-8">
+						<div class="d-flex flex-wrap gap-2 align-items-center">
+							<span class="fw-semibold me-2">Filtrer par thème :</span>
 
-                <div class="col-lg-4">
-                    <label for="tous-cours-search" class="form-label fw-semibold mb-1">
-                        Rechercher un cours
-                    </label>
-                    <div class="input-group">
-                        <span class="input-group-text">
-                            <i class="bi bi-search"></i>
-                        </span>
-                        <input
-                            type="search"
-                            id="tous-cours-search"
-                            class="form-control"
-                            placeholder="Ex : Réseaux mobiles, fibre, CCNA, Satellites…"
-                        >
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+							<button class="btn btn-sm btn-outline-dark active tous-cours-filter-btn" data-filter="all">
+								Tous
+							</button>
+							<button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="5g">
+								5G
+							</button>
+							<button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="reseaux-mobiles,sans-fil">
+								Réseaux mobiles &amp; sans fil
+							</button>
+							<button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="fibre,cables">
+								Fibre &amp; câbles
+							</button>
+							<button class="btn btn-sm btn-outline-dark tous-cours-filter-btn" data-filter="satellites">
+								Satellites
+							</button>
 
-    {# 🟦 LISTE DES COURS COMMUNICATION #}
-    <section class="py-4">
-        <div class="container">
-            <div class="row g-4 justify-content-center">
+						</div>
+					</div>
 
-                {% for c in cours %}
-                    <div
-                        class="col-12 col-sm-6 col-md-4 col-lg-3 tous-cours-card"
-                        data-category="{{ c.tag|default('all')|lower }}"
-                        data-keywords="{{ c.titre|lower }} {{ c.description|default('')|lower }}"
-                    >
-                        <div class="card h-100 shadow-sm border-0">
-                            {# صورة الكورس #}
-                            <img
-                                src="{{asset('images/cours/' ~ c.image)}}"
-                                class="card-img-top"
-                                alt="{{ c.titre }}"
-                                style="height: 235px; object-fit: cover;"
-                            >
+					<div class="col-lg-4">
+						<label for="tous-cours-search" class="form-label fw-semibold mb-1">
+							Rechercher un cours
+						</label>
+						<div class="input-group">
+							<span class="input-group-text">
+								<i class="bi bi-search"></i>
+							</span>
+							<input type="search" id="tous-cours-search" class="form-control" placeholder="Ex : Réseaux mobiles, fibre, CCNA, Satellites…">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                            <div class="card-body d-flex flex-column">
-                                {# تقييم #}
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <div class="d-flex align-items-center">
-                                        <span class="me-1 small text-muted">(15)</span>
-                                        <div class="small">
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-fill text-warning"></i>
-                                            <i class="bi bi-star-half text-warning"></i>
-                                        </div>
-                                    </div>
-                                    <span class="fw-semibold">4.5</span>
-                                </div>
+		{# 🟦 LISTE DES COURS COMMUNICATION #}
+		<section class="py-4">
+			<div class="container">
+				<div class="row g-4 justify-content-center">
 
-                                {# عنوان الكورس #}
-                                <a href="{{ path('cours_show', { id: c.id }) }}" class="text-decoration-none text-dark">
-                                    <h5 class="card-title mb-2">{{ c.titre }}</h5>
-                                </a>
+					{% for c in cours %}
+						<div class="col-12 col-sm-6 col-md-4 col-lg-3 tous-cours-card" data-category="{{ c.tag|default('all')|lower }}" data-keywords="{{ c.titre|lower }} {{ c.description|default('')|lower }}">
+							<div
+								class="card h-100 shadow-sm border-0">
+								{#   image du cours #}
+								<img src="{{asset('images/cours/' ~ c.image)}}" class="card-img-top" alt="{{ c.titre }}" style="height: 235px; object-fit: cover;">
 
-                                {# السعر وعدد الدروس #}
-                                <div class="d-flex align-items-center justify-content-between mb-3">
-                                    <span class="fw-bold text-primary">{{ c.prix }}€</span>
-                                    <span class="small text-muted">
-                                        <i class="bi bi-file-earmark-play me-1"></i>
-                                        {{ c.nombreLecons }} leçons
-                                    </span>
-                                </div>
+								<div class="card-body d-flex flex-column">
 
-                                {# زر إضافة للسلة + المعلّم #}
-                                <div class="mt-auto">
-                                    <button
-                                        type="button"
-                                        class="btn btn-sm btn-primary w-100 mb-3 js-add-to-panier"
-                                        data-url="{{ path('panier_add_ajax', { id: c.id }) }}"
-                                    >
-                                        Ajouter au panier
-                                        <i class="bi bi-cart-plus ms-1"></i>
-                                    </button>
+									<div class="d-flex align-items-center justify-content-between mb-2">
+										<div class="d-flex align-items-center">
+											<span class="me-1 small text-dark">(15)</span>
+											<div class="small">
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-fill text-warning"></i>
+												<i class="bi bi-star-half text-warning"></i>
+											</div>
+										</div>
+										<span class="fw-semibold text-dark">4.5</span>
+									</div>
 
-                                  
-                                </div>
-                            </div>
+									{# titre du cours #}
+									<a href="{{ path('cours_show', { id: c.id }) }}" class="text-decoration-none text-dark">
+										<h5 class="card-title mb-2">{{ c.titre }}</h5>
+									</a>
 
-                            {# زر Commencer #}
-                            <div class="card-footer bg-white border-0 pt-0 pb-3 px-3">
-                                <a
-                                    href="{{ path('cours_show', { id: c.id }) }}"
-                                    class="btn btn-outline-primary w-100 btn-sm"
-                                >
-                                    Commencer
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
-                    <div class="col-12">
-                        <div class="alert alert-info text-center mb-0">
-                            Aucun cours trouvé.
-                        </div>
-                    </div>
-                {% endfor %}
+									{# prix du cours #}
+									<div class="d-flex align-items-center justify-content-between mb-3">
+										<span class="fw-bold text-primary">{{ c.prix }}€</span>
+										<span class="small text-dark">
+											<i class="bi bi-file-earmark-play me-1"></i>
+											{{ c.nombreLecons }}
+											leçons
+										</span>
+									</div>
 
-            </div>
+									{# bouton ajouter au panier #}
+									<div class="mt-auto">
+										<button type="button" class="btn btn-sm btn-primary w-100 mb-3 js-add-to-panier" data-url="{{ path('panier_add_ajax', { id: c.id }) }}">
+											Ajouter au panier
+											<i class="bi bi-cart-plus ms-1"></i>
+										</button>
 
-            {# زر الرجوع لكل التكوينات #}
-            <div class="text-center mt-4">
-                <a href="{{ path('cours') }}" class="button-cours p-2">
-                    Toutes les formations
-                </a>
-            </div>
-        </div>
-    </section>
 
-</main>
+									</div>
+								</div>
+
+								{# bouton commencer #}
+								<div class="card-footer  border-0 pt-0 pb-3 px-3">
+									<a href="{{ path('cours_show', { id: c.id }) }}" class="btn btn-outline-primary w-100 btn-sm">
+										Commencer
+									</a>
+								</div>
+							</div>
+						</div>
+					{% else %}
+						<div class="col-12">
+							<div class="alert alert-info text-center mb-0">
+								Aucun cours trouvé.
+							</div>
+						</div>
+					{% endfor %}
+
+				</div>
+
+				{# bouton voir toutes les cours #}
+				<div class="text-center mt-4">
+					<a href="{{ path('cours') }}" class="button-cours p-2">
+						Toutes les formations
+					</a>
+				</div>
+			</div>
+		</section>
+
+	</main>
 {% endblock %}

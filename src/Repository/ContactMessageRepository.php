@@ -2,23 +2,22 @@
 
 namespace App\Repository;
 
-use App\Entity\Commande;
-use App\Entity\User;
+use App\Entity\ContactMessage;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Commande>
+ * @extends ServiceEntityRepository<ContactMessage>
  */
-class CommandeRepository extends ServiceEntityRepository
+class ContactMessageRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Commande::class);
+        parent::__construct($registry, ContactMessage::class);
     }
 
 //    /**
-//     * @return Commande[] Returns an array of Commande objects
+//     * @return ContactMessage[] Returns an array of ContactMessage objects
 //     */
 //    public function findByExampleField($value): array
 //    {
@@ -32,14 +31,13 @@ class CommandeRepository extends ServiceEntityRepository
 //        ;
 //    }
 
-public function findPanierByUser(User $user): ?Commande
-{
-    return $this->createQueryBuilder('c')
-        ->andWhere('c.user = :user')
-        ->andWhere('c.statut = :statut')
-        ->setParameter('user', $user)
-        ->setParameter('statut', 'en_attente')
-        ->getQuery()
-        ->getOneOrNullResult();
-}
+//    public function findOneBySomeField($value): ?ContactMessage
+//    {
+//        return $this->createQueryBuilder('c')
+//            ->andWhere('c.exampleField = :val')
+//            ->setParameter('val', $value)
+//            ->getQuery()
+//            ->getOneOrNullResult()
+//        ;
+//    }
 }

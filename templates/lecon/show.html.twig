@@ -6,48 +6,60 @@
 {% block body_class %}page-lecon-show
 {% endblock %}
 
-
 {% block body %}
-	<main " class=" container py-4 mt-3">
+	<main class="container py-4 mt-3">
 
 		<button class="mt-2" onclick="changerMode()" id="modeButton">🌙</button>
+
+		{# ✅ Flash messages   #}
+		{% for msg in app.flashes('info') %}
+			<div class="alert alert-info d-flex justify-content-between align-items-center">
+				<div>{{ msg }}</div>
+				<a href="{{ path('connexion') }}" class="btn btn-sm btn-primary">Se connecter</a>
+			</div>
+		{% endfor %}
+
+		{% for msg in app.flashes('warning') %}
+			<div class="alert alert-warning d-flex justify-content-between align-items-center">
+				<div>{{ msg }}</div>
+				<a href="{{ path('cours_show', {id: lecon.cours.id}) }}" class="btn btn-sm btn-dark">Voir le cours</a>
+			</div>
+		{% endfor %}
 
 		<nav aria-label="breadcrumb" class="mb-2">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="{{ path('cours') }}">Tous les cours</a>
+					<a class="text-primary" href="{{ path('cours') }}">Tous les cours</a>
 				</li>
 				<li class="breadcrumb-item">
-					<a href="{{ path('cours_show', {id: lecon.cours.id}) }}">{{ lecon.cours.titre }}</a>
+					<a class="text-primary" href="{{ path('cours_show', {id: lecon.cours.id}) }}">{{ lecon.cours.titre }}</a>
 				</li>
-				<li class="breadcrumb-item " aria-current="page">
-					Leçon
-					{{ lecon.position }}
-				</li>
+				<li class="breadcrumb-item active text-dark" aria-current="page">Leçon
+					{{ lecon.position }}</li>
 			</ol>
 		</nav>
-
 
 		<div class="d-flex justify-content-between align-items-center mb-3">
 			<div>
 				<h1 class="h4 mb-1">{{ lecon.titre }}</h1>
+
 				{% set total = playlist|length %}
 				{% set current = lecon.position %}
 				{% set percent = ((current / total) * 100)|round %}
 
 				<div class="mb-3">
 					<div class="d-flex justify-content-between small text-secondary mb-1">
-						<span>Progression</span>
-						<span>{{ current }}/{{ total }}
+						<span class=" text-dark">Progression</span>
+						<span class="text-dark">{{ current }}/{{ total }}
 							({{ percent }}%)</span>
 					</div>
 
 					<div class="progress">
-						<div class="progress-bar" role="progressbar" style="width: {{ percent }}%"></div>
+						<div class="progress-bar text-dark" role="progressbar" style="width: {{ percent }}%"></div>
 					</div>
 				</div>
 
-				<div class=" small">
+				<div class="small">
 					Leçon
 					{{ lecon.position }}
 					—
@@ -59,8 +71,6 @@
 					{% endif %}
 				</div>
 			</div>
-
-
 		</div>
 
 		<div
@@ -86,12 +96,11 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="card mt-3 shadow-sm">
-					<div class="card-body ">
-						<h2 class="h5 mb-2">Objectif de ce cours</h2>
-
-
-						<ul class="mb-0">
+					<div class="card-body">
+						<h2 class="h5 mb-2 text-dark">Objectif de ce cours</h2>
+						<ul class="mb-0 text-dark">
 							<li>Comprendre les notions clés liées à
 								<strong>{{ lecon.cours.titre }}</strong>
 							</li>
@@ -99,11 +108,12 @@
 							<li>Appliquer les concepts à un exemple pratique</li>
 						</ul>
 					</div>
+
 					<div class="card-ressources mt-3 shadow-sm">
 						<div class="card-body border-0 d-flex justify-content-between align-items-center flex-wrap gap-2">
 							<div>
-								<h2 class="h5 mb-1">Ressources</h2>
-								<div class="small">Support de cours (PDF)</div>
+								<h2 class="h5 mb-1 text-dark">Ressources</h2>
+								<div class="small text-dark">Support de cours (PDF)</div>
 							</div>
 
 							<a class="button-cours" href="{{ asset('files/113335527-Php.pdf') }}" target="_blank">
@@ -112,7 +122,6 @@
 						</div>
 					</div>
 				</div>
-
 
 				{# Next/Prev #}
 				<div class="d-flex justify-content-between mt-3">
@@ -126,17 +135,14 @@
 
 					<div>
 						{% if nextLecon %}
-							{% if nextLecon.estGratuite %}
-								<a class="button-cours" href="{{ path('lecon_show', { id: nextLecon.id }) }}">
-									Suivant ➡️
-								</a>
+							{% if nextLecon.estGratuite or canAccessPremium %}
+								<a class="button-cours" href="{{ path('lecon_show', { id: nextLecon.id }) }}">Suivant ➡️</a>
 							{% else %}
-								<button class="btn btn-secondary" disabled>🔒 Suivant</button>
+								<button class="button-cours" disabled>🔒 Suivant</button>
 							{% endif %}
 						{% endif %}
 					</div>
 				</div>
-
 			</div>
 
 			{# ====== RIGHT: PLAYLIST ====== #}
@@ -148,25 +154,22 @@
 					</div>
 
 					<div class="list-group list-group-flush" style="max-height: 520px; overflow:auto;">
+						{% set canPremium = canAccessPremium ?? false %}
+
 						{% for item in playlist %}
 							{% set isActive = (item.id == lecon.id) %}
+							{% set canOpen = item.estGratuite or canPremium %}
 
-							{% if item.estGratuite %}
-								<a href="{{ path('lecon_show', { id: item.id }) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center
-																																								                        {% if isActive %} active {% endif %}">
-									<span>
-										{{ item.position }}.
-										{{ item.titre }}
-									</span>
-									<span class="badge bg-light text-dark">▶</span>
+							{% if canOpen %}
+								<a href="{{ path('lecon_show', { id: item.id }) }}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center {% if isActive %} active {% endif %}">
+									<span>{{ item.position }}.
+										{{ item.titre }}</span>
+									<span class="badge bg-light text-dark">▶️</span>
 								</a>
 							{% else %}
-								<div class="list-group-item d-flex justify-content-between align-items-center
-																																								                          {% if isActive %} bg-light {% endif %}">
-									<span class="text-muted">
-										{{ item.position }}.
-										{{ item.titre }}
-									</span>
+								<div class="list-group-item d-flex justify-content-between align-items-center {% if isActive %} bg-light {% endif %}">
+									<span class="text-muted">{{ item.position }}.
+										{{ item.titre }}</span>
 									<span class="badge bg-secondary">🔒</span>
 								</div>
 							{% endif %}

@@ -16,11 +16,11 @@ body {
 }
  .nav-link.active {
   background-color: $white;
-  color: $primary;
+  // color: $secondary;
 }
 .nav-link:focus {
   background-color: $white;
-  color: $primary;
+  color: $secondary;
 }
 
 .nav-item {
@@ -291,6 +291,24 @@ input::placeholder {
   margin-top: 20px;
 }
 
+.button-cours {
+    background-color: $secondary;
+    color: $white;
+    padding: 5px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid $white;
+    text-decoration: none;
+}
+.button-cours:hover {
+    background-color: $white;
+    color: $secondary;
+    padding: 2px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid $button;
+}
+
 .button_voir button {
   background-color: $button;
   color: $white;
@@ -503,41 +521,7 @@ input::placeholder {
   border: 5px solid $button;
 }
 
-.newsletter {
-  margin: 0 60px;
-  border: 3px solid $button;
-  border-radius: 30px;
-  background-color: $secondary;
-}
-
-.form_newsletter {
-  width: 400px;
-  margin: auto;
-  border: 1px solid $button;
-  background-color: $evenement;
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-#btn_newsletter:hover {
-  background-color: $button;
-  color: black;
-}
-.text_newsletter {
-  width: 400px;
-  margin: 0 auto;
-  border: 1px solid $button;
-  color: $secondary;
-  background-color: $evenement;
-
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 200px;
-  margin-bottom: 50px;
-}
-
+ 
 @media screen and (max-width: 600px) {
   .newsletter {
     margin: 0;
@@ -600,17 +584,7 @@ input::placeholder {
 .icon_sociale {
   font-size: 24px;
 }
-//  .icon_sociale:hover{
-//      animation: rotate 0.5s ease-in-out;
-//  }
-//  @keyframes rotate{
-//      0%{
-//         transform: rotate(0deg);
-//      }
-//      100%{
-//         transform: rotate(360deg);
-//      }
-//  }
+ 
 .icon_sociale {
   transition: transform 0.5s ease-in-out;
 
@@ -627,103 +601,103 @@ input::placeholder {
   }
 }
 
-#modeButton {
-  position: fixed;
-  top: 110px;
-  right: 15px;
+// #modeButton {
+//   position: fixed;
+//   top: 110px;
+//   right: 15px;
 
-  z-index: 999;
+//   z-index: 999;
 
-  background-color: $secondary;
-  color: #222;
-  opacity: 0.8;
-  border: 2px solid $button;
+//   background-color: $secondary;
+//   color: #222;
+//   opacity: 0.8;
+//   border: 2px solid $button;
 
-  padding: 10px 18px;
+//   padding: 10px 18px;
 
-  border-radius: 25px;
+//   border-radius: 25px;
 
-  font-size: 1rem;
-  font-weight: bold;
+//   font-size: 1rem;
+//   font-weight: bold;
 
-  cursor: pointer;
+//   cursor: pointer;
 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-  transition: all 0.3s ease;
-}
-.dark-mode {
-  background-color: #121212;
-  color: $white;
-}
-
-.dark-mode .card {
- // background-color: $tertiary;
-  color: black;
-}
-
- 
-
-#modeButton:hover {
-  background-color: $secondary;
-  color: white;
-  transform: scale(1.05);
-}
-
-.dark-mode .card_1 {
-  background-color: $secondary;
-  color: white;
-}
-
-.dark-mode .card-title {
-  color: $white;
-}
-
-.dark-mode .line_time {
-  color: $white;
-}
-.dark-mode .line_time .time i {
-  color: $white;
-}
-.dark-mode .line_footer,
-#para_rejoindre {
-  color: $button;
-}
-.dark-mode .text-decoration-none {
-  color: $button;
-}
-.dark-mode .icon_sociale {
-  color: $button;
-}
-.dark-mode .section4_accueil {
-  background-color: $button;
-}
-.dark-mode .icon1_section4_2,
-.icon1_section4_1,
-.icon1_section4 {
-  border: 2px solid $button;
-}
- 
- 
-.dark-mode .btn_accueille{
-    background-color: $white;
-    color: $secondary;
-}
-.dark-mode .btn_accueille:hover{
-    background-color: $button;
-    color: $white;
-}
-.dark-mode .p_section2{
-    color: $button;
-}
-// .dark-mode .dropdown-menu {
-//     background-color: $white;
+//   transition: all 0.3s ease;
+// }
+// .dark-mode {
+//   background-color: #121212;
+//   color: $white;
 // }
 
-.dark-mode .text_evenement{
+// .dark-mode .card {
+//  // background-color: $tertiary;
+//   color: black;
+// }
+
+ 
+
+// #modeButton:hover {
+//   background-color: $secondary;
+//   color: white;
+//   transform: scale(1.05);
+// }
+
+// .dark-mode .card_1 {
+//   background-color: $secondary;
+//   color: white;
+// }
+
+// .dark-mode .card-title {
+//   color: $white;
+// }
+
+// .dark-mode .line_time {
+//   color: $white;
+// }
+// .dark-mode .line_time .time i {
+//   color: $white;
+// }
+// .dark-mode .line_footer,
+// #para_rejoindre {
+//   color: $button;
+// }
+// .dark-mode .text-decoration-none {
+//   color: $button;
+// }
+// // .dark-mode .icon_sociale {
+// //   color: $button;
+// // }
+// .dark-mode .section4_accueil {
+//   background-color: $button;
+// }
+// .dark-mode .icon1_section4_2,
+// .icon1_section4_1,
+// .icon1_section4 {
+//   border: 2px solid $button;
+// }
+ 
+ 
+// .dark-mode .btn_accueille{
+//     background-color: $white;
+//     color: $secondary;
+// }
+// .dark-mode .btn_accueille:hover{
+//     background-color: $button;
+//     color: $white;
+// }
+// .dark-mode .p_section2{
+//     color: $button;
+// }
+// // .dark-mode .dropdown-menu {
+// //     background-color: $white;
+// // }
+
+// .dark-mode .text_evenement{
    
-    color: $secondary;
-}
+//     color: $secondary;
+// }
 
 
 //panier
@@ -786,13 +760,31 @@ input::placeholder {
 }
 
 
-.dark-mode .mode_dark{
-    background-color: $button;
-    color: $white;
+// .dark-mode .mode_dark{
+//     background-color: $button;
+//     color: $white;
+// }
+
+
+
+// .dark-mode .article-card{
+//     background-color:$button;
+// }
+
+
+
+//page A propos
+
+.image__formateur{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
 }
+ 
 
 
 
-.dark-mode .article-card{
-    background-color:$button;
+.tous_les_cours_title{
+    color: $black;
 }

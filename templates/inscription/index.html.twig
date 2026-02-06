@@ -5,12 +5,12 @@
 {% block body %}
 <main class="main_connexion">
   <div>
-    <h1 class="créer_compte text-center">Créez votre compte</h1>
-    <p class="para_compte text-center fw-bold text-light">
-      Veuillez remplir le formulaire ci-dessous pour créer votre compte
-    </p>
+    {# <h1 class="créer_compte text-center">Créez votre compte</h1> #}
+     {# <p class="para_compte text-center"> #}
+      {# Veuillez remplir le formulaire ci-dessous pour créer votre compte #}
+    {# </p> #} 
 
-    {# رسالة نجاح (Flash) إن وجدت #}
+    {# un message de success #}
     {% for message in app.flashes('success') %}
       <div class="alert alert-success w-75 mx-auto">
         {{ message }}
@@ -44,7 +44,7 @@
       </div>
 
       <div class="mb-2">
-        {# هذا field هو RepeatedType (كلمتا مرور) #}
+        {#  les deux mot de passes #}
         {{ form_row(registrationForm.plainPassword.first, { 'attr': { 'class': 'w-75' } }) }}
         {{ form_row(registrationForm.plainPassword.second, { 'attr': { 'class': 'w-75' } }) }}
       </div>
@@ -52,7 +52,7 @@
       <div class="mb-3">
         <label class="lable_checkbox">
           {{ form_widget(registrationForm.agreeTerms) }}
-          J'accepte les conditions d'utilisation
+          
         </label>
         {{ form_errors(registrationForm.agreeTerms) }}
       </div>
